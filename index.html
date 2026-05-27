@@ -8,10 +8,37 @@
 <meta property="og:title" content="CodeRise Digital — No Templates. No Shortcuts.">
 <meta property="og:description" content="We build professional websites for real businesses. Packages from KSh 8,000 — landing pages to full e-commerce. First 5 clients get a free domain!">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://coderisedigital.vercel.app">
+<meta property="og:url" content="https://kuriamyg.github.io/coderiserdigital">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="CodeRise Digital — Professional Web Development">
 <meta name="twitter:description" content="No templates. No shortcuts. Custom websites for real businesses from KSh 8,000.">
+
+<!-- ======== GOOGLE ANALYTICS GA4 ======== -->
+<!-- STEP: Replace G-WL5VTD16VB with your real Measurement ID from analytics.google.com -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WL5VTD16VB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WL5VTD16VB', {
+    page_title: 'CodeRise Digital — Landing Page',
+    page_location: window.location.href
+  });
+
+  // Track UTM source so you know which platform sent the visitor
+  (function(){
+    const params = new URLSearchParams(window.location.search);
+    const source = params.get('utm_source');
+    const medium = params.get('utm_medium');
+    if(source){
+      gtag('event','platform_visit',{
+        event_category: 'Traffic Source',
+        event_label: source + (medium ? ' / '+medium : ''),
+        value: 1
+      });
+    }
+  })();
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1030,7 +1057,7 @@ footer {
         <i class="ti ti-link" style="font-size:16px;color:var(--blue);"></i>
         <div style="text-align:left;">
           <div style="font-size:11px;color:var(--t3);margin-bottom:3px;letter-spacing:1px;text-transform:uppercase;">Tap this link from WhatsApp to visit this page</div>
-          <strong>coderisedigital.vercel.app</strong>
+          <strong>kuriamyg.github.io/coderiserdigital</strong>
         </div>
       </div>
       <div class="link-box-note">Share this link on WhatsApp to bring potential clients directly to this page — no login, no sign-up, just tap and explore.</div>
@@ -1077,7 +1104,51 @@ footer {
 
 <!-- ======== SCRIPTS ======== -->
 <script>
-  // Scroll reveal
+  // ── WHATSAPP BUTTON CLICK TRACKING ──
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const label = btn.innerText.trim().substring(0,40);
+      gtag('event','whatsapp_click',{
+        event_category: 'CTA',
+        event_label: label,
+        value: 1
+      });
+    });
+  });
+
+  // ── SECTION SCROLL TRACKING ──
+  const sections = [
+    {id:'packages', name:'Viewed Packages'},
+  ];
+  const scrollObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        gtag('event','section_view',{
+          event_category:'Engagement',
+          event_label: e.target.dataset.trackLabel || e.target.id,
+          value:1
+        });
+        scrollObs.unobserve(e.target);
+      }
+    });
+  },{threshold:0.4});
+  document.querySelectorAll('section[id]').forEach(function(s){
+    scrollObs.observe(s);
+  });
+
+  // ── TIME ON PAGE (engagement depth) ──
+  let timeMarks = [30,60,120,300];
+  timeMarks.forEach(function(t){
+    setTimeout(function(){
+      gtag('event','time_on_page',{
+        event_category:'Engagement',
+        event_label: t+'s',
+        value: t
+      });
+    }, t*1000);
+  });
+
+
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1, rootMargin: '0px 0px -44px 0px' });
