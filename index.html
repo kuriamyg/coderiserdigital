@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeRise Digital — Professional Web Development in Nairobi</title>
+<meta name="description" content="Professional web development studio in Nairobi. Custom websites built from scratch — no templates, no shortcuts. Packages from KSh 8,000. First 5 clients get a FREE domain.">
+<meta property="og:title" content="CodeRise Digital — No Templates. No Shortcuts.">
+<meta property="og:description" content="We build professional websites for real businesses. Packages from KSh 8,000 — landing pages to full e-commerce. First 5 clients get a free domain!">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://coderisedigital.vercel.app">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CodeRise Digital — Professional Web Development">
+<meta name="twitter:description" content="No templates. No shortcuts. Custom websites for real businesses from KSh 8,000.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.34.0/dist/tabler-icons.min.css">
+
+<style>
+/* ==============================
+   RESET & BASE
+============================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #0A0A0D;
+  color: #EEEEF2;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+
+/* ==============================
+   CSS VARIABLES
+============================== */
+:root {
+  --bg: #0A0A0D;
+  --surface: #0F0F13;
+  --card: #14141A;
+  --card-h: #1A1A22;
+  --b: rgba(255,255,255,0.07);
+  --b2: rgba(255,255,255,0.13);
+  --blue: #4F8EF7;
+  --blue-d: rgba(79,142,247,0.09);
+  --blue-d2: rgba(79,142,247,0.17);
+  --gold: #F0A030;
+  --gold-d: rgba(240,160,48,0.09);
+  --gold-d2: rgba(240,160,48,0.17);
+  --green: #22C55E;
+  --green-d: rgba(34,197,94,0.09);
+  --red: #EF4444;
+  --t1: #EEEEF2;
+  --t2: #8A8A9C;
+  --t3: #46465A;
+  --r: 12px;
+  --r-sm: 8px;
+  --r-lg: 16px;
+}
+
+/* ==============================
+   TYPOGRAPHY
+============================== */
+h1, h2, h3, h4 { font-family: 'Syne', sans-serif; font-weight: 800; line-height: 1.2; }
+.eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--t2);
+  display: block;
+  margin-bottom: 12px;
+}
+.eyebrow.blue { color: var(--blue); }
+.eyebrow.gold { color: var(--gold); }
+.eyebrow.green { color: var(--green); }
+
+/* ==============================
+   LAYOUT
+============================== */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+section { padding: 88px 0; }
+.alt-bg { background: var(--surface); }
+
+/* ==============================
+   SCROLL ANIMATIONS
+============================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.10s; }
+.d2 { transition-delay: 0.20s; }
+.d3 { transition-delay: 0.30s; }
+.d4 { transition-delay: 0.40s; }
+.d5 { transition-delay: 0.50s; }
+
+/* ==============================
+   BUTTONS
+============================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 20px;
+  border-radius: var(--r-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.btn-wa {
+  background: var(--green);
+  color: #fff;
+  animation: pulse-green 2.6s infinite;
+}
+.btn-wa:hover { background: #16a34a; transform: translateY(-1px); animation: none; box-shadow: 0 4px 20px rgba(34,197,94,0.35); }
+@keyframes pulse-green {
+  0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.38); }
+  50%      { box-shadow: 0 0 0 11px rgba(34,197,94,0); }
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--t1);
+  border: 0.5px solid var(--b2);
+}
+.btn-ghost:hover { background: var(--card); }
+.btn-blue { background: var(--blue); color: #fff; }
+.btn-blue:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn-outline-gold {
+  background: var(--gold-d);
+  color: var(--gold);
+  border: 0.5px solid rgba(240,160,48,0.28);
+}
+.btn-outline-gold:hover { background: var(--gold-d2); }
+.btn-outline-blue {
+  background: var(--blue-d);
+  color: var(--blue);
+  border: 0.5px solid rgba(79,142,247,0.25);
+}
+.btn-outline-blue:hover { background: var(--blue-d2); }
+
+/* ==============================
+   NAV
+============================== */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,10,13,0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 0.5px solid var(--b);
+  padding: 14px 0;
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.3px;
+}
+.logo-box {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  background: var(--blue);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: #fff;
+}
+.logo-accent { color: var(--blue); }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+.badge-live {
+  display: flex; align-items: center; gap: 6px;
+  padding: 5px 12px;
+  border-radius: 20px;
+  background: var(--green-d);
+  border: 0.5px solid rgba(34,197,94,0.2);
+  color: var(--green);
+  font-size: 12px; font-weight: 500;
+}
+.badge-live::before {
+  content: '';
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: blink 1.6s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.25;} }
+
+/* ==============================
+   TRUST BAR
+============================== */
+.trust-bar {
+  background: var(--surface);
+  border-bottom: 0.5px solid var(--b);
+  padding: 9px 0;
+}
+.trust-inner {
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12.5px;
+  color: var(--t2);
+  white-space: nowrap;
+}
+.trust-item i { color: var(--blue); font-size: 14px; }
+
+/* ==============================
+   HERO
+============================== */
+.hero {
+  padding: 108px 0 88px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.hero-dots {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(79,142,247,0.065) 1px, transparent 1px);
+  background-size: 38px 38px;
+  pointer-events: none;
+}
+.hero-glow {
+  position: absolute;
+  top: -220px; left: 50%; transform: translateX(-50%);
+  width: 640px; height: 640px;
+  background: radial-gradient(circle, rgba(79,142,247,0.07) 0%, transparent 68%);
+  pointer-events: none;
+}
+.hero-content { position: relative; z-index: 1; }
+.hero h1 {
+  font-size: clamp(30px, 5vw, 56px);
+  font-weight: 800;
+  line-height: 1.13;
+  margin-bottom: 22px;
+  letter-spacing: -1.2px;
+}
+.hero h1 em { font-style: normal; color: var(--blue); }
+.hero-sub {
+  font-size: 16px;
+  color: var(--t2);
+  max-width: 560px;
+  margin: 0 auto 36px;
+  line-height: 1.8;
+}
+.hero-btns {
+  display: flex; gap: 12px; justify-content: center;
+  flex-wrap: wrap; margin-bottom: 64px;
+}
+.hero-stats {
+  display: flex; justify-content: center; gap: 48px;
+  flex-wrap: wrap;
+  padding-top: 44px;
+  border-top: 0.5px solid var(--b);
+}
+.stat-item { text-align: center; }
+.stat-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 30px; }
+.stat-label { font-size: 12px; color: var(--t2); margin-top: 3px; }
+
+/* ==============================
+   PROCESS
+============================== */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px; margin-top: 44px;
+}
+.process-card {
+  background: var(--card); border: 0.5px solid var(--b);
+  border-radius: var(--r); padding: 32px 28px;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative; overflow: hidden;
+}
+.process-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, var(--blue), transparent);
+  opacity: 0; transition: opacity 0.3s;
+}
+.process-card:hover { border-color: var(--b2); background: var(--card-h); }
+.process-card:hover::before { opacity: 1; }
+.process-num {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 52px;
+  color: rgba(79,142,247,0.12); line-height: 1; margin-bottom: 20px;
+}
+.process-card h3 { font-size: 18px; margin-bottom: 10px; }
+.process-card p { font-size: 13.5px; color: var(--t2); line-height: 1.65; }
+
+/* ==============================
+   PACKAGES
+============================== */
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 18px; margin-top: 44px; align-items: start;
+}
+.pkg-card {
+  background: var(--card); border: 0.5px solid var(--b);
+  border-radius: var(--r-lg); padding: 30px;
+  position: relative;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.pkg-card:hover { transform: translateY(-5px); border-color: var(--b2); }
+.pkg-card.featured {
+  border: 1.5px solid var(--blue);
+  background: linear-gradient(160deg, #14141A 0%, #12162B 100%);
+}
+.pkg-card.featured:hover { border-color: rgba(79,142,247,0.7); }
+.pkg-pop-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--blue); color: #fff;
+  font-size: 11px; font-weight: 600; padding: 4px 16px;
+  border-radius: 20px; white-space: nowrap; letter-spacing: 0.5px;
+}
+.pkg-icon {
+  width: 48px; height: 48px; border-radius: var(--r-sm);
+  background: var(--blue-d);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; color: var(--blue); margin-bottom: 18px;
+}
+.pkg-icon.gold { background: var(--gold-d); color: var(--gold); }
+.pkg-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px; margin-bottom: 4px; }
+.pkg-for { font-size: 12px; color: var(--t2); margin-bottom: 16px; }
+.pkg-desc {
+  font-size: 13.5px; color: var(--t2); line-height: 1.7;
+  margin-bottom: 22px; padding-bottom: 22px;
+  border-bottom: 0.5px solid var(--b);
+}
+.pkg-price { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 32px; margin-bottom: 5px; }
+.pkg-price span { font-size: 13px; font-weight: 400; color: var(--t2); }
+.pkg-hosting {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12.5px; color: var(--green); margin-bottom: 20px;
+}
+.pkg-hosting i { font-size: 14px; }
+.pkg-features { margin-bottom: 24px; }
+.feat {
+  display: flex; align-items: flex-start; gap: 9px;
+  font-size: 13px; color: var(--t2);
+  margin-bottom: 10px; line-height: 1.55;
+}
+.feat i { font-size: 14px; color: var(--green); margin-top: 2px; flex-shrink: 0; }
+.pkg-btn { width: 100%; justify-content: center; padding: 14px; font-size: 14px; }
+
+/* ==============================
+   AI SECTION
+============================== */
+.ai-special-badge {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 7px 16px; border-radius: 20px;
+  background: linear-gradient(135deg, rgba(240,160,48,0.12), rgba(79,142,247,0.12));
+  border: 0.5px solid rgba(240,160,48,0.22);
+  color: var(--gold); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.5px; margin-bottom: 18px;
+}
+.ai-intro { font-size: 14.5px; color: var(--t2); max-width: 640px; margin-bottom: 44px; line-height: 1.75; }
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(196px, 1fr));
+  gap: 12px; margin-bottom: 44px;
+}
+.ai-feat {
+  background: var(--card); border: 0.5px solid var(--b);
+  border-radius: var(--r); padding: 20px 18px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.ai-feat:hover { border-color: rgba(240,160,48,0.2); background: var(--card-h); }
+.ai-feat-icon { font-size: 24px; color: var(--gold); margin-bottom: 12px; }
+.ai-feat h4 { font-size: 14px; font-weight: 700; font-family: 'Syne', sans-serif; margin-bottom: 6px; }
+.ai-feat p { font-size: 12px; color: var(--t2); line-height: 1.6; }
+.ai-pricing {
+  background: var(--card);
+  border: 0.5px solid rgba(240,160,48,0.18);
+  border-radius: var(--r); padding: 28px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px; margin-bottom: 14px;
+}
+.ai-price-item h4 { font-size: 12px; color: var(--t2); font-weight: 400; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
+.ai-price-val { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 20px; color: var(--gold); }
+.ai-price-note { font-size: 11.5px; color: var(--t3); margin-top: 4px; }
+.ai-caveat { font-size: 13px; color: var(--t3); margin-top: 8px; }
+
+/* ==============================
+   SECURITY
+============================== */
+.security-intro { font-size: 14.5px; color: var(--t2); max-width: 600px; margin-top: 10px; line-height: 1.75; }
+.security-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px; margin-top: 44px;
+}
+.sec-item {
+  display: flex; align-items: flex-start; gap: 15px;
+  background: var(--card); border: 0.5px solid var(--b);
+  border-radius: var(--r); padding: 20px;
+  transition: border-color 0.2s;
+}
+.sec-item:hover { border-color: rgba(79,142,247,0.2); }
+.sec-icon {
+  width: 38px; height: 38px; border-radius: var(--r-sm);
+  background: var(--blue-d);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 19px; color: var(--blue); flex-shrink: 0;
+}
+.sec-item h4 { font-size: 14px; font-weight: 600; margin-bottom: 5px; font-family: 'DM Sans', sans-serif; }
+.sec-item p { font-size: 12px; color: var(--t2); line-height: 1.6; }
+
+/* ==============================
+   CREDIBILITY
+============================== */
+.cred-box {
+  background: var(--card); border: 0.5px solid var(--b);
+  border-radius: var(--r-lg); padding: 44px;
+  max-width: 740px; margin: 44px auto 0;
+}
+.cred-box h3 { font-size: 22px; margin-bottom: 16px; }
+.cred-box p { font-size: 14.5px; color: var(--t2); line-height: 1.8; margin-bottom: 16px; }
+.sample-offer {
+  background: var(--blue-d2); border: 0.5px solid rgba(79,142,247,0.2);
+  border-radius: var(--r); padding: 20px 22px;
+  display: flex; align-items: flex-start; gap: 14px; margin-top: 8px;
+}
+.sample-offer i { font-size: 24px; color: var(--blue); flex-shrink: 0; margin-top: 1px; }
+.sample-offer h4 { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+.sample-offer p { font-size: 13px; color: var(--t2); margin: 0; line-height: 1.6; }
+
+/* ==============================
+   FAQ
+============================== */
+.faq-list { max-width: 740px; margin: 44px auto 0; }
+.faq-item { border-bottom: 0.5px solid var(--b); overflow: hidden; }
+.faq-item:first-child { border-top: 0.5px solid var(--b); }
+.faq-q {
+  width: 100%; text-align: left;
+  background: none; border: none; color: var(--t1);
+  font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500;
+  padding: 22px 0; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  transition: color 0.2s;
+}
+.faq-q:hover { color: var(--blue); }
+.faq-q i { font-size: 18px; color: var(--t3); flex-shrink: 0; transition: transform 0.3s, color 0.2s; }
+.faq-item.open .faq-q i { transform: rotate(45deg); color: var(--blue); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.38s ease; }
+.faq-a p { font-size: 14px; color: var(--t2); line-height: 1.8; padding: 0 0 22px; }
+
+/* ==============================
+   BONUS
+============================== */
+.bonus-wrap {
+  max-width: 620px; margin: 0 auto;
+  background: linear-gradient(135deg, rgba(240,160,48,0.07), rgba(79,142,247,0.05));
+  border: 0.5px solid rgba(240,160,48,0.22);
+  border-radius: var(--r-lg); padding: 48px 40px;
+  text-align: center;
+}
+.bonus-wrap h3 { font-size: 26px; margin-bottom: 12px; }
+.bonus-wrap > p { font-size: 14.5px; color: var(--t2); margin-bottom: 30px; line-height: 1.75; }
+.slots { display: flex; justify-content: center; gap: 12px; margin-bottom: 10px; }
+.slot { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.slot-bar { width: 48px; height: 9px; border-radius: 5px; }
+.slot-bar.taken { background: var(--red); }
+.slot-bar.open { background: var(--green); }
+.slot-lbl { font-size: 10px; color: var(--t3); letter-spacing: 0.5px; }
+.slots-note { font-size: 13px; color: var(--t2); margin-bottom: 28px; }
+
+/* ==============================
+   FINAL CTA
+============================== */
+.final-cta {
+  text-align: center; padding: 110px 0;
+  position: relative; overflow: hidden;
+}
+.final-cta-glow {
+  position: absolute; bottom: -100px; left: 50%; transform: translateX(-50%);
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(34,197,94,0.055) 0%, transparent 70%);
+  pointer-events: none;
+}
+.final-cta h2 { font-size: clamp(26px, 4vw, 44px); margin-bottom: 14px; }
+.final-cta > p { font-size: 15px; color: var(--t2); margin-bottom: 36px; line-height: 1.75; max-width: 520px; margin-left: auto; margin-right: auto; }
+.link-box {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--card); border: 0.5px solid var(--b2);
+  border-radius: var(--r); padding: 14px 22px;
+  font-size: 13px; color: var(--t2); margin-bottom: 32px;
+}
+.link-box strong { color: var(--blue); }
+.link-box-note { font-size: 12px; color: var(--t3); margin-top: 6px; }
+.btn-wa-xl {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--green); color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 17px; font-weight: 600;
+  padding: 17px 40px; border-radius: var(--r-sm);
+  cursor: pointer; border: none;
+  animation: pulse-green 2.6s infinite;
+  transition: background 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+.btn-wa-xl:hover { background: #16a34a; transform: translateY(-2px); animation: none; box-shadow: 0 6px 28px rgba(34,197,94,0.35); }
+.cta-sub-note { font-size: 12px; color: var(--t3); margin-top: 14px; }
+
+/* ==============================
+   FOOTER
+============================== */
+footer {
+  background: var(--surface); border-top: 0.5px solid var(--b); padding: 44px 0;
+}
+.footer-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 24px;
+}
+.footer-logo-wrap .logo { font-size: 16px; }
+.footer-tagline { font-size: 12px; color: var(--t3); margin-top: 5px; }
+.footer-contact { display: flex; flex-direction: column; gap: 7px; font-size: 13.5px; color: var(--t2); }
+.footer-contact a { color: var(--blue); }
+.footer-contact span { display: flex; align-items: center; gap: 6px; }
+.footer-copy { font-size: 12px; color: var(--t3); text-align: right; line-height: 1.7; }
+
+/* ==============================
+   RESPONSIVE
+============================== */
+@media (max-width: 640px) {
+  section { padding: 64px 0; }
+  .hero { padding: 72px 0 64px; }
+  .nav-right .badge-live { display: none; }
+  .hero-stats { gap: 28px; }
+  .cred-box { padding: 28px 22px; }
+  .bonus-wrap { padding: 36px 22px; }
+  .footer-copy { text-align: left; }
+  .ai-pricing { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 400px) {
+  .ai-pricing { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ======== NAV ======== -->
+<nav>
+  <div class="container">
+    <div class="nav-inner">
+      <div class="logo">
+        <div class="logo-box"><i class="ti ti-code"></i></div>
+        Code<span class="logo-accent">Rise</span> Digital
+      </div>
+      <div class="nav-right">
+        <span class="badge-live">Accepting Clients</span>
+        <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20talk%3F"
+           class="btn btn-wa" target="_blank" rel="noopener">
+          <i class="ti ti-brand-whatsapp"></i> Chat With Us
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ======== TRUST BAR ======== -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-inner">
+      <span class="trust-item"><i class="ti ti-check"></i> 10+ sites delivered</span>
+      <span class="trust-item"><i class="ti ti-check"></i> Built from scratch — zero templates</span>
+      <span class="trust-item"><i class="ti ti-check"></i> On-time delivery, every time</span>
+      <span class="trust-item"><i class="ti ti-check"></i> Nairobi-based studio</span>
+      <span class="trust-item"><i class="ti ti-check"></i> You own your website 100%</span>
+    </div>
+  </div>
+</div>
+
+<!-- ======== HERO ======== -->
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="hero-glow"></div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="eyebrow blue reveal">Web Development Studio — Nairobi, Kenya</span>
+      <h1 class="reveal d1">
+        No Templates. No Shortcuts.<br>
+        <em>Just Clean Websites Built for Your Business.</em>
+      </h1>
+      <p class="hero-sub reveal d2">
+        We engineer every website from the ground up — structured, fast, and built to grow with your business.
+        Whether you need a sharp landing page or a full e-commerce platform, we build it properly.
+        Delivered on time. No excuses.
+      </p>
+      <div class="hero-btns reveal d3">
+        <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20talk%3F"
+           class="btn btn-wa" target="_blank" rel="noopener"
+           style="font-size:15px;padding:15px 30px;">
+          <i class="ti ti-brand-whatsapp" style="font-size:19px;"></i> Start on WhatsApp
+        </a>
+        <a href="#packages" class="btn btn-ghost" style="font-size:15px;padding:15px 26px;">
+          <i class="ti ti-layout-grid"></i> See Packages
+        </a>
+      </div>
+      <div class="hero-stats reveal d4">
+        <div class="stat-item">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Day minimum delivery</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">10+</div>
+          <div class="stat-label">Websites delivered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Client site ownership</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">0</div>
+          <div class="stat-label">Templates ever used</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== PROCESS ======== -->
+<section class="alt-bg">
+  <div class="container">
+    <span class="eyebrow reveal">How it works</span>
+    <h2 class="reveal d1">Simple. Transparent. Delivered.</h2>
+    <div class="process-grid">
+      <div class="process-card reveal d1">
+        <div class="process-num">01</div>
+        <h3>You Brief Us</h3>
+        <p>Tell us what you need via WhatsApp — no long forms or confusing questionnaires. Just a direct chat. We ask the right questions to fully understand your business and what you want your website to achieve.</p>
+      </div>
+      <div class="process-card reveal d2">
+        <div class="process-num">02</div>
+        <h3>We Build It</h3>
+        <p>We write every line of code from scratch — your brand identity, your content, your vision. We update you as we build, and send you a live preview to review before anything goes public.</p>
+      </div>
+      <div class="process-card reveal d3">
+        <div class="process-num">03</div>
+        <h3>You Go Live</h3>
+        <p>We deploy it, stress-test it on every device and screen size, then hand you a site that works. You receive all your files, login credentials, and a personal walkthrough of everything.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== PACKAGES ======== -->
+<section id="packages">
+  <div class="container">
+    <span class="eyebrow reveal">Service packages</span>
+    <h2 class="reveal d1">Transparent pricing. No hidden costs.</h2>
+    <p style="color:var(--t2);font-size:14.5px;max-width:580px;margin-top:10px;line-height:1.75;" class="reveal d2">
+      Hosting is covered by us from day one — you only contribute a small monthly fee to keep your site live,
+      fast, and maintained long after delivery.
+    </p>
+    <div class="pkg-grid">
+
+      <!-- STARTER -->
+      <div class="pkg-card reveal d1">
+        <div class="pkg-icon"><i class="ti ti-rocket"></i></div>
+        <div class="pkg-name">Starter</div>
+        <div class="pkg-for">For individuals &amp; new businesses</div>
+        <p class="pkg-desc">
+          A sharp, professional single-page website that puts your brand online with confidence — building instant trust
+          with every visitor and making it effortless for customers to reach you. Clean, fast, and mobile-first from day one.
+        </p>
+        <div class="pkg-price">KSh 8,000 <span>one-time</span></div>
+        <div class="pkg-hosting"><i class="ti ti-server"></i> Hosting covered — just KSh 500/month after launch</div>
+        <div class="pkg-features">
+          <div class="feat"><i class="ti ti-check"></i>1-page custom site — written from scratch, never a template</div>
+          <div class="feat"><i class="ti ti-check"></i>Fully mobile responsive — looks great on any phone, tablet, or desktop</div>
+          <div class="feat"><i class="ti ti-check"></i>WhatsApp contact button wired directly to your number</div>
+          <div class="feat"><i class="ti ti-check"></i>Social media links (Facebook, Instagram, TikTok, X, etc.)</div>
+          <div class="feat"><i class="ti ti-check"></i>Your business contact section — phone, email, and location</div>
+          <div class="feat"><i class="ti ti-check"></i>Fast-loading with no heavy plugins or bloat slowing it down</div>
+          <div class="feat"><i class="ti ti-check"></i>SSL security (HTTPS) included on every page</div>
+          <div class="feat"><i class="ti ti-check"></i>Delivered in 3 working days</div>
+        </div>
+        <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Starter%20package%20(KSh%208%2C000).%20Can%20we%20talk%3F"
+           class="btn btn-ghost pkg-btn" target="_blank" rel="noopener">
+          <i class="ti ti-brand-whatsapp"></i> Get Starter Package
+        </a>
+      </div>
+
+      <!-- BUSINESS PRO -->
+      <div class="pkg-card featured reveal d2">
+        <div class="pkg-pop-badge">Most Popular</div>
+        <div class="pkg-icon"><i class="ti ti-building-store"></i></div>
+        <div class="pkg-name">Business Pro</div>
+        <div class="pkg-for">For growing businesses &amp; service providers</div>
+        <p class="pkg-desc">
+          A complete business website that works for you around the clock — multiple pages, searchable on Google,
+          and built with everything your business needs to look credible online and turn visitors into real customers.
+        </p>
+        <div class="pkg-price">KSh 22,000 <span>one-time</span></div>
+        <div class="pkg-hosting"><i class="ti ti-server"></i> Hosting covered — just KSh 1,200/month after launch</div>
+        <div class="pkg-features">
+          <div class="feat"><i class="ti ti-check"></i>Up to 6 custom pages — Home, About, Services, Gallery, Blog, Contact</div>
+          <div class="feat"><i class="ti ti-check"></i>Full SEO setup so your business actually shows up on Google searches</div>
+          <div class="feat"><i class="ti ti-check"></i>WhatsApp live chat button visible on every single page</div>
+          <div class="feat"><i class="ti ti-check"></i>Google Maps embedded showing your exact business location</div>
+          <div class="feat"><i class="ti ti-check"></i>Blog section to publish updates, news, or service articles</div>
+          <div class="feat"><i class="ti ti-check"></i>Contact form — messages land directly in your email inbox</div>
+          <div class="feat"><i class="ti ti-check"></i>Image gallery or portfolio to showcase your work</div>
+          <div class="feat"><i class="ti ti-check"></i>Speed-optimized — fast load times even on slow mobile data</div>
+          <div class="feat"><i class="ti ti-check"></i>SSL security and clean, structured code throughout</div>
+          <div class="feat"><i class="ti ti-check"></i>Delivered in 7 working days</div>
+        </div>
+        <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Business%20Pro%20package%20(KSh%2022%2C000).%20Can%20we%20talk%3F"
+           class="btn btn-blue pkg-btn" target="_blank" rel="noopener">
+          <i class="ti ti-brand-whatsapp"></i> Get Business Pro
+        </a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="pkg-card reveal d3">
+        <div class="pkg-icon gold"><i class="ti ti-crown"></i></div>
+        <div class="pkg-name">Premium</div>
+        <div class="pkg-for">For brands, online stores &amp; full platforms</div>
+        <p class="pkg-desc">
+          A full-scale digital platform engineered for businesses that sell online, take bookings, or need a
+          powerful backend to manage their operations. Built to perform at scale. Built to last for years.
+        </p>
+        <div class="pkg-price">KSh 50,000 <span>one-time</span></div>
+        <div class="pkg-hosting"><i class="ti ti-server"></i> Hosting covered — just KSh 3,000/month after launch</div>
+        <div class="pkg-features">
+          <div class="feat"><i class="ti ti-check"></i>Full e-commerce store or appointment booking system — your choice</div>
+          <div class="feat"><i class="ti ti-check"></i>M-Pesa &amp; card payment integration built in and tested</div>
+          <div class="feat"><i class="ti ti-check"></i>Admin dashboard — manage orders, products, and bookings yourself</div>
+          <div class="feat"><i class="ti ti-check"></i>Custom domain name setup, configuration, and DNS management</div>
+          <div class="feat"><i class="ti ti-check"></i>User account &amp; login system (if your platform requires it)</div>
+          <div class="feat"><i class="ti ti-check"></i>Email notification system for orders, bookings, and confirmations</div>
+          <div class="feat"><i class="ti ti-check"></i>Advanced speed &amp; security hardening — built to handle real traffic</div>
+          <div class="feat"><i class="ti ti-check"></i>1 full year of post-launch support and maintenance included</div>
+          <div class="feat"><i class="ti ti-check"></i>Delivered in 14 working days</div>
+        </div>
+        <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Premium%20package%20(KSh%2050%2C000).%20Can%20we%20talk%3F"
+           class="btn btn-outline-gold pkg-btn" target="_blank" rel="noopener">
+          <i class="ti ti-brand-whatsapp"></i> Get Premium Package
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======== AI SECTION ======== -->
+<section class="alt-bg">
+  <div class="container">
+    <div class="ai-special-badge reveal"><i class="ti ti-sparkles"></i> AI-Powered Add-on — Special Case</div>
+    <h2 class="reveal d1">Add Artificial Intelligence to Your Website</h2>
+    <p class="ai-intro reveal d2">
+      Not every business needs AI — but for those that do, it is the sharpest competitive edge available today.
+      We integrate live AI directly into your website so it thinks, responds, and works for your customers
+      automatically — even at 3am when you're fast asleep.
+    </p>
+    <div class="ai-grid">
+      <div class="ai-feat reveal d1">
+        <div class="ai-feat-icon"><i class="ti ti-message-chatbot"></i></div>
+        <h4>AI Support Chatbot</h4>
+        <p>Answers customer questions 24/7 instantly — without you lifting a finger. Never miss a lead again.</p>
+      </div>
+      <div class="ai-feat reveal d2">
+        <div class="ai-feat-icon"><i class="ti ti-filter"></i></div>
+        <h4>Smart Lead Qualifier</h4>
+        <p>Asks visitors the right questions automatically and filters out serious buyers from casual browsers.</p>
+      </div>
+      <div class="ai-feat reveal d3">
+        <div class="ai-feat-icon"><i class="ti ti-shopping-cart"></i></div>
+        <h4>Product Recommender</h4>
+        <p>Learns each visitor's preferences and suggests exactly the right product or service for them.</p>
+      </div>
+      <div class="ai-feat reveal d1">
+        <div class="ai-feat-icon"><i class="ti ti-calendar-event"></i></div>
+        <h4>AI Booking Assistant</h4>
+        <p>Handles appointment scheduling through conversation — no emails, no back-and-forth needed.</p>
+      </div>
+      <div class="ai-feat reveal d2">
+        <div class="ai-feat-icon"><i class="ti ti-search"></i></div>
+        <h4>AI-Powered Search</h4>
+        <p>Understands plain language — "affordable red shoes under 2000" just works, no exact keywords needed.</p>
+      </div>
+      <div class="ai-feat reveal d3">
+        <div class="ai-feat-icon"><i class="ti ti-file-invoice"></i></div>
+        <h4>Quote Generator</h4>
+        <p>Client fills a simple form — AI builds a professional, detailed quote or invoice in seconds.</p>
+      </div>
+      <div class="ai-feat reveal d1">
+        <div class="ai-feat-icon"><i class="ti ti-world"></i></div>
+        <h4>Auto Language Translator</h4>
+        <p>Instantly translates your entire site for international and multilingual visitors with zero effort.</p>
+      </div>
+      <div class="ai-feat reveal d2">
+        <div class="ai-feat-icon"><i class="ti ti-shield-check"></i></div>
+        <h4>Fraud &amp; Spam Detection</h4>
+        <p>Flags suspicious orders, fake sign-ups, and bot activity in real time before they cause harm.</p>
+      </div>
+      <div class="ai-feat reveal d3">
+        <div class="ai-feat-icon"><i class="ti ti-star"></i></div>
+        <h4>Review Sentiment Analysis</h4>
+        <p>Reads all customer feedback and immediately flags negative reviews so nothing slips past you.</p>
+      </div>
+      <div class="ai-feat reveal d1">
+        <div class="ai-feat-icon"><i class="ti ti-pencil"></i></div>
+        <h4>Content Auto-Generator</h4>
+        <p>Writes product descriptions, blog summaries, and page content on the fly — keeping your site fresh.</p>
+      </div>
+    </div>
+    <div class="ai-pricing reveal">
+      <div class="ai-price-item">
+        <h4>One-time integration fee</h4>
+        <div class="ai-price-val">KSh 15,000 – 35,000</div>
+        <div class="ai-price-note">Depends on number of AI features and complexity</div>
+      </div>
+      <div class="ai-price-item">
+        <h4>Monthly AI API usage</h4>
+        <div class="ai-price-val">KSh 2,000 – 8,000/mo</div>
+        <div class="ai-price-note">Based on your site traffic and usage volume</div>
+      </div>
+      <div class="ai-price-item">
+        <h4>Ongoing maintenance</h4>
+        <div class="ai-price-val">Included</div>
+        <div class="ai-price-note">Covered within your monthly hosting plan</div>
+      </div>
+    </div>
+    <p class="ai-caveat reveal">AI add-on is available on Business Pro and Premium packages only.</p>
+  </div>
+</section>
+
+<!-- ======== SECURITY ======== -->
+<section>
+  <div class="container">
+    <span class="eyebrow blue reveal">Hardened by design</span>
+    <h2 class="reveal d1">Security We Don't Compromise On</h2>
+    <p class="security-intro reveal d2">
+      Every website we build is treated like a vault. We layer multiple advanced security mechanisms so your business,
+      your data, and your customers are protected from malicious attacks — and we guarantee zero-shortcut
+      security implementation on every project.
+    </p>
+    <div class="security-grid">
+      <div class="sec-item reveal d1">
+        <div class="sec-icon"><i class="ti ti-lock"></i></div>
+        <div>
+          <h4>SSL / HTTPS Encryption</h4>
+          <p>All data between your site and visitors is fully encrypted in transit — no unprotected connections, ever.</p>
+        </div>
+      </div>
+      <div class="sec-item reveal d2">
+        <div class="sec-icon"><i class="ti ti-shield"></i></div>
+        <div>
+          <h4>Input Sanitization</h4>
+          <p>Every form input is rigorously sanitized to block SQL injection and cross-site scripting (XSS) attacks at source.</p>
+        </div>
+      </div>
+      <div class="sec-item reveal d3">
+        <div class="sec-icon"><i class="ti ti-cloud"></i></div>
+        <div>
+          <h4>DDoS Protection</h4>
+          <p>Your site runs on Vercel and Cloudflare's global edge network — built to absorb and neutralize DDoS attacks automatically.</p>
+        </div>
+      </div>
+      <div class="sec-item reveal d1">
+        <div class="sec-icon"><i class="ti ti-code"></i></div>
+        <div>
+          <h4>Content Security Policy (CSP)</h4>
+          <p>We configure strict CSP headers that block any unauthorized or injected scripts from running on your site.</p>
+        </div>
+      </div>
+      <div class="sec-item reveal d2">
+        <div class="sec-icon"><i class="ti ti-robot"></i></div>
+        <div>
+          <h4>Rate Limiting</h4>
+          <p>All forms and login pages are rate-limited — stops spam bots, credential stuffing, and brute-force attempts cold.</p>
+        </div>
+      </div>
+      <div class="sec-item reveal d3">
+        <div class="sec-icon"><i class="ti ti-credit-card"></i></div>
+        <div>
+          <h4>Secure Payment Handling</h4>
+          <p>No card data ever touches our servers. Stripe and M-Pesa handle all payment processing in their own secure environments.</p>
+        </div>
+      </div>
+      <div class="sec-item reveal d1">
+        <div class="sec-icon"><i class="ti ti-key"></i></div>
+        <div>
+          <h4>bcrypt Password Encryption</h4>
+          <p>Every password in every login system we build is hashed with bcrypt — never stored as readable plain text.</p>
+        </div>
+      </div>
+      <div class="sec-item reveal d2">
+        <div class="sec-icon"><i class="ti ti-refresh"></i></div>
+        <div>
+          <h4>Dependency Maintenance</h4>
+          <p>We actively maintain all libraries and dependencies — no outdated packages with known vulnerabilities left sitting unpatched.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== CREDIBILITY ======== -->
+<section class="alt-bg">
+  <div class="container" style="text-align:center;">
+    <span class="eyebrow reveal">Straight talk</span>
+    <h2 class="reveal d1">Why Work With a New Studio?</h2>
+    <div class="cred-box reveal d2">
+      <h3>We're a growing studio. Here's what that means for you.</h3>
+      <p>CodeRise Digital is a focused, hungry studio — which means when you work with us, you are not one of hundreds of clients on a waiting list. You get our full attention, you talk directly to the person building your site, and you work with a team that has everything to prove and nothing to hide.</p>
+      <p>We'll be honest: our live portfolio is still growing. Rather than show you screenshots of someone else's work or dress up a template as our own, we believe the most honest thing we can offer is this:</p>
+      <div class="sample-offer">
+        <i class="ti ti-eye"></i>
+        <div>
+          <h4>See the quality before you pay a single shilling.</h4>
+          <p>We will build you a free sample page of your actual website — using your brand, your content, your vision — so you can judge the quality directly before making any commitment. If you're not impressed, you walk away with no cost and no pressure.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== FAQ ======== -->
+<section>
+  <div class="container">
+    <span class="eyebrow reveal" style="text-align:center;display:block;">Common questions</span>
+    <h2 style="text-align:center;" class="reveal d1">Everything You Need to Know</h2>
+    <div class="faq-list">
+
+      <div class="faq-item reveal">
+        <button class="faq-q">How long before my website is ready? <i class="ti ti-plus"></i></button>
+        <div class="faq-a"><p>Starter: 3 working days. Business Pro: 7 working days. Premium: 14 working days. The clock starts the day we confirm your brief and receive your 50% deposit. We also send you a live preview to review and request changes before the final launch — so there are no surprises.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q">Do I fully own my website after paying? <i class="ti ti-plus"></i></button>
+        <div class="faq-a"><p>Yes — 100%. Once delivered and paid for, the website and every file belonging to it is yours. No lock-ins, no hidden fees we hold over your head. The only recurring cost is your hosting contribution, which keeps your site live, fast, and maintained.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q">What if I want changes after delivery? <i class="ti ti-plus"></i></button>
+        <div class="faq-a"><p>Minor revisions — text edits, image swaps, color adjustments — within 7 days of delivery are included at no extra charge. Larger changes like adding new pages or features are quoted separately and fairly. We never overcharge for extras, and we always explain what something will cost before doing it.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q">I don't have a logo or content yet — can you still build? <i class="ti ti-plus"></i></button>
+        <div class="faq-a"><p>Absolutely. We handle this regularly. We guide you on what content we need, use clean professional placeholders where necessary, and build around what you already have. If you need a logo designed, we can either include basic branding as an add-on or refer you to trusted, affordable designers.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q">How does payment work? <i class="ti ti-plus"></i></button>
+        <div class="faq-a"><p>We accept M-Pesa and bank transfer. Payment is split 50/50 — 50% upfront to begin the project, and the remaining 50% only once the site is delivered and you are happy with the result. You never pay the second half until you have approved the final website.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q">What if my website goes down after launch? <i class="ti ti-plus"></i></button>
+        <div class="faq-a"><p>We monitor every site we host. If something breaks, we fix it — that is part of what your monthly hosting contribution covers. You will never be left alone trying to figure things out. Just WhatsApp us and we respond within hours, not days.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q">Can I add features to my site later? <i class="ti ti-plus"></i></button>
+        <div class="faq-a"><p>Yes, always. We build every site with future growth in mind. Need a new page, an online shop, a booking system, or AI features added six months from now? We can do it. Starting small and expanding your website over time is a perfectly smart approach, and we will be here for every upgrade.</p></div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q">Can I see websites you have already built? <i class="ti ti-plus"></i></button>
+        <div class="faq-a"><p>We are a growing studio and our public portfolio is still building. Rather than show you generic samples, we build you a free sample page of your own website — your brand, your content — so you judge the quality yourself. It is the most honest way we know to prove what we can do. No payment needed for the sample.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======== BONUS ======== -->
+<section class="alt-bg">
+  <div class="container">
+    <div class="bonus-wrap reveal">
+      <span class="eyebrow gold" style="display:block;">Limited offer</span>
+      <h3>First 5 Clients Get a Free Domain Name</h3>
+      <p>
+        We are covering your domain registration for the full first year — a KSh 1,500 value, completely free.
+        No strings attached, no catch. This offer is real, it is limited to 5 spots, and once they are gone,
+        they will not come back.
+      </p>
+      <div class="slots">
+        <div class="slot"><div class="slot-bar taken"></div><div class="slot-lbl">Taken</div></div>
+        <div class="slot"><div class="slot-bar taken"></div><div class="slot-lbl">Taken</div></div>
+        <div class="slot"><div class="slot-bar open"></div><div class="slot-lbl">Open</div></div>
+        <div class="slot"><div class="slot-bar open"></div><div class="slot-lbl">Open</div></div>
+        <div class="slot"><div class="slot-bar open"></div><div class="slot-lbl">Open</div></div>
+      </div>
+      <p class="slots-note">2 of 5 slots taken — 3 remaining</p>
+      <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%20want%20to%20claim%20one%20of%20the%20free%20domain%20slots%20before%20they%27re%20gone.%20Can%20we%20talk%3F"
+         class="btn btn-wa" target="_blank" rel="noopener"
+         style="font-size:15px;padding:15px 30px;">
+        <i class="ti ti-gift"></i> Claim Your Free Domain
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ======== FINAL CTA ======== -->
+<section class="final-cta">
+  <div class="final-cta-glow"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <span class="eyebrow green reveal" style="display:block;">Ready to start?</span>
+    <h2 class="reveal d1">Let's Build Something Serious Together.</h2>
+    <p class="reveal d2">
+      No forms. No calls. No sign-up needed.<br>
+      Tap the button, tell us what you need, and we'll take it from there.
+    </p>
+
+    <div style="margin-bottom:10px;" class="reveal d3">
+      <div class="link-box">
+        <i class="ti ti-link" style="font-size:16px;color:var(--blue);"></i>
+        <div style="text-align:left;">
+          <div style="font-size:11px;color:var(--t3);margin-bottom:3px;letter-spacing:1px;text-transform:uppercase;">Tap this link from WhatsApp to visit this page</div>
+          <strong>coderisedigital.vercel.app</strong>
+        </div>
+      </div>
+      <div class="link-box-note">Share this link on WhatsApp to bring potential clients directly to this page — no login, no sign-up, just tap and explore.</div>
+    </div>
+
+    <div class="reveal d4" style="margin-top:28px;">
+      <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20talk%3F"
+         class="btn-wa-xl" target="_blank" rel="noopener">
+        <i class="ti ti-brand-whatsapp" style="font-size:22px;"></i> Start the Conversation
+      </a>
+      <p class="cta-sub-note">We reply within minutes &nbsp;·&nbsp; Monday – Saturday &nbsp;·&nbsp; Based in Nairobi, Kenya</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======== FOOTER ======== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo-wrap">
+        <div class="logo">
+          <div class="logo-box" style="width:28px;height:28px;font-size:14px;"><i class="ti ti-code"></i></div>
+          Code<span class="logo-accent">Rise</span> Digital
+        </div>
+        <div class="footer-tagline">Professional Web Development &nbsp;·&nbsp; Nairobi, Kenya</div>
+      </div>
+      <div class="footer-contact">
+        <span>
+          <i class="ti ti-brand-whatsapp" style="color:var(--green);font-size:16px;"></i>
+          <a href="https://wa.me/254112786538" target="_blank">+254 112 786 538</a>
+        </span>
+        <span>
+          <i class="ti ti-map-pin" style="color:var(--t3);font-size:16px;"></i>
+          Nairobi, Kenya
+        </span>
+      </div>
+      <div class="footer-copy">
+        <div>&copy; 2025 CodeRise Digital</div>
+        <div>All rights reserved.</div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ======== SCRIPTS ======== -->
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -44px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      const answer = item.querySelector('.faq-a');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-a').style.maxHeight = '0';
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+</body>
+</html>
