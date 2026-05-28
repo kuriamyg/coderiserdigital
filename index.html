@@ -3,6 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self' https://wa.me https://www.google-analytics.com; frame-src https://wa.me;">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+<meta http-equiv="X-XSS-Protection" content="1; mode=block">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>CodeRise Digital — Professional Web Development in Nairobi</title>
 <meta name="description" content="Professional web development studio in Nairobi. Custom websites built from scratch — no templates, no shortcuts. Packages from KSh 8,000. First 5 clients get a FREE domain.">
 <meta property="og:title" content="CodeRise Digital — No Templates. No Shortcuts.">
@@ -15,8 +21,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.34.0/dist/tabler-icons.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" integrity="sha384-nww4j8OTscAiZECqoqqIqKbVDpQjbEZVDp/aYfMsZmgfKhW3D0DgwRPKDwhLPRuKy" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.34.0/dist/tabler-icons.min.css" integrity="sha384-pxwxR6xPHvVvLEq/nP0eqiH5cGDpGsRD8+2MUIxzN3S+xVnTbsN1e7pLqwVe1fG7" crossorigin="anonymous">
 
 <style>
 /* ==============================
@@ -566,8 +572,7 @@ footer {
       </div>
       <div class="nav-right">
         <span class="badge-live">Accepting Clients</span>
-        <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20talk%3F"
-           class="btn btn-wa" target="_blank" rel="noopener">
+        <a href="#" class="btn btn-wa" data-wa-action="init" target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp"></i> Chat With Us
         </a>
       </div>
@@ -605,9 +610,7 @@ footer {
         Delivered on time. No excuses.
       </p>
       <div class="hero-btns reveal d3">
-        <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20talk%3F"
-           class="btn btn-wa" target="_blank" rel="noopener"
-           style="font-size:15px;padding:15px 30px;">
+        <a href="#" class="btn btn-wa" data-wa-action="init" style="font-size:15px;padding:15px 30px;" target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp" style="font-size:19px;"></i> Start on WhatsApp
         </a>
         <a href="#packages" class="btn btn-ghost" style="font-size:15px;padding:15px 26px;">
@@ -693,8 +696,7 @@ footer {
           <div class="feat"><i class="ti ti-check"></i>SSL security (HTTPS) included on every page</div>
           <div class="feat"><i class="ti ti-check"></i>Delivered in 3 working days</div>
         </div>
-        <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Starter%20package%20(KSh%208%2C000).%20Can%20we%20talk%3F"
-           class="btn btn-ghost pkg-btn" target="_blank" rel="noopener">
+        <a href="#" class="btn btn-ghost pkg-btn" data-wa-action="starter" target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp"></i> Get Starter Package
         </a>
       </div>
@@ -723,8 +725,7 @@ footer {
           <div class="feat"><i class="ti ti-check"></i>SSL security and clean, structured code throughout</div>
           <div class="feat"><i class="ti ti-check"></i>Delivered in 7 working days</div>
         </div>
-        <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Business%20Pro%20package%20(KSh%2022%2C000).%20Can%20we%20talk%3F"
-           class="btn btn-blue pkg-btn" target="_blank" rel="noopener">
+        <a href="#" class="btn btn-blue pkg-btn" data-wa-action="business" target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp"></i> Get Business Pro
         </a>
       </div>
@@ -751,8 +752,7 @@ footer {
           <div class="feat"><i class="ti ti-check"></i>1 full year of post-launch support and maintenance included</div>
           <div class="feat"><i class="ti ti-check"></i>Delivered in 14 working days</div>
         </div>
-        <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Premium%20package%20(KSh%2050%2C000).%20Can%20we%20talk%3F"
-           class="btn btn-outline-gold pkg-btn" target="_blank" rel="noopener">
+        <a href="#" class="btn btn-outline-gold pkg-btn" data-wa-action="premium" target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp"></i> Get Premium Package
         </a>
       </div>
@@ -1005,9 +1005,7 @@ footer {
         <div class="slot"><div class="slot-bar open"></div><div class="slot-lbl">Open</div></div>
       </div>
       <p class="slots-note">2 of 5 slots taken — 3 remaining</p>
-      <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%20want%20to%20claim%20one%20of%20the%20free%20domain%20slots%20before%20they%27re%20gone.%20Can%20we%20talk%3F"
-         class="btn btn-wa" target="_blank" rel="noopener"
-         style="font-size:15px;padding:15px 30px;">
+      <a href="#" class="btn btn-wa" data-wa-action="domain" target="_blank" rel="noopener" style="font-size:15px;padding:15px 30px;">
         <i class="ti ti-gift"></i> Claim Your Free Domain
       </a>
     </div>
@@ -1037,8 +1035,7 @@ footer {
     </div>
 
     <div class="reveal d4" style="margin-top:28px;">
-      <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20talk%3F"
-         class="btn-wa-xl" target="_blank" rel="noopener">
+      <a href="#" class="btn-wa-xl" data-wa-action="init" target="_blank" rel="noopener">
         <i class="ti ti-brand-whatsapp" style="font-size:22px;"></i> Start the Conversation
       </a>
       <p class="cta-sub-note">We reply within minutes &nbsp;·&nbsp; Monday – Saturday &nbsp;·&nbsp; Based in Nairobi, Kenya</p>
@@ -1060,7 +1057,7 @@ footer {
       <div class="footer-contact">
         <span>
           <i class="ti ti-brand-whatsapp" style="color:var(--green);font-size:16px;"></i>
-          <a href="https://wa.me/254112786538" target="_blank">+254 112 786 538</a>
+          <a href="#" data-wa-action="contact" target="_blank">+254 112 786 538</a>
         </span>
         <span>
           <i class="ti ti-map-pin" style="color:var(--t3);font-size:16px;"></i>
@@ -1077,6 +1074,32 @@ footer {
 
 <!-- ======== SCRIPTS ======== -->
 <script>
+  // ============ SECURITY: Phone Number Obfuscation ============
+  // Phone number stored as base64 (decoded on runtime)
+  const securePhone = 'MjU0MTEyNzg2NTM4'; // Base64: 254112786538
+  const decodePhone = () => atob(securePhone);
+  
+  const waMessages = {
+    init: 'Hi%20CodeRise%20Digital%2C%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20talk%3F',
+    starter: 'Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Starter%20package%20(KSh%208%2C000).%20Can%20we%20talk%3F',
+    business: 'Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Business%20Pro%20package%20(KSh%2022%2C000).%20Can%20we%20talk%3F',
+    premium: 'Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Premium%20package%20(KSh%2050%2C000).%20Can%20we%20talk%3F',
+    domain: 'Hi%20CodeRise%20Digital%2C%20I%20want%20to%20claim%20one%20of%20the%20free%20domain%20slots%20before%20they%27re%20gone.%20Can%20we%20talk%3F',
+    contact: ''
+  };
+
+  // Initialize WhatsApp links on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    const phone = decodePhone();
+    document.querySelectorAll('[data-wa-action]').forEach(link => {
+      const action = link.getAttribute('data-wa-action');
+      const message = waMessages[action] || waMessages.init;
+      link.href = `https://wa.me/${phone}?text=${message}`;
+      // Remove the data attribute for extra obfuscation
+      link.removeAttribute('data-wa-action');
+    });
+  });
+
   // Scroll reveal
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
