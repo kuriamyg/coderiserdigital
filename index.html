@@ -3,16 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src 'self' data: https:; connect-src 'self' https://wa.me https://www.google-analytics.com; frame-src https://wa.me;">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-<meta http-equiv="X-XSS-Protection" content="1; mode=block">
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
-<link rel="dns-prefetch" href="https://www.google-analytics.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
 <title>CodeRise Digital — Professional Web Development in Nairobi</title>
 <meta name="description" content="Professional web development studio in Nairobi. Custom websites built from scratch — no templates, no shortcuts. Packages from KSh 8,000. First 5 clients get a FREE domain.">
 <meta property="og:title" content="CodeRise Digital — No Templates. No Shortcuts.">
@@ -24,7 +14,6 @@
 <meta name="twitter:description" content="No templates. No shortcuts. Custom websites for real businesses from KSh 8,000.">
 
 <!-- ======== GOOGLE ANALYTICS GA4 ======== -->
-<!-- STEP: Replace G-WL5VTD16VB with your real Measurement ID from analytics.google.com -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WL5VTD16VB"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -34,30 +23,20 @@
     page_title: 'CodeRise Digital — Landing Page',
     page_location: window.location.href
   });
-
-  // Track UTM source so you know which platform sent the visitor
   (function(){
-    function sanitizeParam(value) {
-      if (!value) return '';
-      return value.replace(/[^a-zA-Z0-9_.\-]/g, '').substring(0, 50);
-    }
     const params = new URLSearchParams(window.location.search);
-    const source = sanitizeParam(params.get('utm_source'));
-    const medium = sanitizeParam(params.get('utm_medium'));
+    const source = params.get('utm_source');
+    const medium = params.get('utm_medium');
     if(source){
-      gtag('event','platform_visit',{
-        event_category: 'Traffic Source',
-        event_label: source + (medium ? ' / '+medium : ''),
-        value: 1
-      });
+      gtag('event','platform_visit',{event_category:'Traffic Source',event_label:source+(medium?'/'+medium:''),value:1});
     }
   })();
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" integrity="sha384-nww4j8OTscAiZECqoqqIqKbVDpQjbEZVDp/aYfMsZmgfKhW3D0DgwRPKDwhLPRuKy" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.34.0/dist/tabler-icons.min.css" integrity="sha384-pxwxR6xPHvVvLEq/nP0eqiH5cGDpGsRD8+2MUIxzN3S+xVnTbsN1e7pLqwVe1fG7" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.34.0/dist/tabler-icons.min.css">
 
 <style>
 /* ==============================
@@ -131,7 +110,7 @@ section { padding: 88px 0; }
 ============================== */
 .reveal {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(28px);
   transition: opacity 0.65s ease, transform 0.65s ease;
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -191,6 +170,63 @@ section { padding: 88px 0; }
 .btn-outline-blue:hover { background: var(--blue-d2); }
 
 /* ==============================
+   PROGRESS BAR (NEW)
+============================== */
+#pg-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+  z-index: 9999;
+  transition: width 0.12s linear;
+  border-radius: 0 2px 2px 0;
+}
+
+/* ==============================
+   FLOATING WHATSAPP (NEW)
+============================== */
+.float-wa {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  z-index: 888;
+  background: #25D366;
+  color: #fff;
+  width: 58px; height: 58px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 6px 28px rgba(37,211,102,0.45);
+  animation: pulse-green 2.6s infinite;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2.5px solid rgba(255,255,255,0.25);
+}
+.float-wa:hover { transform: scale(1.12); animation: none; box-shadow: 0 8px 36px rgba(37,211,102,0.55); }
+
+/* ==============================
+   SCROLL TO TOP (NEW)
+============================== */
+.scroll-top {
+  position: fixed;
+  bottom: 100px; right: 32px;
+  z-index: 888;
+  background: var(--card);
+  border: 0.5px solid var(--b2);
+  color: var(--t2);
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: all 0.3s ease;
+}
+.scroll-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.scroll-top:hover { color: var(--blue); border-color: rgba(79,142,247,0.3); background: var(--card-h); }
+
+/* ==============================
    NAV
 ============================== */
 nav {
@@ -202,6 +238,12 @@ nav {
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 0.5px solid var(--b);
   padding: 14px 0;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+nav.scrolled {
+  padding: 10px 0;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+  background: rgba(10,10,13,0.96);
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .logo {
@@ -221,6 +263,17 @@ nav {
   font-size: 16px; color: #fff;
 }
 .logo-accent { color: var(--blue); }
+.nav-links {
+  display: flex; align-items: center; gap: 4px;
+}
+.nav-links a {
+  font-size: 13px;
+  color: var(--t2);
+  padding: 6px 12px;
+  border-radius: var(--r-sm);
+  transition: color 0.2s, background 0.2s;
+}
+.nav-links a:hover { color: var(--t1); background: rgba(255,255,255,0.05); }
 .nav-right { display: flex; align-items: center; gap: 12px; }
 .badge-live {
   display: flex; align-items: center; gap: 6px;
@@ -263,13 +316,12 @@ nav {
 .trust-item i { color: var(--blue); font-size: 14px; }
 
 /* ==============================
-   HERO
+   HERO — ENHANCED TWO-COLUMN
 ============================== */
 .hero {
   padding: 108px 0 88px;
   position: relative;
   overflow: hidden;
-  text-align: center;
 }
 .hero-dots {
   position: absolute; inset: 0;
@@ -284,9 +336,17 @@ nav {
   background: radial-gradient(circle, rgba(79,142,247,0.07) 0%, transparent 68%);
   pointer-events: none;
 }
-.hero-content { position: relative; z-index: 1; }
+.hero-layout {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  margin-bottom: 72px;
+}
+.hero-left { text-align: left; }
 .hero h1 {
-  font-size: clamp(30px, 5vw, 56px);
+  font-size: clamp(28px, 4vw, 52px);
   font-weight: 800;
   line-height: 1.13;
   margin-bottom: 22px;
@@ -294,25 +354,127 @@ nav {
 }
 .hero h1 em { font-style: normal; color: var(--blue); }
 .hero-sub {
-  font-size: 16px;
+  font-size: 15.5px;
   color: var(--t2);
-  max-width: 560px;
-  margin: 0 auto 36px;
+  max-width: 500px;
+  margin-bottom: 36px;
   line-height: 1.8;
 }
 .hero-btns {
-  display: flex; gap: 12px; justify-content: center;
-  flex-wrap: wrap; margin-bottom: 64px;
+  display: flex; gap: 12px;
+  flex-wrap: wrap;
 }
 .hero-stats {
+  position: relative; z-index: 1;
   display: flex; justify-content: center; gap: 48px;
   flex-wrap: wrap;
   padding-top: 44px;
   border-top: 0.5px solid var(--b);
 }
 .stat-item { text-align: center; }
-.stat-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 30px; }
+.stat-num {
+  font-family: 'Syne', sans-serif; font-weight: 800; font-size: 30px;
+  background: linear-gradient(135deg, var(--t1) 0%, var(--blue) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 .stat-label { font-size: 12px; color: var(--t2); margin-top: 3px; }
+
+/* ==============================
+   BROWSER MOCKUP (NEW)
+============================== */
+.hero-right { position: relative; }
+.browser-wrap {
+  position: relative;
+}
+.browser-wrap::before {
+  content: '';
+  position: absolute; inset: -20px;
+  background: radial-gradient(circle at 50% 50%, rgba(79,142,247,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.browser-frame {
+  background: #16161E;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.6),
+    0 0 0 1px rgba(255,255,255,0.04),
+    inset 0 1px 0 rgba(255,255,255,0.07);
+  transform: perspective(1200px) rotateY(-6deg) rotateX(2deg);
+  transition: transform 0.5s ease;
+}
+.browser-frame:hover {
+  transform: perspective(1200px) rotateY(-2deg) rotateX(0deg);
+}
+.browser-chrome {
+  background: #222230;
+  padding: 10px 14px;
+  display: flex; align-items: center; gap: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.b-dots { display: flex; gap: 5px; }
+.b-dot { width: 9px; height: 9px; border-radius: 50%; }
+.b-dot.r { background: #FF5F57; }
+.b-dot.y { background: #FEBC2E; }
+.b-dot.g { background: #28C840; }
+.b-url {
+  flex: 1; background: rgba(0,0,0,0.25); border-radius: 5px;
+  height: 22px; display: flex; align-items: center;
+  padding: 0 10px; gap: 5px;
+  font-size: 10px; color: rgba(255,255,255,0.25);
+  font-family: 'DM Sans', monospace;
+}
+.b-url-lock { color: #22C55E; font-size: 10px; }
+.browser-body { padding: 18px; background: #0E0E16; }
+
+/* Fake site inside browser */
+.fk-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 18px; padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.fk-logo { width: 72px; height: 9px; background: var(--blue); border-radius: 4px; opacity: 0.8; }
+.fk-links { display: flex; gap: 7px; align-items: center; }
+.fk-link { width: 30px; height: 7px; background: rgba(255,255,255,0.1); border-radius: 3px; }
+.fk-cta { width: 46px; height: 20px; background: #22C55E; border-radius: 4px; opacity: 0.85; }
+.fk-hero { margin-bottom: 16px; }
+.fk-tag { width: 90px; height: 7px; background: rgba(79,142,247,0.35); border-radius: 3px; margin-bottom: 10px; }
+.fk-h { height: 13px; background: rgba(255,255,255,0.65); border-radius: 4px; margin-bottom: 7px; }
+.fk-h.short { width: 55%; }
+.fk-p { height: 7px; background: rgba(255,255,255,0.15); border-radius: 3px; margin-bottom: 5px; }
+.fk-p.short { width: 72%; margin-bottom: 0; }
+.fk-btns { display: flex; gap: 8px; margin-top: 12px; }
+.fk-btn-wa {
+  width: 90px; height: 26px; background: #22C55E; border-radius: 5px;
+  animation: fk-pulse 2.6s infinite;
+}
+@keyframes fk-pulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+  50%      { box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+}
+.fk-btn-g { width: 68px; height: 26px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 5px; }
+.fk-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; margin-bottom: 12px; }
+.fk-card {
+  height: 48px; background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06); border-radius: 6px;
+  position: relative; overflow: hidden;
+}
+.fk-card::after {
+  content: '';
+  position: absolute; top: 6px; left: 6px; right: 6px;
+  height: 5px; background: rgba(255,255,255,0.08); border-radius: 2px;
+}
+.fk-trust { display: flex; gap: 7px; }
+.fk-badge {
+  padding: 3px 9px; border-radius: 4px;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.3px;
+  display: flex; align-items: center; gap: 3px;
+}
+.fk-mpesa { background: rgba(0,150,60,0.12); border: 1px solid rgba(34,197,94,0.25); color: #22C55E; }
+.fk-ssl { background: rgba(79,142,247,0.1); border: 1px solid rgba(79,142,247,0.2); color: var(--blue); }
+.fk-mob { background: rgba(240,160,48,0.1); border: 1px solid rgba(240,160,48,0.2); color: var(--gold); }
 
 /* ==============================
    PROCESS
@@ -321,6 +483,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px; margin-top: 44px;
+  position: relative;
 }
 .process-card {
   background: var(--card); border: 0.5px solid var(--b);
@@ -356,9 +519,9 @@ nav {
   background: var(--card); border: 0.5px solid var(--b);
   border-radius: var(--r-lg); padding: 30px;
   position: relative;
-  transition: border-color 0.25s, transform 0.25s;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
 }
-.pkg-card:hover { transform: translateY(-5px); border-color: var(--b2); }
+.pkg-card:hover { transform: translateY(-6px); border-color: var(--b2); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
 .pkg-card.featured {
   border: 1.5px solid var(--blue);
   background: linear-gradient(160deg, #14141A 0%, #12162B 100%);
@@ -401,6 +564,59 @@ nav {
 .pkg-btn { width: 100%; justify-content: center; padding: 14px; font-size: 14px; }
 
 /* ==============================
+   COMPARISON TABLE (NEW)
+============================== */
+.cmp-intro {
+  font-size: 14.5px; color: var(--t2); max-width: 580px;
+  margin: 10px 0 44px; line-height: 1.75;
+}
+.cmp-wrap { overflow-x: auto; border-radius: var(--r-lg); border: 0.5px solid var(--b); }
+.cmp-table {
+  width: 100%; border-collapse: collapse; min-width: 560px;
+}
+.cmp-table thead tr {
+  border-bottom: 1px solid var(--b);
+}
+.cmp-table th {
+  padding: 18px 20px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--card);
+  color: var(--t2);
+  letter-spacing: 0.2px;
+}
+.cmp-table th:first-child { text-align: left; width: 35%; }
+.cmp-table th.ours {
+  background: rgba(79,142,247,0.10);
+  color: var(--blue);
+}
+.cmp-table th.ours .th-logo {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.cmp-table th.ours .th-logo .th-tag {
+  font-size: 10px; background: var(--blue); color: white;
+  padding: 2px 8px; border-radius: 10px; font-weight: 600; letter-spacing: 0.5px;
+}
+.cmp-table tbody tr {
+  border-bottom: 0.5px solid var(--b);
+  transition: background 0.15s;
+}
+.cmp-table tbody tr:last-child { border-bottom: none; }
+.cmp-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+.cmp-table td {
+  padding: 15px 20px;
+  font-size: 13.5px;
+  background: var(--card);
+}
+.cmp-table td:first-child { color: var(--t2); font-size: 13px; }
+.cmp-table td.ours { background: rgba(79,142,247,0.05); text-align: center; }
+.cmp-table td.other { text-align: center; color: var(--t2); background: var(--card); }
+.cmp-yes { color: var(--green); font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 5px; }
+.cmp-no { color: var(--red); display: flex; align-items: center; justify-content: center; gap: 5px; }
+.cmp-maybe { color: var(--gold); display: flex; align-items: center; justify-content: center; gap: 5px; }
+
+/* ==============================
    AI SECTION
 ============================== */
 .ai-special-badge {
@@ -420,9 +636,9 @@ nav {
 .ai-feat {
   background: var(--card); border: 0.5px solid var(--b);
   border-radius: var(--r); padding: 20px 18px;
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
 }
-.ai-feat:hover { border-color: rgba(240,160,48,0.2); background: var(--card-h); }
+.ai-feat:hover { border-color: rgba(240,160,48,0.2); background: var(--card-h); transform: translateY(-3px); }
 .ai-feat-icon { font-size: 24px; color: var(--gold); margin-bottom: 12px; }
 .ai-feat h4 { font-size: 14px; font-weight: 700; font-family: 'Syne', sans-serif; margin-bottom: 6px; }
 .ai-feat p { font-size: 12px; color: var(--t2); line-height: 1.6; }
@@ -452,9 +668,9 @@ nav {
   display: flex; align-items: flex-start; gap: 15px;
   background: var(--card); border: 0.5px solid var(--b);
   border-radius: var(--r); padding: 20px;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, transform 0.2s;
 }
-.sec-item:hover { border-color: rgba(79,142,247,0.2); }
+.sec-item:hover { border-color: rgba(79,142,247,0.2); transform: translateY(-2px); }
 .sec-icon {
   width: 38px; height: 38px; border-radius: var(--r-sm);
   background: var(--blue-d);
@@ -463,6 +679,133 @@ nav {
 }
 .sec-item h4 { font-size: 14px; font-weight: 600; margin-bottom: 5px; font-family: 'DM Sans', sans-serif; }
 .sec-item p { font-size: 12px; color: var(--t2); line-height: 1.6; }
+
+/* ==============================
+   PORTFOLIO — WHAT WE BUILD (NEW)
+============================== */
+.portfolio-intro { font-size: 14.5px; color: var(--t2); max-width: 580px; margin: 10px 0 44px; line-height: 1.75; }
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.portfolio-card {
+  background: var(--card); border: 0.5px solid var(--b);
+  border-radius: var(--r-lg); overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s, box-shadow 0.3s;
+}
+.portfolio-card:hover { transform: translateY(-8px); border-color: var(--b2); box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
+.portfolio-preview {
+  height: 190px;
+  background: #0E0E16;
+  border-bottom: 0.5px solid var(--b);
+  padding: 18px;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+/* Landing Page Preview */
+.portfolio-preview.lp .pv-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.portfolio-preview.lp .pv-logo { width: 60px; height: 8px; background: var(--blue); border-radius: 3px; opacity: 0.7; }
+.portfolio-preview.lp .pv-links { display: flex; gap: 6px; }
+.portfolio-preview.lp .pv-link { width: 26px; height: 7px; background: rgba(255,255,255,0.1); border-radius: 2px; }
+.portfolio-preview.lp .pv-hero { text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.portfolio-preview.lp .pv-h { height: 11px; background: rgba(255,255,255,0.55); border-radius: 3px; margin-bottom: 7px; width: 80%; }
+.portfolio-preview.lp .pv-h.sm { width: 50%; }
+.portfolio-preview.lp .pv-p { height: 6px; background: rgba(255,255,255,0.15); border-radius: 2px; margin-bottom: 4px; width: 90%; }
+.portfolio-preview.lp .pv-btns { display: flex; gap: 7px; margin-top: 10px; }
+.portfolio-preview.lp .pv-btn-g { width: 70px; height: 22px; background: #22C55E; border-radius: 4px; }
+.portfolio-preview.lp .pv-btn-ghost { width: 56px; height: 22px; border: 1px solid rgba(255,255,255,0.12); border-radius: 4px; }
+/* Multi-page preview */
+.portfolio-preview.mp .pv-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.portfolio-preview.mp .pv-logo { width: 60px; height: 8px; background: var(--gold); border-radius: 3px; opacity: 0.7; }
+.portfolio-preview.mp .pv-menu { display: flex; gap: 5px; }
+.portfolio-preview.mp .pv-mi { width: 28px; height: 7px; background: rgba(255,255,255,0.1); border-radius: 2px; }
+.portfolio-preview.mp .pv-cols { display: grid; grid-template-columns: 1fr 2fr; gap: 10px; flex: 1; }
+.portfolio-preview.mp .pv-sidebar { display: flex; flex-direction: column; gap: 6px; }
+.portfolio-preview.mp .pv-sidebar-item { flex: 1; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; }
+.portfolio-preview.mp .pv-main { display: flex; flex-direction: column; gap: 7px; }
+.portfolio-preview.mp .pv-mh { height: 10px; background: rgba(255,255,255,0.5); border-radius: 3px; }
+.portfolio-preview.mp .pv-mh.sm { width: 60%; }
+.portfolio-preview.mp .pv-mp { height: 6px; background: rgba(255,255,255,0.12); border-radius: 2px; }
+.portfolio-preview.mp .pv-mp.sm { width: 75%; }
+.portfolio-preview.mp .pv-form { margin-top: auto; background: rgba(240,160,48,0.07); border: 1px solid rgba(240,160,48,0.15); border-radius: 5px; padding: 7px; }
+.portfolio-preview.mp .pv-fi { height: 8px; background: rgba(255,255,255,0.06); border-radius: 2px; margin-bottom: 4px; }
+.portfolio-preview.mp .pv-fib { height: 18px; background: var(--gold); border-radius: 3px; opacity: 0.7; }
+/* E-commerce preview */
+.portfolio-preview.ec .pv-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.portfolio-preview.ec .pv-logo { width: 55px; height: 8px; background: #EF4444; border-radius: 3px; opacity: 0.7; }
+.portfolio-preview.ec .pv-cart { width: 22px; height: 22px; background: rgba(255,255,255,0.06); border-radius: 4px; }
+.portfolio-preview.ec .pv-products { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; flex: 1; }
+.portfolio-preview.ec .pv-product {
+  background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 5px;
+  padding: 5px; display: flex; flex-direction: column; gap: 4px;
+}
+.portfolio-preview.ec .pv-product-img { height: 42px; background: rgba(255,255,255,0.06); border-radius: 3px; margin-bottom: 2px; }
+.portfolio-preview.ec .pv-product-name { height: 5px; background: rgba(255,255,255,0.25); border-radius: 2px; }
+.portfolio-preview.ec .pv-product-price { height: 5px; width: 60%; background: rgba(34,197,94,0.4); border-radius: 2px; }
+.portfolio-preview.ec .pv-mpesa { margin-top: 8px; display: flex; align-items: center; gap: 5px; }
+.portfolio-preview.ec .pv-mpesa-badge { font-size: 9px; font-weight: 700; color: #22C55E; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); padding: 2px 8px; border-radius: 3px; }
+
+.portfolio-glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(79,142,247,0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+.portfolio-info { padding: 22px; }
+.portfolio-tag { font-size: 11px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 8px; }
+.portfolio-tag.blue { color: var(--blue); }
+.portfolio-tag.gold { color: var(--gold); }
+.portfolio-tag.red { color: #EF4444; }
+.portfolio-info h3 { font-size: 17px; margin-bottom: 8px; }
+.portfolio-info p { font-size: 13px; color: var(--t2); line-height: 1.65; }
+.portfolio-pills { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
+.pill {
+  font-size: 11px; padding: 3px 10px;
+  border-radius: 20px; background: rgba(255,255,255,0.05);
+  border: 0.5px solid var(--b); color: var(--t3);
+}
+
+/* ==============================
+   TESTIMONIALS (NEW)
+   NOTE: Replace these with real client testimonials once collected.
+============================== */
+.t-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 20px;
+  margin-top: 44px;
+}
+.t-card {
+  background: var(--card);
+  border: 0.5px solid var(--b);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.t-card:hover { border-color: var(--b2); transform: translateY(-4px); }
+.t-card::before {
+  content: '\201C';
+  position: absolute; top: 10px; right: 18px;
+  font-size: 90px; line-height: 1;
+  font-family: Georgia, serif;
+  color: rgba(79,142,247,0.07);
+  pointer-events: none;
+}
+.t-stars { color: #FBBF24; font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+.t-quote {
+  font-size: 14px; color: var(--t2); line-height: 1.85;
+  margin-bottom: 22px; font-style: italic;
+}
+.t-author { display: flex; align-items: center; gap: 13px; }
+.t-avatar {
+  width: 44px; height: 44px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 15px; color: #fff; flex-shrink: 0;
+}
+.t-name { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+.t-biz { font-size: 12px; color: var(--t2); }
 
 /* ==============================
    CREDIBILITY
@@ -515,11 +858,21 @@ nav {
 }
 .bonus-wrap h3 { font-size: 26px; margin-bottom: 12px; }
 .bonus-wrap > p { font-size: 14.5px; color: var(--t2); margin-bottom: 30px; line-height: 1.75; }
-.slots { display: flex; justify-content: center; gap: 12px; margin-bottom: 10px; }
+.slots { display: flex; justify-content: center; gap: 14px; margin-bottom: 10px; }
 .slot { display: flex; flex-direction: column; align-items: center; gap: 6px; }
-.slot-bar { width: 48px; height: 9px; border-radius: 5px; }
+.slot-bar {
+  width: 50px; height: 10px; border-radius: 5px;
+  position: relative; overflow: hidden;
+}
 .slot-bar.taken { background: var(--red); }
-.slot-bar.open { background: var(--green); }
+.slot-bar.open {
+  background: var(--green);
+  animation: slot-shimmer 2.5s infinite;
+}
+@keyframes slot-shimmer {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
 .slot-lbl { font-size: 10px; color: var(--t3); letter-spacing: 0.5px; }
 .slots-note { font-size: 13px; color: var(--t2); margin-bottom: 28px; }
 
@@ -537,15 +890,32 @@ nav {
   pointer-events: none;
 }
 .final-cta h2 { font-size: clamp(26px, 4vw, 44px); margin-bottom: 14px; }
-.final-cta > p { font-size: 15px; color: var(--t2); margin-bottom: 36px; line-height: 1.75; max-width: 520px; margin-left: auto; margin-right: auto; }
+.final-cta > p {
+  font-size: 15px; color: var(--t2); margin-bottom: 36px;
+  line-height: 1.75; max-width: 520px;
+  margin-left: auto; margin-right: auto;
+}
 .link-box {
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: center; gap: 12px;
   background: var(--card); border: 0.5px solid var(--b2);
   border-radius: var(--r); padding: 14px 22px;
-  font-size: 13px; color: var(--t2); margin-bottom: 32px;
+  font-size: 13px; color: var(--t2); margin-bottom: 10px;
+  cursor: pointer; transition: border-color 0.2s;
 }
+.link-box:hover { border-color: rgba(79,142,247,0.3); }
 .link-box strong { color: var(--blue); }
+.link-box .copy-icon { color: var(--t3); font-size: 15px; transition: color 0.2s; }
+.link-box:hover .copy-icon { color: var(--blue); }
 .link-box-note { font-size: 12px; color: var(--t3); margin-top: 6px; }
+.copied-toast {
+  display: inline-block;
+  background: var(--green-d); color: var(--green);
+  border: 0.5px solid rgba(34,197,94,0.2);
+  font-size: 12px; padding: 5px 14px; border-radius: 20px;
+  margin-top: 6px; opacity: 0;
+  transition: opacity 0.3s;
+}
+.copied-toast.show { opacity: 1; }
 .btn-wa-xl {
   display: inline-flex; align-items: center; gap: 10px;
   background: var(--green); color: #fff;
@@ -580,6 +950,13 @@ footer {
 /* ==============================
    RESPONSIVE
 ============================== */
+@media (max-width: 900px) {
+  .hero-layout { grid-template-columns: 1fr; gap: 48px; }
+  .hero-left { text-align: center; }
+  .hero-btns { justify-content: center; }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .nav-links { display: none; }
+}
 @media (max-width: 640px) {
   section { padding: 64px 0; }
   .hero { padding: 72px 0 64px; }
@@ -589,6 +966,9 @@ footer {
   .bonus-wrap { padding: 36px 22px; }
   .footer-copy { text-align: left; }
   .ai-pricing { grid-template-columns: 1fr 1fr; }
+  .float-wa { bottom: 20px; right: 20px; width: 52px; height: 52px; font-size: 24px; }
+  .scroll-top { bottom: 86px; right: 22px; }
+  .browser-frame { transform: none; }
 }
 @media (max-width: 400px) {
   .ai-pricing { grid-template-columns: 1fr; }
@@ -597,17 +977,39 @@ footer {
 </head>
 <body>
 
+<!-- ======== READING PROGRESS BAR ======== -->
+<div id="pg-bar"></div>
+
+<!-- ======== FLOATING WHATSAPP BUTTON ======== -->
+<a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20talk%3F"
+   class="float-wa" target="_blank" rel="noopener" title="Chat with us on WhatsApp"
+   aria-label="Chat on WhatsApp">
+  <i class="ti ti-brand-whatsapp"></i>
+</a>
+
+<!-- ======== SCROLL TO TOP ======== -->
+<button class="scroll-top" id="scroll-top" title="Back to top" aria-label="Scroll to top">
+  <i class="ti ti-arrow-up"></i>
+</button>
+
 <!-- ======== NAV ======== -->
-<nav>
+<nav id="main-nav">
   <div class="container">
     <div class="nav-inner">
       <div class="logo">
         <div class="logo-box"><i class="ti ti-code"></i></div>
         Code<span class="logo-accent">Rise</span> Digital
       </div>
+      <div class="nav-links">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#packages">Pricing</a>
+        <a href="#what-we-build">Our Work</a>
+        <a href="#faq">FAQ</a>
+      </div>
       <div class="nav-right">
         <span class="badge-live">Accepting Clients</span>
-        <a href="#" class="btn btn-wa" data-wa-action="init" target="_blank" rel="noopener">
+        <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20talk%3F"
+           class="btn btn-wa" target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp"></i> Chat With Us
         </a>
       </div>
@@ -633,49 +1035,112 @@ footer {
   <div class="hero-dots"></div>
   <div class="hero-glow"></div>
   <div class="container">
-    <div class="hero-content">
-      <span class="eyebrow blue reveal">Web Development Studio — Nairobi, Kenya</span>
-      <h1 class="reveal d1">
-        No Templates. No Shortcuts.<br>
-        <em>Just Clean Websites Built for Your Business.</em>
-      </h1>
-      <p class="hero-sub reveal d2">
-        We engineer every website from the ground up — structured, fast, and built to grow with your business.
-        Whether you need a sharp landing page or a full e-commerce platform, we build it properly.
-        Delivered on time. No excuses.
-      </p>
-      <div class="hero-btns reveal d3">
-        <a href="#" class="btn btn-wa" data-wa-action="init" style="font-size:15px;padding:15px 30px;" target="_blank" rel="noopener">
-          <i class="ti ti-brand-whatsapp" style="font-size:19px;"></i> Start on WhatsApp
-        </a>
-        <a href="#packages" class="btn btn-ghost" style="font-size:15px;padding:15px 26px;">
-          <i class="ti ti-layout-grid"></i> See Packages
-        </a>
+
+    <div class="hero-layout">
+
+      <!-- LEFT: Copy -->
+      <div class="hero-left">
+        <span class="eyebrow blue reveal">Web Development Studio — Nairobi, Kenya</span>
+        <h1 class="reveal d1">
+          No Templates.<br>No Shortcuts.<br>
+          <em>Just Clean Websites Built for Your Business.</em>
+        </h1>
+        <p class="hero-sub reveal d2">
+          We engineer every website from the ground up — structured, fast, and built to grow with your business.
+          Whether you need a sharp landing page or a full e-commerce platform, we build it right.
+          Delivered on time. No excuses.
+        </p>
+        <div class="hero-btns reveal d3">
+          <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20talk%3F"
+             class="btn btn-wa" target="_blank" rel="noopener"
+             style="font-size:15px;padding:15px 30px;">
+            <i class="ti ti-brand-whatsapp" style="font-size:19px;"></i> Start on WhatsApp
+          </a>
+          <a href="#packages" class="btn btn-ghost" style="font-size:15px;padding:15px 26px;">
+            <i class="ti ti-layout-grid"></i> See Packages
+          </a>
+        </div>
       </div>
-      <div class="hero-stats reveal d4">
-        <div class="stat-item">
-          <div class="stat-num">3</div>
-          <div class="stat-label">Day minimum delivery</div>
+
+      <!-- RIGHT: Browser mockup -->
+      <div class="hero-right reveal d2">
+        <div class="browser-wrap">
+          <div class="browser-frame">
+            <div class="browser-chrome">
+              <div class="b-dots">
+                <span class="b-dot r"></span>
+                <span class="b-dot y"></span>
+                <span class="b-dot g"></span>
+              </div>
+              <div class="b-url">
+                <i class="ti ti-lock b-url-lock"></i>
+                mauzomart.co.ke
+              </div>
+            </div>
+            <div class="browser-body">
+              <!-- Fake website content inside the browser -->
+              <div class="fk-nav">
+                <div class="fk-logo"></div>
+                <div class="fk-links">
+                  <div class="fk-link"></div>
+                  <div class="fk-link"></div>
+                  <div class="fk-link"></div>
+                  <div class="fk-cta"></div>
+                </div>
+              </div>
+              <div class="fk-hero">
+                <div class="fk-tag"></div>
+                <div class="fk-h"></div>
+                <div class="fk-h short"></div>
+                <div class="fk-p"></div>
+                <div class="fk-p short"></div>
+                <div class="fk-btns">
+                  <div class="fk-btn-wa"></div>
+                  <div class="fk-btn-g"></div>
+                </div>
+              </div>
+              <div class="fk-cards">
+                <div class="fk-card"></div>
+                <div class="fk-card"></div>
+                <div class="fk-card"></div>
+              </div>
+              <div class="fk-trust">
+                <div class="fk-badge fk-mpesa">M-Pesa ✓</div>
+                <div class="fk-badge fk-ssl">SSL 🔒</div>
+                <div class="fk-badge fk-mob">Mobile ✓</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="stat-item">
-          <div class="stat-num">10+</div>
-          <div class="stat-label">Websites delivered</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Client site ownership</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">0</div>
-          <div class="stat-label">Templates ever used</div>
-        </div>
+      </div>
+
+    </div><!-- end .hero-layout -->
+
+    <!-- Stats bar -->
+    <div class="hero-stats reveal d4">
+      <div class="stat-item">
+        <div class="stat-num" data-count="3" data-suffix="">3</div>
+        <div class="stat-label">Day minimum delivery</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-count="10" data-suffix="+">10+</div>
+        <div class="stat-label">Websites delivered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-count="100" data-suffix="%">100%</div>
+        <div class="stat-label">Client site ownership</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-count="0" data-suffix="">0</div>
+        <div class="stat-label">Templates ever used</div>
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- ======== PROCESS ======== -->
-<section class="alt-bg">
+<section class="alt-bg" id="how-it-works">
   <div class="container">
     <span class="eyebrow reveal">How it works</span>
     <h2 class="reveal d1">Simple. Transparent. Delivered.</h2>
@@ -731,7 +1196,8 @@ footer {
           <div class="feat"><i class="ti ti-check"></i>SSL security (HTTPS) included on every page</div>
           <div class="feat"><i class="ti ti-check"></i>Delivered in 3 working days</div>
         </div>
-        <a href="#" class="btn btn-ghost pkg-btn" data-wa-action="starter" target="_blank" rel="noopener">
+        <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Starter%20package%20(KSh%208%2C000).%20Can%20we%20talk%3F"
+           class="btn btn-ghost pkg-btn" target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp"></i> Get Starter Package
         </a>
       </div>
@@ -760,7 +1226,8 @@ footer {
           <div class="feat"><i class="ti ti-check"></i>SSL security and clean, structured code throughout</div>
           <div class="feat"><i class="ti ti-check"></i>Delivered in 7 working days</div>
         </div>
-        <a href="#" class="btn btn-blue pkg-btn" data-wa-action="business" target="_blank" rel="noopener">
+        <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Business%20Pro%20package%20(KSh%2022%2C000).%20Can%20we%20talk%3F"
+           class="btn btn-blue pkg-btn" target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp"></i> Get Business Pro
         </a>
       </div>
@@ -787,7 +1254,8 @@ footer {
           <div class="feat"><i class="ti ti-check"></i>1 full year of post-launch support and maintenance included</div>
           <div class="feat"><i class="ti ti-check"></i>Delivered in 14 working days</div>
         </div>
-        <a href="#" class="btn btn-outline-gold pkg-btn" data-wa-action="premium" target="_blank" rel="noopener">
+        <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Premium%20package%20(KSh%2050%2C000).%20Can%20we%20talk%3F"
+           class="btn btn-outline-gold pkg-btn" target="_blank" rel="noopener">
           <i class="ti ti-brand-whatsapp"></i> Get Premium Package
         </a>
       </div>
@@ -796,8 +1264,93 @@ footer {
   </div>
 </section>
 
-<!-- ======== AI SECTION ======== -->
+<!-- ======== COMPARISON TABLE (NEW) ======== -->
 <section class="alt-bg">
+  <div class="container">
+    <span class="eyebrow blue reveal">Why CodeRise?</span>
+    <h2 class="reveal d1">CodeRise vs The Rest</h2>
+    <p class="cmp-intro reveal d2">
+      Not all web development options are equal. Here's how we stack up against the alternatives
+      most Kenyan businesses consider — honestly.
+    </p>
+    <div class="cmp-wrap reveal d3">
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th style="text-align:left;">Feature</th>
+            <th class="ours">
+              <div class="th-logo">
+                Code<strong>Rise</strong> Digital
+                <span class="th-tag">YOU ARE HERE</span>
+              </div>
+            </th>
+            <th>Typical Freelancer</th>
+            <th>DIY Builder (Wix / Squarespace)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Custom code — zero templates</td>
+            <td class="ours"><span class="cmp-yes"><i class="ti ti-check"></i> Always</span></td>
+            <td class="other"><span class="cmp-maybe"><i class="ti ti-minus"></i> Hit or miss</span></td>
+            <td class="other"><span class="cmp-no"><i class="ti ti-x"></i> Never</span></td>
+          </tr>
+          <tr>
+            <td>M-Pesa payment integration</td>
+            <td class="ours"><span class="cmp-yes"><i class="ti ti-check"></i> Included</span></td>
+            <td class="other"><span class="cmp-maybe"><i class="ti ti-minus"></i> Extra cost</span></td>
+            <td class="other"><span class="cmp-no"><i class="ti ti-x"></i> Not supported</span></td>
+          </tr>
+          <tr>
+            <td>You own 100% of the code &amp; files</td>
+            <td class="ours"><span class="cmp-yes"><i class="ti ti-check"></i> Always</span></td>
+            <td class="other"><span class="cmp-yes"><i class="ti ti-check"></i> Usually</span></td>
+            <td class="other"><span class="cmp-no"><i class="ti ti-x"></i> Platform locks you in</span></td>
+          </tr>
+          <tr>
+            <td>Full SEO optimization</td>
+            <td class="ours"><span class="cmp-yes"><i class="ti ti-check"></i> Built in</span></td>
+            <td class="other"><span class="cmp-maybe"><i class="ti ti-minus"></i> Varies</span></td>
+            <td class="other"><span class="cmp-maybe"><i class="ti ti-minus"></i> Basic only</span></td>
+          </tr>
+          <tr>
+            <td>WhatsApp CTA on every page</td>
+            <td class="ours"><span class="cmp-yes"><i class="ti ti-check"></i> Standard</span></td>
+            <td class="other"><span class="cmp-maybe"><i class="ti ti-minus"></i> Extra charge</span></td>
+            <td class="other"><span class="cmp-maybe"><i class="ti ti-minus"></i> Needs plugin</span></td>
+          </tr>
+          <tr>
+            <td>Local Nairobi-based support</td>
+            <td class="ours"><span class="cmp-yes"><i class="ti ti-check"></i> Direct access</span></td>
+            <td class="other"><span class="cmp-maybe"><i class="ti ti-minus"></i> Varies</span></td>
+            <td class="other"><span class="cmp-no"><i class="ti ti-x"></i> No</span></td>
+          </tr>
+          <tr>
+            <td>AI-powered features available</td>
+            <td class="ours"><span class="cmp-yes"><i class="ti ti-check"></i> Add-on available</span></td>
+            <td class="other"><span class="cmp-no"><i class="ti ti-x"></i> Rarely</span></td>
+            <td class="other"><span class="cmp-no"><i class="ti ti-x"></i> No</span></td>
+          </tr>
+          <tr>
+            <td>Free sample before you pay anything</td>
+            <td class="ours"><span class="cmp-yes"><i class="ti ti-check"></i> Yes — always</span></td>
+            <td class="other"><span class="cmp-no"><i class="ti ti-x"></i> No</span></td>
+            <td class="other"><span class="cmp-no"><i class="ti ti-x"></i> No</span></td>
+          </tr>
+          <tr>
+            <td>Transparent flat pricing</td>
+            <td class="ours"><span class="cmp-yes"><i class="ti ti-check"></i> Fixed rates</span></td>
+            <td class="other"><span class="cmp-maybe"><i class="ti ti-minus"></i> Hidden extras common</span></td>
+            <td class="other"><span class="cmp-no"><i class="ti ti-x"></i> Monthly subscription traps</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ======== AI SECTION ======== -->
+<section>
   <div class="container">
     <div class="ai-special-badge reveal"><i class="ti ti-sparkles"></i> AI-Powered Add-on — Special Case</div>
     <h2 class="reveal d1">Add Artificial Intelligence to Your Website</h2>
@@ -880,7 +1433,7 @@ footer {
 </section>
 
 <!-- ======== SECURITY ======== -->
-<section>
+<section class="alt-bg">
   <div class="container">
     <span class="eyebrow blue reveal">Hardened by design</span>
     <h2 class="reveal d1">Security We Don't Compromise On</h2>
@@ -950,8 +1503,214 @@ footer {
   </div>
 </section>
 
-<!-- ======== CREDIBILITY ======== -->
+<!-- ======== PORTFOLIO — WHAT WE BUILD (NEW) ======== -->
+<section id="what-we-build">
+  <div class="container">
+    <span class="eyebrow reveal">What we build</span>
+    <h2 class="reveal d1">Every Type of Business, Covered.</h2>
+    <p class="portfolio-intro reveal d2">
+      From a solo professional needing a clean landing page to a growing business wanting a full online store —
+      we've built them all. Here are the categories of sites we deliver, built right every time.
+    </p>
+    <div class="portfolio-grid">
+
+      <!-- Card 1: Landing Page -->
+      <div class="portfolio-card reveal d1">
+        <div class="portfolio-preview lp">
+          <div class="portfolio-glow"></div>
+          <div class="pv-nav">
+            <div class="pv-logo"></div>
+            <div class="pv-links">
+              <div class="pv-link"></div>
+              <div class="pv-link"></div>
+              <div class="pv-link"></div>
+            </div>
+          </div>
+          <div class="pv-hero">
+            <div class="pv-h"></div>
+            <div class="pv-h sm"></div>
+            <div class="pv-p"></div>
+            <div class="pv-p"></div>
+            <div class="pv-btns">
+              <div class="pv-btn-g"></div>
+              <div class="pv-btn-ghost"></div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag blue">Starter Package</div>
+          <h3>Business Landing Page</h3>
+          <p>A single-page powerhouse that loads fast, looks sharp on every phone, and converts visitors into WhatsApp inquiries instantly.</p>
+          <div class="portfolio-pills">
+            <span class="pill">1 Page</span>
+            <span class="pill">WhatsApp CTA</span>
+            <span class="pill">Mobile-first</span>
+            <span class="pill">3 days</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2: Multi-page business site -->
+      <div class="portfolio-card reveal d2">
+        <div class="portfolio-preview mp">
+          <div class="portfolio-glow" style="background:radial-gradient(circle at 50% 0%, rgba(240,160,48,0.08) 0%, transparent 60%);"></div>
+          <div class="pv-nav">
+            <div class="pv-logo" style="background:var(--gold);"></div>
+            <div class="pv-menu">
+              <div class="pv-mi"></div>
+              <div class="pv-mi"></div>
+              <div class="pv-mi"></div>
+              <div class="pv-mi"></div>
+            </div>
+          </div>
+          <div class="pv-cols">
+            <div class="pv-sidebar">
+              <div class="pv-sidebar-item"></div>
+              <div class="pv-sidebar-item"></div>
+              <div class="pv-sidebar-item"></div>
+            </div>
+            <div class="pv-main">
+              <div class="pv-mh"></div>
+              <div class="pv-mh sm"></div>
+              <div class="pv-mp"></div>
+              <div class="pv-mp sm"></div>
+              <div class="pv-mp"></div>
+              <div class="pv-form">
+                <div class="pv-fi"></div>
+                <div class="pv-fi"></div>
+                <div class="pv-fib"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag gold">Business Pro Package</div>
+          <h3>Full Business Website</h3>
+          <p>Up to 6 pages, Google-indexed, with a contact form, maps, blog, gallery, and WhatsApp on every page. Credibility at scale.</p>
+          <div class="portfolio-pills">
+            <span class="pill">6 Pages</span>
+            <span class="pill">SEO Setup</span>
+            <span class="pill">Google Maps</span>
+            <span class="pill">7 days</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3: E-commerce -->
+      <div class="portfolio-card reveal d3">
+        <div class="portfolio-preview ec">
+          <div class="portfolio-glow" style="background:radial-gradient(circle at 50% 0%, rgba(239,68,68,0.06) 0%, transparent 60%);"></div>
+          <div class="pv-nav">
+            <div class="pv-logo" style="background:#EF4444;"></div>
+            <div class="pv-cart"></div>
+          </div>
+          <div class="pv-products">
+            <div class="pv-product">
+              <div class="pv-product-img"></div>
+              <div class="pv-product-name"></div>
+              <div class="pv-product-price"></div>
+            </div>
+            <div class="pv-product">
+              <div class="pv-product-img"></div>
+              <div class="pv-product-name"></div>
+              <div class="pv-product-price"></div>
+            </div>
+            <div class="pv-product">
+              <div class="pv-product-img"></div>
+              <div class="pv-product-name"></div>
+              <div class="pv-product-price"></div>
+            </div>
+          </div>
+          <div class="pv-mpesa">
+            <div class="pv-mpesa-badge">M-Pesa ✓</div>
+            <div class="pv-mpesa-badge" style="background:rgba(79,142,247,0.1);border-color:rgba(79,142,247,0.2);color:var(--blue);">Cards ✓</div>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <div class="portfolio-tag red">Premium Package</div>
+          <h3>E-Commerce Store</h3>
+          <p>A full online store with M-Pesa + card payments, admin dashboard, order notifications, and everything you need to sell online in Kenya.</p>
+          <div class="portfolio-pills">
+            <span class="pill">M-Pesa + Cards</span>
+            <span class="pill">Admin Panel</span>
+            <span class="pill">Bookings</span>
+            <span class="pill">14 days</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======== TESTIMONIALS (NEW) ========
+     NOTE TO CODERISE: Replace these 3 testimonials with real client quotes once collected.
+     Collect via WhatsApp after delivery and paste the exact words here.
+     Update name, business type, and initials accordingly.
+-->
 <section class="alt-bg">
+  <div class="container">
+    <span class="eyebrow green reveal">Client feedback</span>
+    <h2 class="reveal d1">What Our Early Clients Say</h2>
+    <div class="t-grid">
+
+      <!-- TESTIMONIAL 1 — Replace with real client quote -->
+      <div class="t-card reveal d1">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">
+          "I had been putting off getting a website for two years because every quote I got was either too expensive
+          or came with too many conditions. CodeRise built me a clean, professional site in three days — exactly what
+          I described — and my WhatsApp inquiries doubled in the first week."
+        </p>
+        <div class="t-author">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#4F8EF7,#22C55E);">JW</div>
+          <div>
+            <div class="t-name">Jane Wanjiku</div>
+            <div class="t-biz">Hair Salon — Kilimani, Nairobi</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TESTIMONIAL 2 — Replace with real client quote -->
+      <div class="t-card reveal d2">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">
+          "What impressed me most was the free sample. They built a preview of my actual site before I paid a
+          single shilling. The quality was obvious immediately. The Business Pro package was worth every shilling —
+          I now show up on Google when people search my services."
+        </p>
+        <div class="t-author">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#F0A030,#EF4444);">BO</div>
+          <div>
+            <div class="t-name">Brian Otieno</div>
+            <div class="t-biz">Freelance Consultant — Westlands, Nairobi</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TESTIMONIAL 3 — Replace with real client quote -->
+      <div class="t-card reveal d3">
+        <div class="t-stars">★★★★★</div>
+        <p class="t-quote">
+          "The M-Pesa integration was seamless — customers pay directly through the site and I get notified
+          instantly on my phone. I used to lose orders because people didn't want to call. Now they just pay and go.
+          My sales have improved significantly since launch."
+        </p>
+        <div class="t-author">
+          <div class="t-avatar" style="background:linear-gradient(135deg,#8B5CF6,#4F8EF7);">AH</div>
+          <div>
+            <div class="t-name">Amira Hassan</div>
+            <div class="t-biz">Online Boutique — Mombasa Road, Nairobi</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======== CREDIBILITY ======== -->
+<section>
   <div class="container" style="text-align:center;">
     <span class="eyebrow reveal">Straight talk</span>
     <h2 class="reveal d1">Why Work With a New Studio?</h2>
@@ -971,7 +1730,7 @@ footer {
 </section>
 
 <!-- ======== FAQ ======== -->
-<section>
+<section class="alt-bg" id="faq">
   <div class="container">
     <span class="eyebrow reveal" style="text-align:center;display:block;">Common questions</span>
     <h2 style="text-align:center;" class="reveal d1">Everything You Need to Know</h2>
@@ -1022,7 +1781,7 @@ footer {
 </section>
 
 <!-- ======== BONUS ======== -->
-<section class="alt-bg">
+<section>
   <div class="container">
     <div class="bonus-wrap reveal">
       <span class="eyebrow gold" style="display:block;">Limited offer</span>
@@ -1040,7 +1799,9 @@ footer {
         <div class="slot"><div class="slot-bar open"></div><div class="slot-lbl">Open</div></div>
       </div>
       <p class="slots-note">2 of 5 slots taken — 3 remaining</p>
-      <a href="#" class="btn btn-wa" data-wa-action="domain" target="_blank" rel="noopener" style="font-size:15px;padding:15px 30px;">
+      <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%20want%20to%20claim%20one%20of%20the%20free%20domain%20slots%20before%20they%27re%20gone.%20Can%20we%20talk%3F"
+         class="btn btn-wa" target="_blank" rel="noopener"
+         style="font-size:15px;padding:15px 30px;">
         <i class="ti ti-gift"></i> Claim Your Free Domain
       </a>
     </div>
@@ -1059,18 +1820,21 @@ footer {
     </p>
 
     <div style="margin-bottom:10px;" class="reveal d3">
-      <div class="link-box">
+      <div class="link-box" id="copy-link-box" onclick="copyLink()" title="Click to copy link">
         <i class="ti ti-link" style="font-size:16px;color:var(--blue);"></i>
         <div style="text-align:left;">
-          <div style="font-size:11px;color:var(--t3);margin-bottom:3px;letter-spacing:1px;text-transform:uppercase;">Tap this link from WhatsApp to visit this page</div>
+          <div style="font-size:11px;color:var(--t3);margin-bottom:3px;letter-spacing:1px;text-transform:uppercase;">Share this page</div>
           <strong>kuriamyg.github.io/coderiserdigital</strong>
         </div>
+        <i class="ti ti-copy copy-icon"></i>
       </div>
-      <div class="link-box-note">Share this link on WhatsApp to bring potential clients directly to this page — no login, no sign-up, just tap and explore.</div>
+      <div class="copied-toast" id="copied-toast">✓ Link copied to clipboard!</div>
+      <div class="link-box-note">Share this link on WhatsApp to bring potential clients directly to this page.</div>
     </div>
 
     <div class="reveal d4" style="margin-top:28px;">
-      <a href="#" class="btn-wa-xl" data-wa-action="init" target="_blank" rel="noopener">
+      <a href="https://wa.me/254112786538?text=Hi%20CodeRise%20Digital%2C%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20talk%3F"
+         class="btn-wa-xl" target="_blank" rel="noopener">
         <i class="ti ti-brand-whatsapp" style="font-size:22px;"></i> Start the Conversation
       </a>
       <p class="cta-sub-note">We reply within minutes &nbsp;·&nbsp; Monday – Saturday &nbsp;·&nbsp; Based in Nairobi, Kenya</p>
@@ -1092,7 +1856,7 @@ footer {
       <div class="footer-contact">
         <span>
           <i class="ti ti-brand-whatsapp" style="color:var(--green);font-size:16px;"></i>
-          <a href="#" data-wa-action="contact" target="_blank">+254 112 786 538</a>
+          <a href="https://wa.me/254112786538" target="_blank">+254 112 786 538</a>
         </span>
         <span>
           <i class="ti ti-map-pin" style="color:var(--t3);font-size:16px;"></i>
@@ -1100,7 +1864,7 @@ footer {
         </span>
       </div>
       <div class="footer-copy">
-        <div>&copy; 2025 CodeRise Digital</div>
+        <div>&copy; 2026 CodeRise Digital</div>
         <div>All rights reserved.</div>
       </div>
     </div>
@@ -1109,82 +1873,39 @@ footer {
 
 <!-- ======== SCRIPTS ======== -->
 <script>
-  // ============ SECURITY: Phone Number Obfuscation ============
-  // Phone number stored as base64 (decoded on runtime)
-  const securePhone = 'MjU0MTEyNzg2NTM4'; // Base64: 254112786538
-  const decodePhone = () => atob(securePhone);
-  
-  const waMessages = {
-    init: 'Hi%20CodeRise%20Digital%2C%20I%20visited%20your%20website%20and%20I%27m%20interested%20in%20your%20services.%20Can%20we%20talk%3F',
-    starter: 'Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Starter%20package%20(KSh%208%2C000).%20Can%20we%20talk%3F',
-    business: 'Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Business%20Pro%20package%20(KSh%2022%2C000).%20Can%20we%20talk%3F',
-    premium: 'Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Premium%20package%20(KSh%2050%2C000).%20Can%20we%20talk%3F',
-    domain: 'Hi%20CodeRise%20Digital%2C%20I%20want%20to%20claim%20one%20of%20the%20free%20domain%20slots%20before%20they%27re%20gone.%20Can%20we%20talk%3F',
-    contact: ''
-  };
-
-  // Initialize WhatsApp links on page load
-  document.addEventListener('DOMContentLoaded', () => {
-    const phone = decodePhone();
-    document.querySelectorAll('[data-wa-action]').forEach(link => {
-      const action = link.getAttribute('data-wa-action');
-      const message = waMessages[action] || waMessages.init;
-      link.href = `https://wa.me/${phone}?text=${message}`;
-      // Remove the data attribute for extra obfuscation
-      link.removeAttribute('data-wa-action');
-    });
-
-    // ── WHATSAPP BUTTON CLICK TRACKING ──
-    document.querySelectorAll('[data-wa-action]').forEach(function(btn){
-      btn.addEventListener('click', function(){
-        const label = btn.textContent.trim().replace(/[^a-zA-Z0-9\s]/g, '').substring(0,40);
-        gtag('event','whatsapp_click',{
-          event_category: 'CTA',
-          event_label: label,
-          value: 1
-        });
-      });
+  // ── GA4: WHATSAPP CLICK TRACKING ──
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      const label = btn.innerText.trim().substring(0,40);
+      gtag('event','whatsapp_click',{event_category:'CTA',event_label:label,value:1});
     });
   });
 
-  // ── SECTION SCROLL TRACKING ──
-  const sections = [
-    {id:'packages', name:'Viewed Packages'},
-  ];
+  // ── GA4: SECTION SCROLL TRACKING ──
   const scrollObs = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){
-        gtag('event','section_view',{
-          event_category:'Engagement',
-          event_label: e.target.dataset.trackLabel || e.target.id,
-          value:1
-        });
+        gtag('event','section_view',{event_category:'Engagement',event_label:e.target.dataset.trackLabel||e.target.id,value:1});
         scrollObs.unobserve(e.target);
       }
     });
   },{threshold:0.4});
-  document.querySelectorAll('section[id]').forEach(function(s){
-    scrollObs.observe(s);
-  });
+  document.querySelectorAll('section[id]').forEach(function(s){ scrollObs.observe(s); });
 
-  // ── TIME ON PAGE (engagement depth) ──
-  let timeMarks = [30,60,120,300];
-  timeMarks.forEach(function(t){
+  // ── GA4: TIME ON PAGE ──
+  [30,60,120,300].forEach(function(t){
     setTimeout(function(){
-      gtag('event','time_on_page',{
-        event_category:'Engagement',
-        event_label: t+'s',
-        value: t
-      });
-    }, t*1000);
+      gtag('event','time_on_page',{event_category:'Engagement',event_label:t+'s',value:t});
+    },t*1000);
   });
 
+  // ── SCROLL ANIMATIONS (reveal) ──
   const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1, rootMargin: '0px 0px -44px 0px' });
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  },{ threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  // FAQ accordion
+  // ── FAQ ACCORDION ──
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.parentElement;
@@ -1194,12 +1915,91 @@ footer {
         openItem.classList.remove('open');
         openItem.querySelector('.faq-a').style.maxHeight = '0';
       });
-      if (!isOpen) {
+      if(!isOpen){
         item.classList.add('open');
         answer.style.maxHeight = answer.scrollHeight + 'px';
       }
     });
   });
+
+  // ── READING PROGRESS BAR ──
+  const pgBar = document.getElementById('pg-bar');
+  window.addEventListener('scroll', function(){
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    pgBar.style.width = pct + '%';
+  }, { passive: true });
+
+  // ── NAV SCROLL STATE ──
+  const mainNav = document.getElementById('main-nav');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 60){
+      mainNav.classList.add('scrolled');
+    } else {
+      mainNav.classList.remove('scrolled');
+    }
+  }, { passive: true });
+
+  // ── SCROLL TO TOP ──
+  const scrollTopBtn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 500){
+      scrollTopBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
+    }
+  }, { passive: true });
+  scrollTopBtn.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // ── ANIMATED COUNTER ──
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1200;
+    const start = performance.now();
+    function step(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const current = Math.round(eased * target);
+      el.textContent = current + suffix;
+      if(progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        animateCounter(e.target);
+        counterObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-num[data-count]').forEach(el => counterObs.observe(el));
+
+  // ── COPY LINK ──
+  function copyLink(){
+    const url = 'https://kuriamyg.github.io/coderiserdigital';
+    navigator.clipboard.writeText(url).then(function(){
+      const toast = document.getElementById('copied-toast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }).catch(function(){
+      // Fallback
+      const ta = document.createElement('textarea');
+      ta.value = url;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      const toast = document.getElementById('copied-toast');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    });
+  }
 </script>
 </body>
 </html>
