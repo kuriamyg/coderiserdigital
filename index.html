@@ -9,6 +9,10 @@
 <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 <meta http-equiv="X-XSS-Protection" content="1; mode=block">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
 <title>CodeRise Digital — Professional Web Development in Nairobi</title>
 <meta name="description" content="Professional web development studio in Nairobi. Custom websites built from scratch — no templates, no shortcuts. Packages from KSh 8,000. First 5 clients get a FREE domain.">
 <meta property="og:title" content="CodeRise Digital — No Templates. No Shortcuts.">
@@ -33,9 +37,13 @@
 
   // Track UTM source so you know which platform sent the visitor
   (function(){
+    function sanitizeParam(value) {
+      if (!value) return '';
+      return value.replace(/[^a-zA-Z0-9_.\-]/g, '').substring(0, 50);
+    }
     const params = new URLSearchParams(window.location.search);
-    const source = params.get('utm_source');
-    const medium = params.get('utm_medium');
+    const source = sanitizeParam(params.get('utm_source'));
+    const medium = sanitizeParam(params.get('utm_medium'));
     if(source){
       gtag('event','platform_visit',{
         event_category: 'Traffic Source',
@@ -1129,7 +1137,7 @@ footer {
     // ── WHATSAPP BUTTON CLICK TRACKING ──
     document.querySelectorAll('[data-wa-action]').forEach(function(btn){
       btn.addEventListener('click', function(){
-        const label = btn.innerText.trim().substring(0,40);
+        const label = btn.textContent.trim().replace(/[^a-zA-Z0-9\s]/g, '').substring(0,40);
         gtag('event','whatsapp_click',{
           event_category: 'CTA',
           event_label: label,
