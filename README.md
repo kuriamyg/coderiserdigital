@@ -41,8 +41,8 @@ This website is built with:
 Interested in working with Coderiser Digital? We'd love to hear about your project!
 
 - **Website**: [Visit our site](https://coderiserdigital.com)
-- **Email**: [Contact us](mailto:info@coderiserdigital.com)
-- **Follow**: Stay updated with our latest work and insights
+- **Email**: [info@coderiserdigital.com](mailto:info@coderiserdigital.com)
+- **Email**: [kuriam177@gmail.com](mailto:kuriam177@gmail.com)
 
 ## 📋 Project Goals
 
