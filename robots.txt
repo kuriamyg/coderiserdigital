@@ -1,0 +1,14 @@
+# CodeRise Digital — robots.txt
+# https://kuriamyg.github.io/coderiserdigital
+
+User-agent: *
+Allow: /
+
+# Block any future sensitive paths from indexing
+Disallow: /.well-known/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+
+# Sitemap (create this once the site has a custom domain)
+# Sitemap: https://coderiserdigital.co.ke/sitemap.xml
