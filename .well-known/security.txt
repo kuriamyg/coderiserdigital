@@ -1,0 +1,22 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+
+Contact: mailto:hello@coderiserdigital.co.ke
+Expires: 2027-06-01T00:00:00.000Z
+Preferred-Languages: en, sw
+Canonical: https://kuriamyg.github.io/coderiserdigital/.well-known/security.txt
+
+# CodeRise Digital — Responsible Disclosure Policy
+#
+# If you have discovered a security vulnerability in any system
+# operated by CodeRise Digital, please report it responsibly.
+#
+# We commit to:
+#   - Acknowledging your report within 48 hours
+#   - Keeping you informed of our progress
+#   - Not pursuing legal action against good-faith researchers
+#   - Crediting you in our fix notes (if you wish)
+#
+# Please do not publicly disclose the issue before we have had
+# a reasonable opportunity to address it.
+#
+# Thank you for helping keep CodeRise Digital and our clients secure.
