@@ -1,6 +1,6 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 
-Contact: mailto:hello@coderiserdigital.co.ke
+Contact: mailto:kuriam177@gmail.com
 Expires: 2027-06-01T00:00:00.000Z
 Preferred-Languages: en, sw
 Canonical: https://kuriamyg.github.io/coderiserdigital/.well-known/security.txt
