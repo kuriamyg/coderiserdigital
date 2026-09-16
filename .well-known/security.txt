@@ -1,5 +1,3 @@
------BEGIN PGP SIGNED MESSAGE-----
-
 Contact: mailto:kuriam177@gmail.com
 Expires: 2027-06-01T00:00:00.000Z
 Preferred-Languages: en, sw

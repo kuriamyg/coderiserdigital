@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Scores are asserted at "warn" severity in .lighthouserc.json — this job
+      # reports regressions but never blocks the PR on a network-variance-driven
+      # score dip. Ratchet assertions to "error" once a stable baseline exists.
+      - uses: treosh/lighthouse-ci-action@v11
+        with:
+          configPath: ./.lighthouserc.json

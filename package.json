@@ -1,0 +1,16 @@
+{
+  "name": "coderiserdigital",
+  "private": true,
+  "description": "CodeRise Digital marketing site",
+  "engines": {
+    "node": ">=22.22.0"
+  },
+  "scripts": {
+    "lint:html": "html-validate index.html",
+    "lint:json": "node scripts/validate-json.mjs",
+    "lint": "npm run lint:html && npm run lint:json"
+  },
+  "devDependencies": {
+    "html-validate": "^11.16.0"
+  }
+}
