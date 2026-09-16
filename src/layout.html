@@ -56,9 +56,9 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeRise Digital — Professional Web Development in Nairobi</title>
-<meta name="description" content="Professional web development studio in Nairobi. Custom websites built from scratch — no templates, no shortcuts. Packages from KSh 8,000. First 5 clients get a FREE domain.">
-<link rel="canonical" href="https://kuriamyg.github.io/coderiserdigital">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<link rel="canonical" href="{{CANONICAL}}">
 
 <!-- Favicons + PWA manifest -->
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -68,18 +68,18 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0A0A0D">
 
-<meta property="og:title" content="CodeRise Digital — No Templates. No Shortcuts.">
-<meta property="og:description" content="We build professional websites for real businesses. Packages from KSh 8,000 — landing pages to full e-commerce. First 5 clients get a free domain!">
+<meta property="og:title" content="{{OG_TITLE}}">
+<meta property="og:description" content="{{OG_DESCRIPTION}}">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://kuriamyg.github.io/coderiserdigital">
+<meta property="og:url" content="{{CANONICAL}}">
 <meta property="og:image" content="https://kuriamyg.github.io/coderiserdigital/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="CodeRise Digital — No Templates. No Shortcuts. Web development studio in Nairobi, Kenya.">
 <meta property="og:locale" content="en_KE">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CodeRise Digital — No Templates. No Shortcuts.">
-<meta name="twitter:description" content="We build professional websites for real businesses. Packages from KSh 8,000 — landing pages to full e-commerce. First 5 clients get a free domain!">
+<meta name="twitter:title" content="{{OG_TITLE}}">
+<meta name="twitter:description" content="{{OG_DESCRIPTION}}">
 <meta name="twitter:image" content="https://kuriamyg.github.io/coderiserdigital/assets/og-image.png">
 
 <!-- JSON-LD structured data — helps Google surface this as a local business
@@ -139,7 +139,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-WL5VTD16VB', {
-    page_title: 'CodeRise Digital — No Templates. No Shortcuts.',
+    page_title: '{{OG_TITLE}}',
     page_location: window.location.href,
     // [SEC] Anonymise IP — GDPR + Kenya DPA 2019 compliance
     anonymize_ip: true,
@@ -184,147 +184,15 @@
 
 <link rel="stylesheet" href="styles.css">
 </head>
-<body data-page="home">
+<body data-page="{{PAGE_ID}}">
 
-<!-- ======== NAV ======== -->
-<nav>
-  <div class="container">
-    <div class="nav-inner">
-      <a href="index.html" class="logo">
-        <div class="logo-box"><i class="ti ti-code"></i></div>
-        Code<span class="logo-accent">Rise</span> Digital
-      </a>
-      <div class="nav-right">
-        <span class="badge-live">Accepting Clients</span>
-        <!-- [SEC-4] rel="noopener noreferrer" — prevents reverse tabnapping via window.opener -->
-        <!-- [SEC-5] href assembled by JS at runtime — phone not hardcoded in DOM (see script.js) -->
-        <a id="nav-wa-btn" href="#" class="btn btn-wa" target="_blank" rel="noopener noreferrer">
-          <i class="ti ti-brand-whatsapp"></i> Chat With Us
-        </a>
-      </div>
-    </div>
-  </div>
-</nav>
+{{NAV}}
 
-<!-- ======== PAGE NAV ======== -->
-<div class="page-nav">
-  <div class="container">
-    <div class="page-nav-inner">
-      <a href="index.html" class="page-nav-link" data-page="home">Home</a>
-      <a href="packages.html" class="page-nav-link" data-page="packages">Packages</a>
-      <a href="process.html" class="page-nav-link" data-page="process">Process</a>
-      <a href="ai.html" class="page-nav-link" data-page="ai">AI Add-ons</a>
-      <a href="faq.html" class="page-nav-link" data-page="faq">FAQ</a>
-    </div>
-  </div>
-</div>
+{{CONTENT}}
 
+{{PAGER}}
 
-<!-- ======== TRUST BAR ======== -->
-<div class="trust-bar">
-  <div class="container">
-    <div class="trust-inner">
-      <span class="trust-item"><i class="ti ti-check"></i> 10+ sites delivered</span>
-      <span class="trust-item"><i class="ti ti-check"></i> Built from scratch — zero templates</span>
-      <span class="trust-item"><i class="ti ti-check"></i> On-time delivery, every time</span>
-      <span class="trust-item"><i class="ti ti-check"></i> Nairobi-based studio</span>
-      <span class="trust-item"><i class="ti ti-check"></i> You own your website 100%</span>
-    </div>
-  </div>
-</div>
-
-<!-- ======== HERO ======== -->
-<section class="hero">
-  <div class="hero-dots"></div>
-  <div class="hero-glow"></div>
-  <div class="container">
-    <div class="hero-content">
-      <span class="eyebrow blue reveal">Web Development Studio — Nairobi, Kenya</span>
-      <h1 class="reveal d1">
-        No Templates. No Shortcuts.<br>
-        <em>Just Clean Websites Built for Your Business.</em>
-      </h1>
-      <p class="hero-sub reveal d2">
-        We engineer every website from the ground up — structured, fast, and built to grow with your business.
-        Whether you need a sharp landing page or a full e-commerce platform, we build it properly.
-        Delivered on time. No excuses.
-      </p>
-      <div class="hero-btns reveal d3">
-        <!-- [SEC-4] rel="noopener noreferrer" on all external links -->
-        <!-- [SEC-5] href set by JS — wa-link class used as hook -->
-        <!-- [SEC-13] Pre-fill text minimised — no package details in URL -->
-        <a class="btn btn-wa wa-link" data-msg="general" href="#" target="_blank" rel="noopener noreferrer"
-           style="font-size:15px;padding:15px 30px;">
-          <i class="ti ti-brand-whatsapp" style="font-size:19px;"></i> Start on WhatsApp
-        </a>
-        <a href="packages.html" class="btn btn-ghost" style="font-size:15px;padding:15px 26px;">
-          <i class="ti ti-layout-grid"></i> See Packages
-        </a>
-      </div>
-      <div class="hero-stats reveal d4">
-        <div class="stat-item">
-          <div class="stat-num">3</div>
-          <div class="stat-label">Day minimum delivery</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">10+</div>
-          <div class="stat-label">Websites delivered</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Client site ownership</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">0</div>
-          <div class="stat-label">Templates ever used</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<div class="pager">
-  <div class="container pager-inner">
-    <div class="pager-empty"></div>
-    <a href="packages.html" class="pager-btn pager-next">
-        <span><small>Next</small>Packages</span>
-        <i class="ti ti-arrow-right"></i>
-      </a>
-  </div>
-</div>
-
-<!-- ======== FOOTER ======== -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-logo-wrap">
-        <div class="logo">
-          <div class="logo-box" style="width:28px;height:28px;font-size:14px;"><i class="ti ti-code"></i></div>
-          Code<span class="logo-accent">Rise</span> Digital
-        </div>
-        <div class="footer-tagline">Professional Web Development &nbsp;·&nbsp; Nairobi, Kenya</div>
-      </div>
-      <div class="footer-contact">
-        <span>
-          <i class="ti ti-brand-whatsapp" style="color:var(--green);font-size:16px;"></i>
-          <!-- [SEC-5] Phone assembled at runtime — see script.js -->
-          <a id="footer-phone-link" href="#" target="_blank" rel="noopener noreferrer">+254 112 786 538</a>
-        </span>
-        <span>
-          <i class="ti ti-map-pin" style="color:var(--t3);font-size:16px;"></i>
-          Nairobi, Kenya
-        </span>
-      </div>
-      <!-- [SEC-10] Copyright year corrected to 2026 -->
-      <div class="footer-copy">
-        <div>&copy; 2026 CodeRise Digital</div>
-        <div>All rights reserved.</div>
-      </div>
-    </div>
-  </div>
-</footer>
-
+{{FOOTER}}
 
 <script src="script.js" defer></script>
 </body>
