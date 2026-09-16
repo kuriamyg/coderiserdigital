@@ -40,8 +40,7 @@ This website is built with:
 
 Interested in working with Coderiser Digital? We'd love to hear about your project!
 
-- **Website**: [Visit our site](https://coderiserdigital.com)
-- **Email**: [info@coderiserdigital.com](mailto:info@coderiserdigital.com)
+- **Website**: [Visit our site](https://kuriamyg.github.io/coderiserdigital)
 - **Email**: [kuriam177@gmail.com](mailto:kuriam177@gmail.com)
 
 ## 📋 Project Goals
@@ -51,6 +50,15 @@ Interested in working with Coderiser Digital? We'd love to hear about your proje
 - Build long-term partnerships with clients
 - Stay current with web development trends
 - Provide exceptional customer service
+
+## ✅ Development
+
+```
+npm install     # installs the HTML/JSON lint tooling
+npm run lint    # validates index.html markup, manifest.json and JSON-LD
+```
+
+CI runs `npm run lint` on every push and pull request.
 
 ## 🤝 Contributing
 
