@@ -2,6 +2,9 @@
   "name": "coderiserdigital",
   "private": true,
   "description": "CodeRise Digital marketing site",
+  "engines": {
+    "node": ">=22.22.0"
+  },
   "scripts": {
     "lint:html": "html-validate index.html",
     "lint:json": "node scripts/validate-json.mjs",
