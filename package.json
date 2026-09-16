@@ -6,7 +6,9 @@
     "node": ">=22.22.0"
   },
   "scripts": {
-    "lint:html": "html-validate index.html",
+    "build": "node scripts/build.mjs",
+    "verify-build": "npm run build && git diff --exit-code -- index.html packages.html process.html ai.html faq.html",
+    "lint:html": "html-validate index.html packages.html process.html ai.html faq.html",
     "lint:json": "node scripts/validate-json.mjs",
     "lint": "npm run lint:html && npm run lint:json"
   },

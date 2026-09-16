@@ -36,6 +36,37 @@ This website is built with:
 - **CSS3** - Modern styling and responsive layouts
 - **JavaScript** - Interactive features and enhanced user experience
 
+## 📄 Site structure
+
+The site is five static pages, each with its own URL and its own title/description/OG
+tags for sharing: **Home** (`index.html`), **Packages** (`packages.html`), **Process**
+(`process.html`), **AI Add-ons** (`ai.html`), and **FAQ** (`faq.html`). A persistent
+nav bar links directly to any page, and Next/Back links at the bottom of each page
+step through them in order.
+
+The published `.html` files at the repo root are generated — never hand-edit them.
+Edit the source instead:
+
+```
+src/layout.html          the shared <head> + page shell
+src/partials/nav.html    nav bar + page links (identical on every page)
+src/partials/footer.html footer (identical on every page)
+src/pages/*.html         each page's own content
+src/pages.config.mjs     per-page title/description/OG tags, and page order
+styles.css               shared styles
+script.js                shared behaviour (WhatsApp links, FAQ accordion, etc.)
+```
+
+After editing, regenerate the published pages:
+
+```
+npm run build
+```
+
+CI runs this same build and fails if the committed `.html` files don't match its
+output — so `npm run build` (and committing what it produces) is required before
+pushing a content change, not optional.
+
 ## 📞 Get in Touch
 
 Interested in working with Coderiser Digital? We'd love to hear about your project!
@@ -54,11 +85,13 @@ Interested in working with Coderiser Digital? We'd love to hear about your proje
 ## ✅ Development
 
 ```
-npm install     # installs the HTML/JSON lint tooling
-npm run lint    # validates index.html markup, manifest.json and JSON-LD
+npm install     # installs the build + lint tooling
+npm run build   # regenerates the published pages from src/
+npm run lint    # validates page markup, manifest.json and JSON-LD
 ```
 
-CI runs `npm run lint` on every push and pull request.
+CI runs `npm run verify-build` (rebuilds and fails if the committed pages don't match
+the output) and `npm run lint` on every push and pull request.
 
 ## 🤝 Contributing
 

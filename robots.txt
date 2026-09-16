@@ -10,5 +10,8 @@ Disallow: /admin/
 Disallow: /dashboard/
 Disallow: /api/
 
-# Sitemap (create this once the site has a custom domain)
-# Sitemap: https://coderiserdigital.co.ke/sitemap.xml
+# Build sources — raw page partials and build scripts, not meant to be indexed
+Disallow: /src/
+Disallow: /scripts/
+
+Sitemap: https://kuriamyg.github.io/coderiserdigital/sitemap.xml
