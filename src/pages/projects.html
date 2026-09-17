@@ -1,0 +1,106 @@
+<!-- ======== PROJECTS ======== -->
+<section id="projects">
+  <div class="container">
+    <span class="eyebrow reveal">Selected work</span>
+    <h2 class="reveal d1">Things I've built.</h2>
+    <p style="color:var(--t2);font-size:14.5px;max-width:580px;margin-top:10px;line-height:1.75;" class="reveal d2">
+      A mix of production systems, client work, and personal tools — mostly where money,
+      trust, or risk are involved.
+    </p>
+    <div class="pkg-grid">
+
+      <!-- PESAFLOW -->
+      <div class="pkg-card featured reveal d1">
+        <div class="pkg-pop-badge">Flagship</div>
+        <div class="pkg-icon"><i class="ti ti-wallet"></i></div>
+        <div class="pkg-name">PesaFlow</div>
+        <div class="pkg-for">Kenya-first personal finance &amp; budgeting app</div>
+        <p class="pkg-desc">
+          A production budgeting app built for how Kenyans actually spend — automatic
+          M-Pesa transaction parsing, categorisation, budgets, debts, savings, and an
+          AI coach. Money is modelled as fixed-point Decimal throughout, never float.
+        </p>
+        <div class="pkg-hosting"><i class="ti ti-server"></i> Live at pesaflow-theta.vercel.app</div>
+        <div class="pkg-features">
+          <div class="feat"><i class="ti ti-check"></i>23-model Postgres schema, money stored as Decimal(14,2)</div>
+          <div class="feat"><i class="ti ti-check"></i>M-Pesa transaction parser with 31 passing tests</div>
+          <div class="feat"><i class="ti ti-check"></i>AI coach powered by the Claude API</div>
+          <div class="feat"><i class="ti ti-check"></i>Budgets, debts, savings, and wealth tracking in one dashboard</div>
+          <div class="feat"><i class="ti ti-check"></i>Mobile-first — built for a market where the phone is the computer</div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="btn btn-blue" href="https://pesaflow-theta.vercel.app" target="_blank" rel="noopener noreferrer" style="flex:1;justify-content:center;padding:14px;font-size:14px;">
+            <i class="ti ti-external-link"></i> View Live App
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/kuriamyg/pesaflow" target="_blank" rel="noopener noreferrer" style="flex:1;justify-content:center;padding:14px;font-size:14px;">
+            <i class="ti ti-brand-github"></i> View Code
+          </a>
+        </div>
+      </div>
+
+      <!-- TRUSTGIVING -->
+      <div class="pkg-card reveal d2">
+        <div class="pkg-icon"><i class="ti ti-building-bank"></i></div>
+        <div class="pkg-name">TrustGiving</div>
+        <div class="pkg-for">Financial system of record for a church</div>
+        <p class="pkg-desc">
+          Built with the rigor of software that handles other people's money — an
+          append-only audit log enforced at the database grant level, a two-person
+          rule required for every cash transaction, and Postgres-native uniqueness
+          for membership numbers and envelope codes.
+        </p>
+        <div class="pkg-hosting" style="color:var(--t2);"><i class="ti ti-lock"></i> Private client project — code not publicly shared</div>
+        <div class="pkg-features">
+          <div class="feat"><i class="ti ti-check"></i>Append-only audit log — the app's database role cannot UPDATE or DELETE it</div>
+          <div class="feat"><i class="ti ti-check"></i>Two-person cash confirmation, enforced at both the API and the database</div>
+          <div class="feat"><i class="ti ti-check"></i>Atomic uniqueness via Postgres sequences, not application-level checks</div>
+          <div class="feat"><i class="ti ti-check"></i>User roles re-verified server-side on every request, never trusted from a token</div>
+        </div>
+      </div>
+
+      <!-- TRADE EXPECTANCY JOURNAL -->
+      <div class="pkg-card reveal d3">
+        <div class="pkg-icon gold"><i class="ti ti-chart-line"></i></div>
+        <div class="pkg-name">Trade Expectancy Journal</div>
+        <div class="pkg-for">Self-contained trading risk calculator</div>
+        <p class="pkg-desc">
+          A standalone HTML tool for tracking manual forex and gold trades against a
+          fixed-risk, fixed-R:R model, with live win-rate and expectancy (EV)
+          calculation. No install, no server, no dependencies.
+        </p>
+        <div class="pkg-hosting"><i class="ti ti-server"></i> Zero dependencies — runs entirely in the browser</div>
+        <div class="pkg-features">
+          <div class="feat"><i class="ti ti-check"></i>Live expectancy calculation: EV = (Win% × AvgWin) − (Loss% × AvgLoss)</div>
+          <div class="feat"><i class="ti ti-check"></i>Trades saved locally per device via localStorage</div>
+          <div class="feat"><i class="ti ti-check"></i>CSV export for further analysis in a spreadsheet</div>
+        </div>
+        <a class="btn btn-outline-gold pkg-btn" href="https://github.com/kuriamyg/trade-expectancy-journal" target="_blank" rel="noopener noreferrer">
+          <i class="ti ti-brand-github"></i> View Code
+        </a>
+      </div>
+
+      <!-- THIS SITE -->
+      <div class="pkg-card reveal d1">
+        <div class="pkg-icon"><i class="ti ti-browser"></i></div>
+        <div class="pkg-name">This Site</div>
+        <div class="pkg-for">Rebuilt from a single-page landing page</div>
+        <p class="pkg-desc">
+          Started as a web-dev-studio landing page. I audited it, fixed a dead
+          analytics pipeline, and restructured it into a multi-page static site with
+          its own CI — HTML validation and Lighthouse on every push, and a small
+          build pipeline that regenerates every page from shared partials.
+        </p>
+        <div class="pkg-hosting"><i class="ti ti-server"></i> Deployed on GitHub Pages</div>
+        <div class="pkg-features">
+          <div class="feat"><i class="ti ti-check"></i>Static-site build pipeline — no framework, no runtime dependencies</div>
+          <div class="feat"><i class="ti ti-check"></i>CI: html-validate + Lighthouse CI on every page, every push</div>
+          <div class="feat"><i class="ti ti-check"></i>Generated pages are drift-checked against source in CI</div>
+        </div>
+        <a class="btn btn-ghost pkg-btn" href="https://github.com/kuriamyg/coderiserdigital" target="_blank" rel="noopener noreferrer">
+          <i class="ti ti-brand-github"></i> View Code
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>

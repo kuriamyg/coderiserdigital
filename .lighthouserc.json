@@ -4,10 +4,10 @@
       "staticDistDir": ".",
       "url": [
         "http://localhost/index.html",
-        "http://localhost/packages.html",
-        "http://localhost/process.html",
-        "http://localhost/ai.html",
-        "http://localhost/faq.html"
+        "http://localhost/projects.html",
+        "http://localhost/about.html",
+        "http://localhost/skills.html",
+        "http://localhost/contact.html"
       ],
       "numberOfRuns": 1,
       "settings": {

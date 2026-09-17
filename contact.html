@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 
 <!-- ======================================================
-     SECURITY HARDENING — CodeRise Digital
+     SECURITY HARDENING — Moses Mwangi Kuria
      Applied: May 2026
      Standard: OWASP Top 10 · CSP L2 · RFC 9116
      ======================================================
@@ -56,9 +56,9 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Add-ons — CodeRise Digital</title>
-<meta name="description" content="Add a live AI chatbot, lead qualifier, booking assistant, or smart search to your website. Available on Business Pro and Premium packages.">
-<link rel="canonical" href="https://kuriamyg.github.io/coderiserdigital/ai.html">
+<title>Contact — Moses Mwangi Kuria</title>
+<meta name="description" content="Open to freelance projects, collaboration, and interesting engineering problems. Get in touch on WhatsApp, email, or GitHub.">
+<link rel="canonical" href="https://kuriamyg.github.io/coderiserdigital/contact.html">
 
 <!-- Favicons + PWA manifest -->
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -68,43 +68,40 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0A0A0D">
 
-<meta property="og:title" content="CodeRise Digital — AI-Powered Website Add-ons">
-<meta property="og:description" content="Live AI chatbots, booking assistants, smart search and more — integrated directly into your website.">
+<meta property="og:title" content="Contact — Moses Mwangi Kuria">
+<meta property="og:description" content="Let's talk — WhatsApp, email, or GitHub.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://kuriamyg.github.io/coderiserdigital/ai.html">
+<meta property="og:url" content="https://kuriamyg.github.io/coderiserdigital/contact.html">
 <meta property="og:image" content="https://kuriamyg.github.io/coderiserdigital/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="CodeRise Digital — No Templates. No Shortcuts. Web development studio in Nairobi, Kenya.">
+<meta property="og:image:alt" content="Moses Mwangi Kuria — Software Engineer, Nairobi, Kenya.">
 <meta property="og:locale" content="en_KE">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CodeRise Digital — AI-Powered Website Add-ons">
-<meta name="twitter:description" content="Live AI chatbots, booking assistants, smart search and more — integrated directly into your website.">
+<meta name="twitter:title" content="Contact — Moses Mwangi Kuria">
+<meta name="twitter:description" content="Let's talk — WhatsApp, email, or GitHub.">
 <meta name="twitter:image" content="https://kuriamyg.github.io/coderiserdigital/assets/og-image.png">
 
-<!-- JSON-LD structured data — helps Google surface this as a local business
-     (name, service area, contact) directly in search results. -->
+<!-- JSON-LD structured data — helps Google surface this as a person/professional
+     profile (name, role, skills) directly in search results. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "CodeRise Digital",
-  "description": "Web development studio in Nairobi, Kenya building custom websites from scratch — no templates, no shortcuts.",
+  "@type": "Person",
+  "name": "Moses Mwangi Kuria",
+  "jobTitle": "Software Engineer",
+  "description": "Full-stack software engineer based in Nairobi, Kenya, building fintech systems, security-first engineering practices, and practical tools.",
   "url": "https://kuriamyg.github.io/coderiserdigital",
   "image": "https://kuriamyg.github.io/coderiserdigital/assets/og-image.png",
-  "logo": "https://kuriamyg.github.io/coderiserdigital/apple-touch-icon.png",
-  "telephone": "+254112786538",
-  "priceRange": "KSh 8,000 - KSh 50,000",
+  "sameAs": ["https://github.com/kuriamyg"],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Nairobi",
     "addressCountry": "KE"
   },
-  "areaServed": "KE",
-  "makesOffer": [
-    { "@type": "Offer", "name": "Starter Package", "price": "8000", "priceCurrency": "KES" },
-    { "@type": "Offer", "name": "Business Pro Package", "price": "22000", "priceCurrency": "KES" },
-    { "@type": "Offer", "name": "Premium Package", "price": "50000", "priceCurrency": "KES" }
+  "knowsAbout": [
+    "Next.js", "React", "TypeScript", "NestJS", "Prisma", "PostgreSQL",
+    "Django", "Fintech engineering", "Application security", "Claude API integration"
   ]
 }
 </script>
@@ -139,7 +136,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-WL5VTD16VB', {
-    page_title: 'CodeRise Digital — AI-Powered Website Add-ons',
+    page_title: 'Contact — Moses Mwangi Kuria',
     page_location: window.location.href,
     // [SEC] Anonymise IP — GDPR + Kenya DPA 2019 compliance
     anonymize_ip: true,
@@ -184,7 +181,7 @@
 
 <link rel="stylesheet" href="styles.css">
 </head>
-<body data-page="ai">
+<body data-page="contact">
 
 <!-- ======== NAV ======== -->
 <nav>
@@ -192,14 +189,16 @@
     <div class="nav-inner">
       <a href="index.html" class="logo">
         <div class="logo-box"><i class="ti ti-code"></i></div>
-        Code<span class="logo-accent">Rise</span> Digital
+        Moses <span class="logo-accent">Kuria</span>
       </a>
       <div class="nav-right">
-        <span class="badge-live">Accepting Clients</span>
+        <a href="https://github.com/kuriamyg" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding:9px 11px;" aria-label="GitHub">
+          <i class="ti ti-brand-github"></i>
+        </a>
         <!-- [SEC-4] rel="noopener noreferrer" — prevents reverse tabnapping via window.opener -->
         <!-- [SEC-5] href assembled by JS at runtime — phone not hardcoded in DOM (see script.js) -->
         <a id="nav-wa-btn" href="#" class="btn btn-wa" target="_blank" rel="noopener noreferrer">
-          <i class="ti ti-brand-whatsapp"></i> Chat With Us
+          <i class="ti ti-brand-whatsapp"></i> Message Me
         </a>
       </div>
     </div>
@@ -211,108 +210,57 @@
   <div class="container">
     <div class="page-nav-inner">
       <a href="index.html" class="page-nav-link" data-page="home">Home</a>
-      <a href="packages.html" class="page-nav-link" data-page="packages">Packages</a>
-      <a href="process.html" class="page-nav-link" data-page="process">Process</a>
-      <a href="ai.html" class="page-nav-link" data-page="ai">AI Add-ons</a>
-      <a href="faq.html" class="page-nav-link" data-page="faq">FAQ</a>
+      <a href="projects.html" class="page-nav-link" data-page="projects">Projects</a>
+      <a href="about.html" class="page-nav-link" data-page="about">About</a>
+      <a href="skills.html" class="page-nav-link" data-page="skills">Skills</a>
+      <a href="contact.html" class="page-nav-link" data-page="contact">Contact</a>
     </div>
   </div>
 </div>
 
 
-<!-- ======== AI SECTION ======== -->
-<section>
-  <div class="container">
-    <div class="ai-special-badge reveal"><i class="ti ti-sparkles"></i> AI-Powered Add-on — Special Case</div>
-    <h2 class="reveal d1">Add Artificial Intelligence to Your Website</h2>
-    <p class="ai-intro reveal d2">
-      Not every business needs AI — but for those that do, it is the sharpest competitive edge available today.
-      We integrate live AI directly into your website so it thinks, responds, and works for your customers
-      automatically — even at 3am when you're fast asleep.
+<!-- ======== CONTACT ======== -->
+<section class="final-cta">
+  <div class="final-cta-glow"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <span class="eyebrow green reveal" style="display:block;">Get in touch</span>
+    <h2 class="reveal d1">Let's Build Something.</h2>
+    <p class="reveal d2">
+      Open to freelance projects, collaboration, and interesting engineering problems —
+      particularly fintech, security, or anything that needs real operational rigor.
     </p>
-    <div class="ai-grid">
-      <div class="ai-feat reveal d1">
-        <div class="ai-feat-icon"><i class="ti ti-message-chatbot"></i></div>
-        <h4>AI Support Chatbot</h4>
-        <p>Answers customer questions 24/7 instantly — without you lifting a finger. Never miss a lead again.</p>
-      </div>
-      <div class="ai-feat reveal d2">
-        <div class="ai-feat-icon"><i class="ti ti-filter"></i></div>
-        <h4>Smart Lead Qualifier</h4>
-        <p>Asks visitors the right questions automatically and filters out serious buyers from casual browsers.</p>
-      </div>
-      <div class="ai-feat reveal d3">
-        <div class="ai-feat-icon"><i class="ti ti-shopping-cart"></i></div>
-        <h4>Product Recommender</h4>
-        <p>Learns each visitor's preferences and suggests exactly the right product or service for them.</p>
-      </div>
-      <div class="ai-feat reveal d1">
-        <div class="ai-feat-icon"><i class="ti ti-calendar-event"></i></div>
-        <h4>AI Booking Assistant</h4>
-        <p>Handles appointment scheduling through conversation — no emails, no back-and-forth needed.</p>
-      </div>
-      <div class="ai-feat reveal d2">
-        <div class="ai-feat-icon"><i class="ti ti-search"></i></div>
-        <h4>AI-Powered Search</h4>
-        <p>Understands plain language — "affordable red shoes under 2000" just works, no exact keywords needed.</p>
-      </div>
-      <div class="ai-feat reveal d3">
-        <div class="ai-feat-icon"><i class="ti ti-file-invoice"></i></div>
-        <h4>Quote Generator</h4>
-        <p>Client fills a simple form — AI builds a professional, detailed quote or invoice in seconds.</p>
-      </div>
-      <div class="ai-feat reveal d1">
-        <div class="ai-feat-icon"><i class="ti ti-world"></i></div>
-        <h4>Auto Language Translator</h4>
-        <p>Instantly translates your entire site for international and multilingual visitors with zero effort.</p>
-      </div>
-      <div class="ai-feat reveal d2">
-        <div class="ai-feat-icon"><i class="ti ti-shield-check"></i></div>
-        <h4>Fraud &amp; Spam Detection</h4>
-        <p>Flags suspicious orders, fake sign-ups, and bot activity in real time before they cause harm.</p>
-      </div>
-      <div class="ai-feat reveal d3">
-        <div class="ai-feat-icon"><i class="ti ti-star"></i></div>
-        <h4>Review Sentiment Analysis</h4>
-        <p>Reads all customer feedback and immediately flags negative reviews so nothing slips past you.</p>
-      </div>
-      <div class="ai-feat reveal d1">
-        <div class="ai-feat-icon"><i class="ti ti-pencil"></i></div>
-        <h4>Content Auto-Generator</h4>
-        <p>Writes product descriptions, blog summaries, and page content on the fly — keeping your site fresh.</p>
-      </div>
+    <div class="reveal d3" style="display:flex;flex-direction:column;gap:12px;max-width:420px;margin:0 auto 28px;">
+      <!-- [SEC-4] rel="noopener noreferrer" on all external links -->
+      <a class="link-box" href="mailto:kuriam177@gmail.com" style="justify-content:flex-start;width:100%;">
+        <i class="ti ti-mail" style="font-size:16px;color:var(--blue);"></i>
+        <div style="text-align:left;">
+          <div style="font-size:11px;color:var(--t3);margin-bottom:3px;letter-spacing:1px;text-transform:uppercase;">Email</div>
+          <strong>kuriam177@gmail.com</strong>
+        </div>
+      </a>
+      <a class="link-box" href="https://github.com/kuriamyg" target="_blank" rel="noopener noreferrer" style="justify-content:flex-start;width:100%;">
+        <i class="ti ti-brand-github" style="font-size:16px;color:var(--blue);"></i>
+        <div style="text-align:left;">
+          <div style="font-size:11px;color:var(--t3);margin-bottom:3px;letter-spacing:1px;text-transform:uppercase;">GitHub</div>
+          <strong>github.com/kuriamyg</strong>
+        </div>
+      </a>
     </div>
-    <div class="ai-pricing reveal">
-      <div class="ai-price-item">
-        <h4>One-time integration fee</h4>
-        <div class="ai-price-val">KSh 15,000 – 35,000</div>
-        <div class="ai-price-note">Depends on number of AI features and complexity</div>
-      </div>
-      <div class="ai-price-item">
-        <h4>Monthly AI API usage</h4>
-        <div class="ai-price-val">KSh 2,000 – 8,000/mo</div>
-        <div class="ai-price-note">Based on your site traffic and usage volume</div>
-      </div>
-      <div class="ai-price-item">
-        <h4>Ongoing maintenance</h4>
-        <div class="ai-price-val">Included</div>
-        <div class="ai-price-note">Covered within your monthly hosting plan</div>
-      </div>
+    <div class="reveal d4" style="margin-top:8px;">
+      <a class="btn-wa-xl wa-link" data-msg="general" href="#" target="_blank" rel="noopener noreferrer">
+        <i class="ti ti-brand-whatsapp" style="font-size:22px;"></i> Message Me on WhatsApp
+      </a>
+      <p class="cta-sub-note">I usually reply within a day or two &nbsp;·&nbsp; Based in Nairobi, Kenya</p>
     </div>
-    <p class="ai-caveat reveal">AI add-on is available on Business Pro and Premium packages only.</p>
   </div>
 </section>
 
 
 <div class="pager">
   <div class="container pager-inner">
-    <a href="process.html" class="pager-btn pager-prev">
+    <a href="skills.html" class="pager-btn pager-prev">
         <i class="ti ti-arrow-left"></i>
-        <span><small>Back</small>Process</span>
-      </a>
-    <a href="faq.html" class="pager-btn pager-next">
-        <span><small>Next</small>FAQ</span>
-        <i class="ti ti-arrow-right"></i>
+        <span><small>Back</small>Skills</span>
       </a>
   </div>
 </div>
@@ -324,9 +272,9 @@
       <div class="footer-logo-wrap">
         <div class="logo">
           <div class="logo-box" style="width:28px;height:28px;font-size:14px;"><i class="ti ti-code"></i></div>
-          Code<span class="logo-accent">Rise</span> Digital
+          Moses <span class="logo-accent">Kuria</span>
         </div>
-        <div class="footer-tagline">Professional Web Development &nbsp;·&nbsp; Nairobi, Kenya</div>
+        <div class="footer-tagline">Software Engineer &nbsp;·&nbsp; Nairobi, Kenya</div>
       </div>
       <div class="footer-contact">
         <span>
@@ -335,14 +283,13 @@
           <a id="footer-phone-link" href="#" target="_blank" rel="noopener noreferrer">+254 112 786 538</a>
         </span>
         <span>
-          <i class="ti ti-map-pin" style="color:var(--t3);font-size:16px;"></i>
-          Nairobi, Kenya
+          <i class="ti ti-brand-github" style="color:var(--t3);font-size:16px;"></i>
+          <a href="https://github.com/kuriamyg" target="_blank" rel="noopener noreferrer">github.com/kuriamyg</a>
         </span>
       </div>
-      <!-- [SEC-10] Copyright year corrected to 2026 -->
       <div class="footer-copy">
-        <div>&copy; 2026 CodeRise Digital</div>
-        <div>All rights reserved.</div>
+        <div>&copy; 2026 Moses Mwangi Kuria</div>
+        <div>Nairobi, Kenya</div>
       </div>
     </div>
   </div>

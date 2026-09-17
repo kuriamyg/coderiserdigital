@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 
 <!-- ======================================================
-     SECURITY HARDENING — CodeRise Digital
+     SECURITY HARDENING — Moses Mwangi Kuria
      Applied: May 2026
      Standard: OWASP Top 10 · CSP L2 · RFC 9116
      ======================================================
@@ -56,8 +56,8 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodeRise Digital — Professional Web Development in Nairobi</title>
-<meta name="description" content="Professional web development studio in Nairobi. Custom websites built from scratch — no templates, no shortcuts. Packages from KSh 8,000. First 5 clients get a FREE domain.">
+<title>Moses Mwangi Kuria — Software Engineer</title>
+<meta name="description" content="Software engineer in Nairobi, Kenya, building fintech systems, security-first engineering practices, and practical tools. See PesaFlow, TrustGiving, and other work.">
 <link rel="canonical" href="https://kuriamyg.github.io/coderiserdigital">
 
 <!-- Favicons + PWA manifest -->
@@ -68,43 +68,40 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0A0A0D">
 
-<meta property="og:title" content="CodeRise Digital — No Templates. No Shortcuts.">
-<meta property="og:description" content="We build professional websites for real businesses. Packages from KSh 8,000 — landing pages to full e-commerce. First 5 clients get a free domain!">
+<meta property="og:title" content="Moses Mwangi Kuria — Software Engineer">
+<meta property="og:description" content="Full-stack engineering where money, trust, or risk are involved. A live Kenya-first budgeting app, a church finance system with audit-grade integrity, and more.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kuriamyg.github.io/coderiserdigital">
 <meta property="og:image" content="https://kuriamyg.github.io/coderiserdigital/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="CodeRise Digital — No Templates. No Shortcuts. Web development studio in Nairobi, Kenya.">
+<meta property="og:image:alt" content="Moses Mwangi Kuria — Software Engineer, Nairobi, Kenya.">
 <meta property="og:locale" content="en_KE">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CodeRise Digital — No Templates. No Shortcuts.">
-<meta name="twitter:description" content="We build professional websites for real businesses. Packages from KSh 8,000 — landing pages to full e-commerce. First 5 clients get a free domain!">
+<meta name="twitter:title" content="Moses Mwangi Kuria — Software Engineer">
+<meta name="twitter:description" content="Full-stack engineering where money, trust, or risk are involved. A live Kenya-first budgeting app, a church finance system with audit-grade integrity, and more.">
 <meta name="twitter:image" content="https://kuriamyg.github.io/coderiserdigital/assets/og-image.png">
 
-<!-- JSON-LD structured data — helps Google surface this as a local business
-     (name, service area, contact) directly in search results. -->
+<!-- JSON-LD structured data — helps Google surface this as a person/professional
+     profile (name, role, skills) directly in search results. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "CodeRise Digital",
-  "description": "Web development studio in Nairobi, Kenya building custom websites from scratch — no templates, no shortcuts.",
+  "@type": "Person",
+  "name": "Moses Mwangi Kuria",
+  "jobTitle": "Software Engineer",
+  "description": "Full-stack software engineer based in Nairobi, Kenya, building fintech systems, security-first engineering practices, and practical tools.",
   "url": "https://kuriamyg.github.io/coderiserdigital",
   "image": "https://kuriamyg.github.io/coderiserdigital/assets/og-image.png",
-  "logo": "https://kuriamyg.github.io/coderiserdigital/apple-touch-icon.png",
-  "telephone": "+254112786538",
-  "priceRange": "KSh 8,000 - KSh 50,000",
+  "sameAs": ["https://github.com/kuriamyg"],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Nairobi",
     "addressCountry": "KE"
   },
-  "areaServed": "KE",
-  "makesOffer": [
-    { "@type": "Offer", "name": "Starter Package", "price": "8000", "priceCurrency": "KES" },
-    { "@type": "Offer", "name": "Business Pro Package", "price": "22000", "priceCurrency": "KES" },
-    { "@type": "Offer", "name": "Premium Package", "price": "50000", "priceCurrency": "KES" }
+  "knowsAbout": [
+    "Next.js", "React", "TypeScript", "NestJS", "Prisma", "PostgreSQL",
+    "Django", "Fintech engineering", "Application security", "Claude API integration"
   ]
 }
 </script>
@@ -139,7 +136,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-WL5VTD16VB', {
-    page_title: 'CodeRise Digital — No Templates. No Shortcuts.',
+    page_title: 'Moses Mwangi Kuria — Software Engineer',
     page_location: window.location.href,
     // [SEC] Anonymise IP — GDPR + Kenya DPA 2019 compliance
     anonymize_ip: true,
@@ -192,14 +189,16 @@
     <div class="nav-inner">
       <a href="index.html" class="logo">
         <div class="logo-box"><i class="ti ti-code"></i></div>
-        Code<span class="logo-accent">Rise</span> Digital
+        Moses <span class="logo-accent">Kuria</span>
       </a>
       <div class="nav-right">
-        <span class="badge-live">Accepting Clients</span>
+        <a href="https://github.com/kuriamyg" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding:9px 11px;" aria-label="GitHub">
+          <i class="ti ti-brand-github"></i>
+        </a>
         <!-- [SEC-4] rel="noopener noreferrer" — prevents reverse tabnapping via window.opener -->
         <!-- [SEC-5] href assembled by JS at runtime — phone not hardcoded in DOM (see script.js) -->
         <a id="nav-wa-btn" href="#" class="btn btn-wa" target="_blank" rel="noopener noreferrer">
-          <i class="ti ti-brand-whatsapp"></i> Chat With Us
+          <i class="ti ti-brand-whatsapp"></i> Message Me
         </a>
       </div>
     </div>
@@ -211,10 +210,10 @@
   <div class="container">
     <div class="page-nav-inner">
       <a href="index.html" class="page-nav-link" data-page="home">Home</a>
-      <a href="packages.html" class="page-nav-link" data-page="packages">Packages</a>
-      <a href="process.html" class="page-nav-link" data-page="process">Process</a>
-      <a href="ai.html" class="page-nav-link" data-page="ai">AI Add-ons</a>
-      <a href="faq.html" class="page-nav-link" data-page="faq">FAQ</a>
+      <a href="projects.html" class="page-nav-link" data-page="projects">Projects</a>
+      <a href="about.html" class="page-nav-link" data-page="about">About</a>
+      <a href="skills.html" class="page-nav-link" data-page="skills">Skills</a>
+      <a href="contact.html" class="page-nav-link" data-page="contact">Contact</a>
     </div>
   </div>
 </div>
@@ -224,11 +223,11 @@
 <div class="trust-bar">
   <div class="container">
     <div class="trust-inner">
-      <span class="trust-item"><i class="ti ti-check"></i> 10+ sites delivered</span>
-      <span class="trust-item"><i class="ti ti-check"></i> Built from scratch — zero templates</span>
-      <span class="trust-item"><i class="ti ti-check"></i> On-time delivery, every time</span>
-      <span class="trust-item"><i class="ti ti-check"></i> Nairobi-based studio</span>
-      <span class="trust-item"><i class="ti ti-check"></i> You own your website 100%</span>
+      <span class="trust-item"><i class="ti ti-check"></i> Live production app (PesaFlow)</span>
+      <span class="trust-item"><i class="ti ti-check"></i> Security-first engineering</span>
+      <span class="trust-item"><i class="ti ti-check"></i> Decimal-precision fintech systems</span>
+      <span class="trust-item"><i class="ti ti-check"></i> Nairobi, Kenya</span>
+      <span class="trust-item"><i class="ti ti-check"></i> Open source on GitHub</span>
     </div>
   </div>
 </div>
@@ -239,44 +238,43 @@
   <div class="hero-glow"></div>
   <div class="container">
     <div class="hero-content">
-      <span class="eyebrow blue reveal">Web Development Studio — Nairobi, Kenya</span>
+      <span class="eyebrow blue reveal">Software Engineer — Nairobi, Kenya</span>
       <h1 class="reveal d1">
-        No Templates. No Shortcuts.<br>
-        <em>Just Clean Websites Built for Your Business.</em>
+        Hi, I'm Moses.<br>
+        <em>I build software that handles real money and real risk.</em>
       </h1>
       <p class="hero-sub reveal d2">
-        We engineer every website from the ground up — structured, fast, and built to grow with your business.
-        Whether you need a sharp landing page or a full e-commerce platform, we build it properly.
-        Delivered on time. No excuses.
+        Fintech systems, security-first engineering, and practical tools — from a live
+        Kenya-first budgeting app to a church finance system built with audit-grade
+        integrity. I care about correctness where it actually matters.
       </p>
       <div class="hero-btns reveal d3">
+        <a href="projects.html" class="btn btn-blue" style="font-size:15px;padding:15px 30px;">
+          <i class="ti ti-layout-grid"></i> View My Work
+        </a>
         <!-- [SEC-4] rel="noopener noreferrer" on all external links -->
         <!-- [SEC-5] href set by JS — wa-link class used as hook -->
-        <!-- [SEC-13] Pre-fill text minimised — no package details in URL -->
-        <a class="btn btn-wa wa-link" data-msg="general" href="#" target="_blank" rel="noopener noreferrer"
-           style="font-size:15px;padding:15px 30px;">
-          <i class="ti ti-brand-whatsapp" style="font-size:19px;"></i> Start on WhatsApp
-        </a>
-        <a href="packages.html" class="btn btn-ghost" style="font-size:15px;padding:15px 26px;">
-          <i class="ti ti-layout-grid"></i> See Packages
+        <a class="btn btn-ghost wa-link" data-msg="general" href="#" target="_blank" rel="noopener noreferrer"
+           style="font-size:15px;padding:15px 26px;">
+          <i class="ti ti-brand-whatsapp"></i> Get in Touch
         </a>
       </div>
       <div class="hero-stats reveal d4">
         <div class="stat-item">
-          <div class="stat-num">3</div>
-          <div class="stat-label">Day minimum delivery</div>
+          <div class="stat-num">1</div>
+          <div class="stat-label">Live fintech app in production</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">10+</div>
-          <div class="stat-label">Websites delivered</div>
+          <div class="stat-num">23</div>
+          <div class="stat-label">Models in PesaFlow's schema</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Client site ownership</div>
+          <div class="stat-num">16</div>
+          <div class="stat-label">Layers in my security framework</div>
         </div>
         <div class="stat-item">
           <div class="stat-num">0</div>
-          <div class="stat-label">Templates ever used</div>
+          <div class="stat-label">Floats used for money, ever</div>
         </div>
       </div>
     </div>
@@ -287,8 +285,8 @@
 <div class="pager">
   <div class="container pager-inner">
     <div class="pager-empty"></div>
-    <a href="packages.html" class="pager-btn pager-next">
-        <span><small>Next</small>Packages</span>
+    <a href="projects.html" class="pager-btn pager-next">
+        <span><small>Next</small>Projects</span>
         <i class="ti ti-arrow-right"></i>
       </a>
   </div>
@@ -301,9 +299,9 @@
       <div class="footer-logo-wrap">
         <div class="logo">
           <div class="logo-box" style="width:28px;height:28px;font-size:14px;"><i class="ti ti-code"></i></div>
-          Code<span class="logo-accent">Rise</span> Digital
+          Moses <span class="logo-accent">Kuria</span>
         </div>
-        <div class="footer-tagline">Professional Web Development &nbsp;·&nbsp; Nairobi, Kenya</div>
+        <div class="footer-tagline">Software Engineer &nbsp;·&nbsp; Nairobi, Kenya</div>
       </div>
       <div class="footer-contact">
         <span>
@@ -312,14 +310,13 @@
           <a id="footer-phone-link" href="#" target="_blank" rel="noopener noreferrer">+254 112 786 538</a>
         </span>
         <span>
-          <i class="ti ti-map-pin" style="color:var(--t3);font-size:16px;"></i>
-          Nairobi, Kenya
+          <i class="ti ti-brand-github" style="color:var(--t3);font-size:16px;"></i>
+          <a href="https://github.com/kuriamyg" target="_blank" rel="noopener noreferrer">github.com/kuriamyg</a>
         </span>
       </div>
-      <!-- [SEC-10] Copyright year corrected to 2026 -->
       <div class="footer-copy">
-        <div>&copy; 2026 CodeRise Digital</div>
-        <div>All rights reserved.</div>
+        <div>&copy; 2026 Moses Mwangi Kuria</div>
+        <div>Nairobi, Kenya</div>
       </div>
     </div>
   </div>
