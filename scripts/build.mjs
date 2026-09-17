@@ -56,6 +56,7 @@ for (let i = 0; i < pages.length; i++) {
     .replaceAll('{{CANONICAL}}', page.canonical)
     .replaceAll('{{OG_TITLE}}', escapeHtml(page.ogTitle))
     .replaceAll('{{OG_DESCRIPTION}}', escapeHtml(page.ogDescription))
+    .replaceAll('{{OG_IMAGE}}', page.ogImage)
     .replaceAll('{{PAGE_ID}}', page.id)
     .replace('{{NAV}}', nav)
     .replace('{{CONTENT}}', content)
