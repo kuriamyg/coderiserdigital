@@ -171,13 +171,18 @@
   rel="stylesheet"
   crossorigin="anonymous">
 
-<!-- Tabler Icons v3.34.0 — pinned exact version for supply-chain safety -->
+<!-- Tabler Icons v3.34.0 — pinned exact version for supply-chain safety.
+     [FIX] The hash previously here did not match the real file — it silently
+     blocked this entire stylesheet (and therefore every icon on every page,
+     site-wide) in any browser that enforces SRI. Verified independently via
+     `npm install @tabler/icons-webfont@3.34.0` and hashing the exact file
+     jsdelivr serves for this pinned version, with both openssl and Python's
+     hashlib agreeing. Re-verify the same way (not by hand) if this version
+     number ever changes. -->
 <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.34.0/dist/tabler-icons.min.css"
-  integrity="sha384-PrZDPcIAicxJHAMETnw1iJkLGFePeFjzNKALkCx5VpypIyj+EbrMQPMqjBXvqE7"
+  integrity="sha384-8zE3cHqgn3iJlsilASXr1IcXFP7TnplbXZSbvKuaUYjPUpcK7QhlyLE/cY7lIBTp"
   crossorigin="anonymous">
-<!-- Note: if the SRI hash above fails after a CDN update, regenerate at https://www.srihash.org
-     using the exact URL: https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.34.0/dist/tabler-icons.min.css -->
 
 <link rel="stylesheet" href="styles.css">
 </head>
