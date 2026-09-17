@@ -8,13 +8,9 @@
   var p = ['254', '112', '786', '538'];
   var num = p.join('');
 
-  // [SEC-13] Message map — minimal, no package prices exposed in URL
+  // [SEC-13] Message map — minimal, no personal details exposed in the URL
   var msgs = {
-    general: 'Hi%20CodeRise%20Digital%2C%20I%20visited%20your%20site%20and%20I%27m%20interested.%20Can%20we%20talk%3F',
-    starter:  'Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Starter%20package.%20Can%20we%20talk%3F',
-    pro:      'Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20Business%20Pro.%20Can%20we%20talk%3F',
-    premium:  'Hi%20CodeRise%20Digital%2C%20I%27m%20interested%20in%20the%20Premium%20package.%20Can%20we%20talk%3F',
-    domain:   'Hi%20CodeRise%20Digital%2C%20I%20want%20to%20claim%20a%20free%20domain%20slot.%20Can%20we%20talk%3F'
+    general: 'Hi%20Moses%2C%20I%20saw%20your%20portfolio%20and%20I%27d%20like%20to%20talk.'
   };
 
   // Wire up all WhatsApp links
@@ -74,23 +70,4 @@ var observer = new IntersectionObserver(function(entries) {
 }, { threshold: 0.1, rootMargin: '0px 0px -44px 0px' });
 document.querySelectorAll('.reveal').forEach(function(el) {
   observer.observe(el);
-});
-
-// ══════════════════════════════════════════════════════════════
-// FAQ ACCORDION
-// ══════════════════════════════════════════════════════════════
-document.querySelectorAll('.faq-q').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var item = btn.parentElement;
-    var answer = item.querySelector('.faq-a');
-    var isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(function(openItem) {
-      openItem.classList.remove('open');
-      openItem.querySelector('.faq-a').style.maxHeight = '0';
-    });
-    if (!isOpen) {
-      item.classList.add('open');
-      answer.style.maxHeight = answer.scrollHeight + 'px';
-    }
-  });
 });

@@ -1,0 +1,101 @@
+<!-- ======== HOW I WORK ======== -->
+<section class="alt-bg">
+  <div class="container">
+    <span class="eyebrow reveal">How I work</span>
+    <h2 class="reveal d1">Understand it. Build it right. Ship it.</h2>
+    <div class="process-grid">
+      <div class="process-card reveal d1">
+        <div class="process-num">01</div>
+        <h3>Understand the Real Problem</h3>
+        <p>Before writing code I map out the actual workflow — for PesaFlow that meant understanding how Kenyans really receive and spend M-Pesa money before designing a single database table.</p>
+      </div>
+      <div class="process-card reveal d2">
+        <div class="process-num">02</div>
+        <h3>Correctness First</h3>
+        <p>Money bugs are correctness bugs. I model currency as fixed-point Decimal, write validation before features, and add automated tests before anything that touches finances ships.</p>
+      </div>
+      <div class="process-card reveal d3">
+        <div class="process-num">03</div>
+        <h3>Ship, Then Iterate</h3>
+        <p>I favor small, deployed, working versions over big-bang rewrites. I keep a running log of what's actually shipped versus what's claimed — and correct the record when they drift.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== ENGINEERING PRACTICES ======== -->
+<section>
+  <div class="container">
+    <span class="eyebrow blue reveal">Hardened by default</span>
+    <h2 class="reveal d1">Practices I Don't Compromise On</h2>
+    <p class="security-intro reveal d2">
+      I maintain a personal security-hardening standard, aligned with OWASP Top 10, that I
+      run at the start of every serious project — not because a client asked, but because
+      it's how I think software should be built.
+    </p>
+    <div class="security-grid">
+      <div class="sec-item reveal d1">
+        <div class="sec-icon"><i class="ti ti-coin"></i></div>
+        <div>
+          <h4>Decimal Money, Never Float</h4>
+          <p>Every amount in a financial system I build is a fixed-point Decimal. Floats drift, and drift in money is a bug, not a rounding error.</p>
+        </div>
+      </div>
+      <div class="sec-item reveal d2">
+        <div class="sec-icon"><i class="ti ti-history"></i></div>
+        <div>
+          <h4>Append-Only Audit Logs</h4>
+          <p>Where a record of what happened matters, the audit log is enforced append-only at the database grant level — not just in application code that could be bypassed.</p>
+        </div>
+      </div>
+      <div class="sec-item reveal d3">
+        <div class="sec-icon"><i class="ti ti-shield-check"></i></div>
+        <div>
+          <h4>Server-Side Role Verification</h4>
+          <p>A user's role is re-checked from the database on every authenticated request. A token claim is never trusted on its own.</p>
+        </div>
+      </div>
+      <div class="sec-item reveal d1">
+        <div class="sec-icon"><i class="ti ti-shield"></i></div>
+        <div>
+          <h4>Input Validation &amp; Sanitisation</h4>
+          <p>Every input is validated with a schema (Zod) and sanitised before use — blocking injection and XSS at the source, not after the fact.</p>
+        </div>
+      </div>
+      <div class="sec-item reveal d2">
+        <div class="sec-icon"><i class="ti ti-code"></i></div>
+        <div>
+          <h4>CSP &amp; Security Headers</h4>
+          <p>A strict Content Security Policy and subresource integrity hashes on every external script — not just SSL and a privacy policy.</p>
+        </div>
+      </div>
+      <div class="sec-item reveal d3">
+        <div class="sec-icon"><i class="ti ti-robot"></i></div>
+        <div>
+          <h4>Rate Limiting</h4>
+          <p>Forms and auth endpoints are rate-limited by default — stops credential stuffing and spam before it becomes a problem.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== ABOUT ME ======== -->
+<section class="alt-bg">
+  <div class="container" style="text-align:center;">
+    <span class="eyebrow reveal">About me</span>
+    <h2 class="reveal d1">Software engineer based in Nairobi, Kenya.</h2>
+    <div class="cred-box reveal d2">
+      <h3>Moses Mwangi Kuria</h3>
+      <p>I build full-stack systems — mostly where money, trust, or risk are involved. That's meant a Kenya-first budgeting app that parses M-Pesa transactions and never lets a shilling round wrong, a church finance system with database-enforced audit trails and two-person cash controls, and a security-hardening framework I run at the start of every serious project.</p>
+      <p>I'm not chasing novelty for its own sake. I'd rather ship a smaller thing that's actually correct than a bigger thing that only looks finished.</p>
+      <div class="sample-offer">
+        <i class="ti ti-message-circle"></i>
+        <div>
+          <h4>Want to work together?</h4>
+          <p>I'm open to freelance projects, collaboration, and interesting engineering problems — particularly fintech, security, or anything that needs real operational rigor. See the <a href="contact.html" style="color:var(--blue);">contact page</a> to reach out.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

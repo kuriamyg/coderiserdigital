@@ -1,48 +1,32 @@
-# Coderiser Digital
+# Moses Mwangi Kuria — Software Engineer
 
-A modern web development studio portfolio and promotional website.
+Personal portfolio site. Live at [kuriamyg.github.io/coderiserdigital](https://kuriamyg.github.io/coderiserdigital).
 
 ## About
 
-Coderiser Digital is a web development studio dedicated to creating exceptional digital experiences. We specialize in building responsive, user-friendly websites and web applications that help businesses establish a strong online presence.
+Full-stack software engineer based in Nairobi, Kenya. I build systems where money, trust,
+or risk are involved — a Kenya-first budgeting app that parses M-Pesa transactions, a
+church finance system with database-enforced audit trails, and a security-hardening
+framework I run at the start of every serious project.
 
-## 🎯 Our Services
-
-- **Web Design** - Beautiful, responsive website designs tailored to your brand
-- **Web Development** - Full-stack development using modern technologies and best practices
-- **UI/UX Design** - User-centered design that enhances engagement and conversion
-- **Front-End Development** - Interactive and dynamic user interfaces
-- **Back-End Development** - Robust server-side solutions and databases
-- **Website Optimization** - Performance enhancement and SEO optimization
-
-## 🚀 What We Offer
-
-At Coderiser Digital, we transform your ideas into reality through:
-
-- **Custom Solutions** - Every project is unique and deserves a tailored approach
-- **Modern Technologies** - We use cutting-edge tools and frameworks
-- **Responsive Design** - All websites are mobile-first and work seamlessly across devices
-- **Quality Assurance** - Thorough testing ensures reliability and performance
-- **Client Support** - Ongoing maintenance and support after launch
-
-## 💼 Portfolio Highlights
-
-This website showcases our work, expertise, and commitment to excellence in web development. Explore our projects to see how we've helped clients achieve their digital goals.
+See the [Projects page](https://kuriamyg.github.io/coderiserdigital/projects.html) for
+what I've actually built, and [Skills](https://kuriamyg.github.io/coderiserdigital/skills.html)
+for the stack behind it.
 
 ## 🛠️ Technologies
 
-This website is built with:
+This site itself is built with:
 - **HTML5** - Semantic and accessible markup
 - **CSS3** - Modern styling and responsive layouts
-- **JavaScript** - Interactive features and enhanced user experience
+- **JavaScript** - Interactive features (WhatsApp link wiring, scroll reveal)
 
 ## 📄 Site structure
 
-The site is five static pages, each with its own URL and its own title/description/OG
-tags for sharing: **Home** (`index.html`), **Packages** (`packages.html`), **Process**
-(`process.html`), **AI Add-ons** (`ai.html`), and **FAQ** (`faq.html`). A persistent
-nav bar links directly to any page, and Next/Back links at the bottom of each page
-step through them in order.
+Five static pages, each with its own URL and its own title/description/OG tags for
+sharing: **Home** (`index.html`), **Projects** (`projects.html`), **About**
+(`about.html`), **Skills** (`skills.html`), and **Contact** (`contact.html`). A
+persistent nav bar links directly to any page, and Next/Back links at the bottom of
+each page step through them in order.
 
 The published `.html` files at the repo root are generated — never hand-edit them.
 Edit the source instead:
@@ -54,7 +38,7 @@ src/partials/footer.html footer (identical on every page)
 src/pages/*.html         each page's own content
 src/pages.config.mjs     per-page title/description/OG tags, and page order
 styles.css               shared styles
-script.js                shared behaviour (WhatsApp links, FAQ accordion, etc.)
+script.js                shared behaviour (WhatsApp link wiring, scroll reveal)
 ```
 
 After editing, regenerate the published pages:
@@ -67,21 +51,6 @@ CI runs this same build and fails if the committed `.html` files don't match its
 output — so `npm run build` (and committing what it produces) is required before
 pushing a content change, not optional.
 
-## 📞 Get in Touch
-
-Interested in working with Coderiser Digital? We'd love to hear about your project!
-
-- **Website**: [Visit our site](https://kuriamyg.github.io/coderiserdigital)
-- **Email**: [kuriam177@gmail.com](mailto:kuriam177@gmail.com)
-
-## 📋 Project Goals
-
-- Deliver high-quality web solutions
-- Create memorable user experiences
-- Build long-term partnerships with clients
-- Stay current with web development trends
-- Provide exceptional customer service
-
 ## ✅ Development
 
 ```
@@ -93,14 +62,10 @@ npm run lint    # validates page markup, manifest.json and JSON-LD
 CI runs `npm run verify-build` (rebuilds and fails if the committed pages don't match
 the output) and `npm run lint` on every push and pull request.
 
-## 🤝 Contributing
+## 📞 Get in Touch
 
-If you're interested in collaborating or have feedback about our work, please reach out to us directly.
+Open to freelance projects, collaboration, and interesting engineering problems.
 
-## 📝 License
-
-All content and code on this website is the intellectual property of Coderiser Digital.
-
----
-
-**Coderiser Digital** - Transforming ideas into digital excellence. 🚀
+- **Email**: [kuriam177@gmail.com](mailto:kuriam177@gmail.com)
+- **GitHub**: [github.com/kuriamyg](https://github.com/kuriamyg)
+- Or see the [Contact page](https://kuriamyg.github.io/coderiserdigital/contact.html) for WhatsApp.

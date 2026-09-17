@@ -1,6 +1,6 @@
 import { readFileSync, existsSync } from 'node:fs';
 
-const PAGES = ['index.html', 'packages.html', 'process.html', 'ai.html', 'faq.html'];
+const PAGES = ['index.html', 'projects.html', 'about.html', 'skills.html', 'contact.html'];
 
 let failed = false;
 

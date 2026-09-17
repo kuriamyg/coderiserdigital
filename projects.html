@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 
 <!-- ======================================================
-     SECURITY HARDENING — CodeRise Digital
+     SECURITY HARDENING — Moses Mwangi Kuria
      Applied: May 2026
      Standard: OWASP Top 10 · CSP L2 · RFC 9116
      ======================================================
@@ -56,9 +56,9 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Process &amp; Security — CodeRise Digital</title>
-<meta name="description" content="How we build your website: brief, build, launch — plus the security practices every CodeRise Digital project gets by default.">
-<link rel="canonical" href="https://kuriamyg.github.io/coderiserdigital/process.html">
+<title>Projects — Moses Mwangi Kuria</title>
+<meta name="description" content="PesaFlow (a live Kenya-first budgeting app), TrustGiving (a church finance system with audit-grade integrity), a trading expectancy journal, and other work.">
+<link rel="canonical" href="https://kuriamyg.github.io/coderiserdigital/projects.html">
 
 <!-- Favicons + PWA manifest -->
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -68,43 +68,40 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0A0A0D">
 
-<meta property="og:title" content="CodeRise Digital — Our Process &amp; Security">
-<meta property="og:description" content="See exactly how we build your site, and the security standards every project gets by default.">
+<meta property="og:title" content="Projects — Moses Mwangi Kuria">
+<meta property="og:description" content="A live fintech app, a financial system of record, and other things I have built.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://kuriamyg.github.io/coderiserdigital/process.html">
+<meta property="og:url" content="https://kuriamyg.github.io/coderiserdigital/projects.html">
 <meta property="og:image" content="https://kuriamyg.github.io/coderiserdigital/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="CodeRise Digital — No Templates. No Shortcuts. Web development studio in Nairobi, Kenya.">
+<meta property="og:image:alt" content="Moses Mwangi Kuria — Software Engineer, Nairobi, Kenya.">
 <meta property="og:locale" content="en_KE">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="CodeRise Digital — Our Process &amp; Security">
-<meta name="twitter:description" content="See exactly how we build your site, and the security standards every project gets by default.">
+<meta name="twitter:title" content="Projects — Moses Mwangi Kuria">
+<meta name="twitter:description" content="A live fintech app, a financial system of record, and other things I have built.">
 <meta name="twitter:image" content="https://kuriamyg.github.io/coderiserdigital/assets/og-image.png">
 
-<!-- JSON-LD structured data — helps Google surface this as a local business
-     (name, service area, contact) directly in search results. -->
+<!-- JSON-LD structured data — helps Google surface this as a person/professional
+     profile (name, role, skills) directly in search results. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "CodeRise Digital",
-  "description": "Web development studio in Nairobi, Kenya building custom websites from scratch — no templates, no shortcuts.",
+  "@type": "Person",
+  "name": "Moses Mwangi Kuria",
+  "jobTitle": "Software Engineer",
+  "description": "Full-stack software engineer based in Nairobi, Kenya, building fintech systems, security-first engineering practices, and practical tools.",
   "url": "https://kuriamyg.github.io/coderiserdigital",
   "image": "https://kuriamyg.github.io/coderiserdigital/assets/og-image.png",
-  "logo": "https://kuriamyg.github.io/coderiserdigital/apple-touch-icon.png",
-  "telephone": "+254112786538",
-  "priceRange": "KSh 8,000 - KSh 50,000",
+  "sameAs": ["https://github.com/kuriamyg"],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Nairobi",
     "addressCountry": "KE"
   },
-  "areaServed": "KE",
-  "makesOffer": [
-    { "@type": "Offer", "name": "Starter Package", "price": "8000", "priceCurrency": "KES" },
-    { "@type": "Offer", "name": "Business Pro Package", "price": "22000", "priceCurrency": "KES" },
-    { "@type": "Offer", "name": "Premium Package", "price": "50000", "priceCurrency": "KES" }
+  "knowsAbout": [
+    "Next.js", "React", "TypeScript", "NestJS", "Prisma", "PostgreSQL",
+    "Django", "Fintech engineering", "Application security", "Claude API integration"
   ]
 }
 </script>
@@ -139,7 +136,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-WL5VTD16VB', {
-    page_title: 'CodeRise Digital — Our Process &amp; Security',
+    page_title: 'Projects — Moses Mwangi Kuria',
     page_location: window.location.href,
     // [SEC] Anonymise IP — GDPR + Kenya DPA 2019 compliance
     anonymize_ip: true,
@@ -184,7 +181,7 @@
 
 <link rel="stylesheet" href="styles.css">
 </head>
-<body data-page="process">
+<body data-page="projects">
 
 <!-- ======== NAV ======== -->
 <nav>
@@ -192,14 +189,16 @@
     <div class="nav-inner">
       <a href="index.html" class="logo">
         <div class="logo-box"><i class="ti ti-code"></i></div>
-        Code<span class="logo-accent">Rise</span> Digital
+        Moses <span class="logo-accent">Kuria</span>
       </a>
       <div class="nav-right">
-        <span class="badge-live">Accepting Clients</span>
+        <a href="https://github.com/kuriamyg" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="padding:9px 11px;" aria-label="GitHub">
+          <i class="ti ti-brand-github"></i>
+        </a>
         <!-- [SEC-4] rel="noopener noreferrer" — prevents reverse tabnapping via window.opener -->
         <!-- [SEC-5] href assembled by JS at runtime — phone not hardcoded in DOM (see script.js) -->
         <a id="nav-wa-btn" href="#" class="btn btn-wa" target="_blank" rel="noopener noreferrer">
-          <i class="ti ti-brand-whatsapp"></i> Chat With Us
+          <i class="ti ti-brand-whatsapp"></i> Message Me
         </a>
       </div>
     </div>
@@ -211,127 +210,118 @@
   <div class="container">
     <div class="page-nav-inner">
       <a href="index.html" class="page-nav-link" data-page="home">Home</a>
-      <a href="packages.html" class="page-nav-link" data-page="packages">Packages</a>
-      <a href="process.html" class="page-nav-link" data-page="process">Process</a>
-      <a href="ai.html" class="page-nav-link" data-page="ai">AI Add-ons</a>
-      <a href="faq.html" class="page-nav-link" data-page="faq">FAQ</a>
+      <a href="projects.html" class="page-nav-link" data-page="projects">Projects</a>
+      <a href="about.html" class="page-nav-link" data-page="about">About</a>
+      <a href="skills.html" class="page-nav-link" data-page="skills">Skills</a>
+      <a href="contact.html" class="page-nav-link" data-page="contact">Contact</a>
     </div>
   </div>
 </div>
 
 
-<!-- ======== PROCESS ======== -->
-<section class="alt-bg">
+<!-- ======== PROJECTS ======== -->
+<section id="projects">
   <div class="container">
-    <span class="eyebrow reveal">How it works</span>
-    <h2 class="reveal d1">Simple. Transparent. Delivered.</h2>
-    <div class="process-grid">
-      <div class="process-card reveal d1">
-        <div class="process-num">01</div>
-        <h3>You Brief Us</h3>
-        <p>Tell us what you need via WhatsApp — no long forms or confusing questionnaires. Just a direct chat. We ask the right questions to fully understand your business and what you want your website to achieve.</p>
-      </div>
-      <div class="process-card reveal d2">
-        <div class="process-num">02</div>
-        <h3>We Build It</h3>
-        <p>We write every line of code from scratch — your brand identity, your content, your vision. We update you as we build, and send you a live preview to review before anything goes public.</p>
-      </div>
-      <div class="process-card reveal d3">
-        <div class="process-num">03</div>
-        <h3>You Go Live</h3>
-        <p>We deploy it, stress-test it on every device and screen size, then hand you a site that works. You receive all your files, login credentials, and a personal walkthrough of everything.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======== SECURITY ======== -->
-<section>
-  <div class="container">
-    <span class="eyebrow blue reveal">Hardened by design</span>
-    <h2 class="reveal d1">Security We Don't Compromise On</h2>
-    <p class="security-intro reveal d2">
-      Every website we build is treated like a vault. We layer multiple advanced security mechanisms so your business,
-      your data, and your customers are protected from malicious attacks — and we guarantee zero-shortcut
-      security implementation on every project.
+    <span class="eyebrow reveal">Selected work</span>
+    <h2 class="reveal d1">Things I've built.</h2>
+    <p style="color:var(--t2);font-size:14.5px;max-width:580px;margin-top:10px;line-height:1.75;" class="reveal d2">
+      A mix of production systems, client work, and personal tools — mostly where money,
+      trust, or risk are involved.
     </p>
-    <div class="security-grid">
-      <div class="sec-item reveal d1">
-        <div class="sec-icon"><i class="ti ti-lock"></i></div>
-        <div>
-          <h4>SSL / HTTPS Encryption</h4>
-          <p>All data between your site and visitors is fully encrypted in transit — no unprotected connections, ever.</p>
-        </div>
-      </div>
-      <div class="sec-item reveal d2">
-        <div class="sec-icon"><i class="ti ti-shield"></i></div>
-        <div>
-          <h4>Input Sanitization</h4>
-          <p>Every form input is rigorously sanitized to block SQL injection and cross-site scripting (XSS) attacks at source.</p>
-        </div>
-      </div>
-      <div class="sec-item reveal d3">
-        <div class="sec-icon"><i class="ti ti-cloud"></i></div>
-        <div>
-          <h4>DDoS Protection</h4>
-          <p>Your site runs behind Cloudflare's global edge network — built to absorb and neutralize DDoS attacks automatically.</p>
-        </div>
-      </div>
-      <div class="sec-item reveal d1">
-        <div class="sec-icon"><i class="ti ti-code"></i></div>
-        <div>
-          <h4>Content Security Policy (CSP)</h4>
-          <p>We configure strict CSP headers that block any unauthorized or injected scripts from running on your site.</p>
-        </div>
-      </div>
-      <div class="sec-item reveal d2">
-        <div class="sec-icon"><i class="ti ti-robot"></i></div>
-        <div>
-          <h4>Rate Limiting</h4>
-          <p>All forms and login pages are rate-limited — stops spam bots, credential stuffing, and brute-force attempts cold.</p>
-        </div>
-      </div>
-      <div class="sec-item reveal d3">
-        <div class="sec-icon"><i class="ti ti-credit-card"></i></div>
-        <div>
-          <h4>Secure Payment Handling</h4>
-          <p>No card data ever touches our servers. Stripe and M-Pesa handle all payment processing in their own secure environments.</p>
-        </div>
-      </div>
-      <div class="sec-item reveal d1">
-        <div class="sec-icon"><i class="ti ti-key"></i></div>
-        <div>
-          <h4>bcrypt Password Encryption</h4>
-          <p>Every password in every login system we build is hashed with bcrypt — never stored as readable plain text.</p>
-        </div>
-      </div>
-      <div class="sec-item reveal d2">
-        <div class="sec-icon"><i class="ti ti-refresh"></i></div>
-        <div>
-          <h4>Dependency Maintenance</h4>
-          <p>We actively maintain all libraries and dependencies — no outdated packages with known vulnerabilities left sitting unpatched.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="pkg-grid">
 
-<!-- ======== CREDIBILITY ======== -->
-<section class="alt-bg">
-  <div class="container" style="text-align:center;">
-    <span class="eyebrow reveal">Straight talk</span>
-    <h2 class="reveal d1">Why Work With a New Studio?</h2>
-    <div class="cred-box reveal d2">
-      <h3>We're a growing studio. Here's what that means for you.</h3>
-      <p>CodeRise Digital is a focused, hungry studio — which means when you work with us, you are not one of hundreds of clients on a waiting list. You get our full attention, you talk directly to the person building your site, and you work with a team that has everything to prove and nothing to hide.</p>
-      <p>We'll be honest: our live portfolio is still growing. Rather than show you screenshots of someone else's work or dress up a template as our own, we believe the most honest thing we can offer is this:</p>
-      <div class="sample-offer">
-        <i class="ti ti-eye"></i>
-        <div>
-          <h4>See the quality before you pay a single shilling.</h4>
-          <p>We will build you a free sample page of your actual website — using your brand, your content, your vision — so you can judge the quality directly before making any commitment. If you're not impressed, you walk away with no cost and no pressure.</p>
+      <!-- PESAFLOW -->
+      <div class="pkg-card featured reveal d1">
+        <div class="pkg-pop-badge">Flagship</div>
+        <div class="pkg-icon"><i class="ti ti-wallet"></i></div>
+        <div class="pkg-name">PesaFlow</div>
+        <div class="pkg-for">Kenya-first personal finance &amp; budgeting app</div>
+        <p class="pkg-desc">
+          A production budgeting app built for how Kenyans actually spend — automatic
+          M-Pesa transaction parsing, categorisation, budgets, debts, savings, and an
+          AI coach. Money is modelled as fixed-point Decimal throughout, never float.
+        </p>
+        <div class="pkg-hosting"><i class="ti ti-server"></i> Live at pesaflow-theta.vercel.app</div>
+        <div class="pkg-features">
+          <div class="feat"><i class="ti ti-check"></i>23-model Postgres schema, money stored as Decimal(14,2)</div>
+          <div class="feat"><i class="ti ti-check"></i>M-Pesa transaction parser with 31 passing tests</div>
+          <div class="feat"><i class="ti ti-check"></i>AI coach powered by the Claude API</div>
+          <div class="feat"><i class="ti ti-check"></i>Budgets, debts, savings, and wealth tracking in one dashboard</div>
+          <div class="feat"><i class="ti ti-check"></i>Mobile-first — built for a market where the phone is the computer</div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a class="btn btn-blue" href="https://pesaflow-theta.vercel.app" target="_blank" rel="noopener noreferrer" style="flex:1;justify-content:center;padding:14px;font-size:14px;">
+            <i class="ti ti-external-link"></i> View Live App
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/kuriamyg/pesaflow" target="_blank" rel="noopener noreferrer" style="flex:1;justify-content:center;padding:14px;font-size:14px;">
+            <i class="ti ti-brand-github"></i> View Code
+          </a>
         </div>
       </div>
+
+      <!-- TRUSTGIVING -->
+      <div class="pkg-card reveal d2">
+        <div class="pkg-icon"><i class="ti ti-building-bank"></i></div>
+        <div class="pkg-name">TrustGiving</div>
+        <div class="pkg-for">Financial system of record for a church</div>
+        <p class="pkg-desc">
+          Built with the rigor of software that handles other people's money — an
+          append-only audit log enforced at the database grant level, a two-person
+          rule required for every cash transaction, and Postgres-native uniqueness
+          for membership numbers and envelope codes.
+        </p>
+        <div class="pkg-hosting" style="color:var(--t2);"><i class="ti ti-lock"></i> Private client project — code not publicly shared</div>
+        <div class="pkg-features">
+          <div class="feat"><i class="ti ti-check"></i>Append-only audit log — the app's database role cannot UPDATE or DELETE it</div>
+          <div class="feat"><i class="ti ti-check"></i>Two-person cash confirmation, enforced at both the API and the database</div>
+          <div class="feat"><i class="ti ti-check"></i>Atomic uniqueness via Postgres sequences, not application-level checks</div>
+          <div class="feat"><i class="ti ti-check"></i>User roles re-verified server-side on every request, never trusted from a token</div>
+        </div>
+      </div>
+
+      <!-- TRADE EXPECTANCY JOURNAL -->
+      <div class="pkg-card reveal d3">
+        <div class="pkg-icon gold"><i class="ti ti-chart-line"></i></div>
+        <div class="pkg-name">Trade Expectancy Journal</div>
+        <div class="pkg-for">Self-contained trading risk calculator</div>
+        <p class="pkg-desc">
+          A standalone HTML tool for tracking manual forex and gold trades against a
+          fixed-risk, fixed-R:R model, with live win-rate and expectancy (EV)
+          calculation. No install, no server, no dependencies.
+        </p>
+        <div class="pkg-hosting"><i class="ti ti-server"></i> Zero dependencies — runs entirely in the browser</div>
+        <div class="pkg-features">
+          <div class="feat"><i class="ti ti-check"></i>Live expectancy calculation: EV = (Win% × AvgWin) − (Loss% × AvgLoss)</div>
+          <div class="feat"><i class="ti ti-check"></i>Trades saved locally per device via localStorage</div>
+          <div class="feat"><i class="ti ti-check"></i>CSV export for further analysis in a spreadsheet</div>
+        </div>
+        <a class="btn btn-outline-gold pkg-btn" href="https://github.com/kuriamyg/trade-expectancy-journal" target="_blank" rel="noopener noreferrer">
+          <i class="ti ti-brand-github"></i> View Code
+        </a>
+      </div>
+
+      <!-- THIS SITE -->
+      <div class="pkg-card reveal d1">
+        <div class="pkg-icon"><i class="ti ti-browser"></i></div>
+        <div class="pkg-name">This Site</div>
+        <div class="pkg-for">Rebuilt from a single-page landing page</div>
+        <p class="pkg-desc">
+          Started as a web-dev-studio landing page. I audited it, fixed a dead
+          analytics pipeline, and restructured it into a multi-page static site with
+          its own CI — HTML validation and Lighthouse on every push, and a small
+          build pipeline that regenerates every page from shared partials.
+        </p>
+        <div class="pkg-hosting"><i class="ti ti-server"></i> Deployed on GitHub Pages</div>
+        <div class="pkg-features">
+          <div class="feat"><i class="ti ti-check"></i>Static-site build pipeline — no framework, no runtime dependencies</div>
+          <div class="feat"><i class="ti ti-check"></i>CI: html-validate + Lighthouse CI on every page, every push</div>
+          <div class="feat"><i class="ti ti-check"></i>Generated pages are drift-checked against source in CI</div>
+        </div>
+        <a class="btn btn-ghost pkg-btn" href="https://github.com/kuriamyg/coderiserdigital" target="_blank" rel="noopener noreferrer">
+          <i class="ti ti-brand-github"></i> View Code
+        </a>
+      </div>
+
     </div>
   </div>
 </section>
@@ -339,12 +329,12 @@
 
 <div class="pager">
   <div class="container pager-inner">
-    <a href="packages.html" class="pager-btn pager-prev">
+    <a href="index.html" class="pager-btn pager-prev">
         <i class="ti ti-arrow-left"></i>
-        <span><small>Back</small>Packages</span>
+        <span><small>Back</small>Home</span>
       </a>
-    <a href="ai.html" class="pager-btn pager-next">
-        <span><small>Next</small>AI Add-ons</span>
+    <a href="about.html" class="pager-btn pager-next">
+        <span><small>Next</small>About</span>
         <i class="ti ti-arrow-right"></i>
       </a>
   </div>
@@ -357,9 +347,9 @@
       <div class="footer-logo-wrap">
         <div class="logo">
           <div class="logo-box" style="width:28px;height:28px;font-size:14px;"><i class="ti ti-code"></i></div>
-          Code<span class="logo-accent">Rise</span> Digital
+          Moses <span class="logo-accent">Kuria</span>
         </div>
-        <div class="footer-tagline">Professional Web Development &nbsp;·&nbsp; Nairobi, Kenya</div>
+        <div class="footer-tagline">Software Engineer &nbsp;·&nbsp; Nairobi, Kenya</div>
       </div>
       <div class="footer-contact">
         <span>
@@ -368,14 +358,13 @@
           <a id="footer-phone-link" href="#" target="_blank" rel="noopener noreferrer">+254 112 786 538</a>
         </span>
         <span>
-          <i class="ti ti-map-pin" style="color:var(--t3);font-size:16px;"></i>
-          Nairobi, Kenya
+          <i class="ti ti-brand-github" style="color:var(--t3);font-size:16px;"></i>
+          <a href="https://github.com/kuriamyg" target="_blank" rel="noopener noreferrer">github.com/kuriamyg</a>
         </span>
       </div>
-      <!-- [SEC-10] Copyright year corrected to 2026 -->
       <div class="footer-copy">
-        <div>&copy; 2026 CodeRise Digital</div>
-        <div>All rights reserved.</div>
+        <div>&copy; 2026 Moses Mwangi Kuria</div>
+        <div>Nairobi, Kenya</div>
       </div>
     </div>
   </div>

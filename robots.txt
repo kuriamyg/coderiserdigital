@@ -1,4 +1,4 @@
-# CodeRise Digital — robots.txt
+# Moses Mwangi Kuria — robots.txt
 # https://kuriamyg.github.io/coderiserdigital
 
 User-agent: *
