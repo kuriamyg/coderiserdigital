@@ -79,26 +79,72 @@
         </a>
       </div>
 
-      <!-- THIS SITE -->
+      <!-- SAFEREPORT -->
       <div class="pkg-card reveal d1">
-        <div class="pkg-icon"><i class="ti ti-browser"></i></div>
-        <div class="pkg-name">This Site</div>
-        <div class="pkg-for">Rebuilt from a single-page landing page</div>
+        <div class="pkg-icon"><i class="ti ti-shield-heart"></i></div>
+        <div class="pkg-name">SafeReport</div>
+        <div class="pkg-for">Anonymous GBV incident reporting platform for Kenya</div>
         <p class="pkg-desc">
-          Started as a web-dev-studio landing page. I audited it, fixed a dead
-          analytics pipeline, and restructured it into a multi-page static site with
-          its own CI — HTML validation and Lighthouse on every push, and a small
-          build pipeline that regenerates every page from shared partials.
+          Lets survivors of gender-based violence report an incident with no account, no
+          name, and no phone number — a unique reference code is the only link back to
+          their case, and a one-tap Safe Exit immediately masks browser history. Staff
+          get a full case-management system with role-based access and audit logging.
         </p>
-        <div class="pkg-hosting"><i class="ti ti-server"></i> Deployed on GitHub Pages</div>
+        <div class="pkg-hosting"><i class="ti ti-server"></i> Live at safereport-mwangi-moses-kuria-s-projects.vercel.app</div>
         <div class="pkg-features">
-          <div class="feat"><i class="ti ti-check"></i>Static-site build pipeline — no framework, no runtime dependencies</div>
-          <div class="feat"><i class="ti ti-check"></i>CI: html-validate + Lighthouse CI on every page, every push</div>
-          <div class="feat"><i class="ti ti-check"></i>Generated pages are drift-checked against source in CI</div>
+          <div class="feat"><i class="ti ti-check"></i>Anonymous reporting with a unique GBV-XXXXXXXX reference code</div>
+          <div class="feat"><i class="ti ti-check"></i>Safe Exit — one click masks browser history mid-session</div>
+          <div class="feat"><i class="ti ti-check"></i>Role-based case management for officers, supervisors, and admins</div>
+          <div class="feat"><i class="ti ti-check"></i>Installable PWA with an offline splash screen</div>
         </div>
-        <a class="btn btn-ghost pkg-btn" href="https://github.com/kuriamyg/coderiserdigital" target="_blank" rel="noopener noreferrer">
-          <i class="ti ti-brand-github"></i> View Code
+        <a class="btn btn-blue pkg-btn" href="https://safereport-mwangi-moses-kuria-s-projects.vercel.app" target="_blank" rel="noopener noreferrer">
+          <i class="ti ti-external-link"></i> View Live App
         </a>
+      </div>
+
+      <!-- JKUAT BIOMETRIC PORTAL -->
+      <div class="pkg-card reveal d2">
+        <div class="pkg-icon"><i class="ti ti-fingerprint"></i></div>
+        <div class="pkg-name">JKUAT Biometric Portal</div>
+        <div class="pkg-for">Passwordless student portal — WebAuthn biometric auth</div>
+        <p class="pkg-desc">
+          Replaces password logins with FIDO2/WebAuthn biometrics — fingerprint, Face ID,
+          or Windows Hello — bound to a physical device, plus fee payments, unit
+          registration, and a RAG-powered assistant that answers questions against the
+          student's own live data. A self-audit of all 80 API routes found and fixed six
+          missing-auth and two IDOR issues before launch.
+        </p>
+        <div class="pkg-hosting"><i class="ti ti-server"></i> Live at jkuat-biometric-portal.vercel.app</div>
+        <div class="pkg-features">
+          <div class="feat"><i class="ti ti-check"></i>Passwordless auth via @simplewebauthn — no passwords stored, ever</div>
+          <div class="feat"><i class="ti ti-check"></i>M-Pesa STK Push fee payments via the Daraja API</div>
+          <div class="feat"><i class="ti ti-check"></i>RAG virtual assistant answering questions against live student data</div>
+          <div class="feat"><i class="ti ti-check"></i>Jest unit tests, Playwright e2e, and Sentry monitoring in production</div>
+        </div>
+        <a class="btn btn-blue pkg-btn" href="https://jkuat-biometric-portal.vercel.app" target="_blank" rel="noopener noreferrer">
+          <i class="ti ti-external-link"></i> View Live App
+        </a>
+      </div>
+
+      <!-- AURUM MACRO -->
+      <div class="pkg-card reveal d3">
+        <div class="pkg-icon gold"><i class="ti ti-chart-candle"></i></div>
+        <div class="pkg-name">Aurum Macro</div>
+        <div class="pkg-for">Automated macro signal engine for XAU/USD</div>
+        <p class="pkg-desc">
+          A scheduled service that scores eight independent macro and options-flow
+          signals — real yields, DXY, VIX, COT positioning, and more — into a daily
+          composite gold bias on a normalised scale, so a verdict means the same thing
+          whether three or eight signals were available. Every call is written to an
+          append-only track record and served over a REST API to a companion execution bot.
+        </p>
+        <div class="pkg-hosting" style="color:var(--t2);"><i class="ti ti-lock"></i> Private repository — Docker + Railway, runs on a daily cron</div>
+        <div class="pkg-features">
+          <div class="feat"><i class="ti ti-check"></i>Eight independent signals scored into a ratio-scale composite bias</div>
+          <div class="feat"><i class="ti ti-check"></i>Append-only public track record — every past call is auditable, none are editable</div>
+          <div class="feat"><i class="ti ti-check"></i>Telegram alerts on every scan and on every bias reversal</div>
+          <div class="feat"><i class="ti ti-check"></i>301 tests passing, ruff and mypy strict clean</div>
+        </div>
       </div>
 
     </div>
