@@ -10,6 +10,7 @@ export const pages = [
     description: 'Software engineer in Nairobi, Kenya, building fintech systems, security-first engineering practices, and practical tools. See PesaFlow, TrustGiving, and other work.',
     ogTitle: 'Moses Mwangi Kuria — Software Engineer',
     ogDescription: 'Full-stack engineering where money, trust, or risk are involved. A live Kenya-first budgeting app, a church finance system with audit-grade integrity, and more.',
+    ogImage: `${SITE}/assets/og-image.png`,
     canonical: SITE,
   },
   {
@@ -21,6 +22,7 @@ export const pages = [
     description: 'PesaFlow (a live Kenya-first budgeting app), TrustGiving (a church finance system with audit-grade integrity), a trading expectancy journal, and other work.',
     ogTitle: 'Projects — Moses Mwangi Kuria',
     ogDescription: 'A live fintech app, a financial system of record, and other things I have built.',
+    ogImage: `${SITE}/assets/og-image-projects.png`,
     canonical: `${SITE}/projects.html`,
   },
   {
@@ -32,6 +34,7 @@ export const pages = [
     description: 'How I build software: understand the real problem first, treat correctness as non-negotiable where money is involved, and ship working versions over big-bang rewrites.',
     ogTitle: 'About — Moses Mwangi Kuria',
     ogDescription: 'Software engineer based in Nairobi, Kenya. How I think about building financial and security-critical systems.',
+    ogImage: `${SITE}/assets/og-image-about.png`,
     canonical: `${SITE}/about.html`,
   },
   {
@@ -43,6 +46,7 @@ export const pages = [
     description: 'Next.js, React, TypeScript, NestJS, Prisma, PostgreSQL, security engineering, AI integration, and more.',
     ogTitle: 'Skills — Moses Mwangi Kuria',
     ogDescription: 'The stack and practices behind the projects — frontend, backend, databases, security, and AI integration.',
+    ogImage: `${SITE}/assets/og-image-skills.png`,
     canonical: `${SITE}/skills.html`,
   },
   {
@@ -54,6 +58,7 @@ export const pages = [
     description: 'Open to freelance projects, collaboration, and interesting engineering problems. Get in touch on WhatsApp, email, or GitHub.',
     ogTitle: 'Contact — Moses Mwangi Kuria',
     ogDescription: "Let's talk — WhatsApp, email, or GitHub.",
+    ogImage: `${SITE}/assets/og-image-contact.png`,
     canonical: `${SITE}/contact.html`,
   },
 ];

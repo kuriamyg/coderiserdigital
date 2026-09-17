@@ -437,6 +437,7 @@ body[data-page="contact"] .page-nav-link[data-page="contact"] {
   border-radius: var(--r-lg); padding: 44px;
   max-width: 740px; margin: 44px auto 0;
 }
+.avatar { border-radius: 20px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(79,142,247,0.25); }
 .cred-box h3 { font-size: 22px; margin-bottom: 16px; }
 .cred-box p { font-size: 14.5px; color: var(--t2); line-height: 1.8; margin-bottom: 16px; }
 .sample-offer {
