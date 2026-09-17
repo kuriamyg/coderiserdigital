@@ -207,6 +207,80 @@ nav {
   transition: color 0.2s, background 0.2s;
 }
 .page-nav-link:hover { color: var(--t1); background: var(--card); }
+
+/* ==============================
+   SOCIAL LINKS
+============================== */
+.social-row {
+  background: var(--bg);
+  border-bottom: 0.5px solid var(--b);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.social-row::-webkit-scrollbar { display: none; }
+.social-row-inner {
+  display: flex;
+  gap: 8px;
+  padding: 10px 0;
+  white-space: nowrap;
+}
+.social-link {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--card);
+  border: 0.5px solid var(--b);
+  color: var(--t2);
+  font-size: 15px;
+  flex-shrink: 0;
+  transition: transform 0.2s, color 0.2s, border-color 0.2s, background 0.2s;
+}
+.social-link:hover {
+  transform: scale(1.12);
+  color: var(--blue);
+  border-color: rgba(79,142,247,0.3);
+}
+.social-link.social-github {
+  width: 38px; height: 38px;
+  font-size: 18px;
+  background: var(--blue-d);
+  color: var(--blue);
+  border-color: rgba(79,142,247,0.25);
+}
+.social-link.social-github:hover {
+  background: var(--blue-d2);
+  transform: scale(1.08);
+}
+
+/* Inline variant — centered, wraps on mobile instead of scrolling (used in page content) */
+.social-row-inline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Footer variant — icon + label pill, wraps on mobile */
+.social-row-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 0.5px solid var(--b);
+  width: 100%;
+}
+.social-link-labeled,
+.social-link-labeled.social-github {
+  width: auto; height: auto;
+  padding: 8px 14px;
+  gap: 8px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 500;
+}
+.social-link-labeled.social-github i { font-size: 15px; }
+.social-link-labeled span { white-space: nowrap; }
 body[data-page="home"] .page-nav-link[data-page="home"],
 body[data-page="projects"] .page-nav-link[data-page="projects"],
 body[data-page="about"] .page-nav-link[data-page="about"],

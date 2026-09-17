@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { pages } from '../src/pages.config.mjs';
+import { socialLinks } from '../src/social-links.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const srcDir = path.join(root, 'src');
@@ -16,6 +17,43 @@ function escapeHtml(str) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+}
+
+function socialLinkAttrs(s) {
+  return s.external ? ' target="_blank" rel="noopener noreferrer"' : '';
+}
+
+function socialIconsHtml(indent) {
+  return socialLinks
+    .map((s) => `<a href="${s.href}" class="social-link${s.id === 'github' ? ' social-github' : ''}" aria-label="${s.ariaLabel}"${socialLinkAttrs(s)}><i class="ti ${s.icon}"></i></a>`)
+    .join(`\n${indent}`);
+}
+
+// Full-bleed scrolling bar — used in the sticky nav header.
+function renderSocialRowNav() {
+  return `<div class="social-row">
+  <div class="container">
+    <div class="social-row-inner">
+      ${socialIconsHtml('      ')}
+    </div>
+  </div>
+</div>`;
+}
+
+// Centered, wraps on mobile — used inline within page content (e.g. Contact).
+function renderSocialRowInline() {
+  return `<div class="social-row-inline">
+      ${socialIconsHtml('      ')}
+    </div>`;
+}
+
+function renderSocialRowFooter() {
+  const items = socialLinks
+    .map((s) => `<a href="${s.href}" class="social-link social-link-labeled${s.id === 'github' ? ' social-github' : ''}" aria-label="${s.ariaLabel}"${socialLinkAttrs(s)}><i class="ti ${s.icon}"></i><span>${s.label}</span></a>`)
+    .join('\n    ');
+  return `<div class="social-row-footer">
+    ${items}
+  </div>`;
 }
 
 function renderPager(index) {
@@ -45,9 +83,16 @@ function renderPager(index) {
 </div>`;
 }
 
+const socialRowNav = renderSocialRowNav();
+const socialRowInline = renderSocialRowInline();
+const socialRowFooter = renderSocialRowFooter();
+const navWithSocial = nav.replaceAll('{{SOCIAL_ROW_NAV}}', socialRowNav);
+const footerWithSocial = footer.replaceAll('{{SOCIAL_ROW_FOOTER}}', socialRowFooter);
+
 for (let i = 0; i < pages.length; i++) {
   const page = pages[i];
-  const content = readFileSync(path.join(srcDir, 'pages', page.source), 'utf8');
+  const content = readFileSync(path.join(srcDir, 'pages', page.source), 'utf8')
+    .replaceAll('{{SOCIAL_ROW_INLINE}}', socialRowInline);
   const pager = renderPager(i);
 
   const html = layout
@@ -58,10 +103,10 @@ for (let i = 0; i < pages.length; i++) {
     .replaceAll('{{OG_DESCRIPTION}}', escapeHtml(page.ogDescription))
     .replaceAll('{{OG_IMAGE}}', page.ogImage)
     .replaceAll('{{PAGE_ID}}', page.id)
-    .replace('{{NAV}}', nav)
+    .replace('{{NAV}}', navWithSocial)
     .replace('{{CONTENT}}', content)
     .replace('{{PAGER}}', pager)
-    .replace('{{FOOTER}}', footer);
+    .replace('{{FOOTER}}', footerWithSocial);
 
   writeFileSync(path.join(root, page.file), html);
   console.log(`built ${page.file}`);
