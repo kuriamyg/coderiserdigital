@@ -434,6 +434,18 @@ body[data-page="contact"] .page-nav-link[data-page="contact"] {
   margin-bottom: 22px; padding-bottom: 22px;
   border-bottom: 0.5px solid var(--b);
 }
+.pkg-overview {
+  margin-bottom: 22px; padding-bottom: 22px;
+  border-bottom: 0.5px solid var(--b);
+}
+.pkg-overview-item {
+  display: flex; align-items: flex-start; gap: 9px;
+  font-size: 13.5px; color: var(--t2);
+  margin-bottom: 10px; line-height: 1.6;
+}
+.pkg-overview-item:last-child { margin-bottom: 0; }
+.pkg-overview-item i { font-size: 13px; color: var(--blue); margin-top: 3px; flex-shrink: 0; }
+.pkg-overview-item strong { color: var(--t1); font-weight: 600; }
 .pkg-price { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 32px; margin-bottom: 5px; }
 .pkg-price span { font-size: 13px; font-weight: 400; color: var(--t2); }
 .pkg-hosting {
