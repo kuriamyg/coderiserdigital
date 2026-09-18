@@ -252,6 +252,34 @@ nav {
   transform: scale(1.08);
 }
 
+/* Brand colors — each platform's icon reads as itself, not a flat grey glyph */
+.social-link.social-linkedin { background: rgba(10,102,194,0.09); color: #0A66C2; border-color: rgba(10,102,194,0.25); }
+.social-link.social-linkedin:hover { background: rgba(10,102,194,0.17); color: #2E90F0; }
+
+.social-link.social-x { background: rgba(255,255,255,0.08); color: #FFFFFF; border-color: rgba(255,255,255,0.18); }
+.social-link.social-x:hover { background: rgba(255,255,255,0.14); }
+
+.social-link.social-email { background: var(--gold-d); color: var(--gold); border-color: rgba(240,160,48,0.25); }
+.social-link.social-email:hover { background: var(--gold-d2); }
+
+.social-link.social-instagram {
+  background: linear-gradient(45deg, rgba(240,148,51,0.15), rgba(230,104,60,0.15), rgba(220,39,67,0.15), rgba(204,35,102,0.15), rgba(188,24,136,0.15));
+  color: #E1306C; border-color: rgba(220,39,67,0.3);
+}
+.social-link.social-instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #fff;
+}
+
+.social-link.social-facebook { background: rgba(24,119,242,0.09); color: #1877F2; border-color: rgba(24,119,242,0.25); }
+.social-link.social-facebook:hover { background: rgba(24,119,242,0.17); }
+
+.social-link.social-tiktok { background: rgba(37,244,238,0.08); color: #25F4EE; text-shadow: -1px 1px 0 #FE2C55; border-color: rgba(37,244,238,0.22); }
+.social-link.social-tiktok:hover { background: rgba(37,244,238,0.14); }
+
+.social-link.social-whatsapp { background: var(--green-d); color: var(--green); border-color: rgba(34,197,94,0.25); }
+.social-link.social-whatsapp:hover { background: rgba(34,197,94,0.17); }
+
 /* Inline variant — centered, wraps on mobile instead of scrolling (used in page content) */
 .social-row-inline {
   display: flex;
@@ -427,8 +455,16 @@ body[data-page="contact"] .page-nav-link[data-page="contact"] {
   font-size: 24px; color: var(--blue); margin-bottom: 18px;
 }
 .pkg-icon.gold { background: var(--gold-d); color: var(--gold); }
-.pkg-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px; margin-bottom: 4px; }
+.pkg-name-row { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; flex-wrap: wrap; }
+.pkg-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px; }
 .pkg-for { font-size: 12px; color: var(--t2); margin-bottom: 16px; }
+.pkg-status {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 20px; white-space: nowrap;
+}
+.pkg-status-live { background: var(--green-d); color: var(--green); }
+.pkg-status-pilot { background: var(--blue-d); color: var(--blue); }
+.pkg-status-private { background: rgba(255,255,255,0.06); color: var(--t2); }
 .pkg-desc {
   font-size: 13.5px; color: var(--t2); line-height: 1.7;
   margin-bottom: 22px; padding-bottom: 22px;

@@ -25,7 +25,7 @@ function socialLinkAttrs(s) {
 
 function socialIconsHtml(indent) {
   return socialLinks
-    .map((s) => `<a href="${s.href}" class="social-link${s.id === 'github' ? ' social-github' : ''}" aria-label="${s.ariaLabel}"${socialLinkAttrs(s)}><i class="ti ${s.icon}"></i></a>`)
+    .map((s) => `<a href="${s.href}" class="social-link social-${s.id}" aria-label="${s.ariaLabel}"${socialLinkAttrs(s)}><i class="ti ${s.icon}"></i></a>`)
     .join(`\n${indent}`);
 }
 
@@ -49,7 +49,7 @@ function renderSocialRowInline() {
 
 function renderSocialRowFooter() {
   const items = socialLinks
-    .map((s) => `<a href="${s.href}" class="social-link social-link-labeled${s.id === 'github' ? ' social-github' : ''}" aria-label="${s.ariaLabel}"${socialLinkAttrs(s)}><i class="ti ${s.icon}"></i><span>${s.label}</span></a>`)
+    .map((s) => `<a href="${s.href}" class="social-link social-link-labeled social-${s.id}" aria-label="${s.ariaLabel}"${socialLinkAttrs(s)}><i class="ti ${s.icon}"></i><span>${s.label}</span></a>`)
     .join('\n    ');
   return `<div class="social-row-footer">
     ${items}
