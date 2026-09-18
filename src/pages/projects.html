@@ -9,17 +9,41 @@
     </p>
     <div class="pkg-grid">
 
-      <!-- PESAFLOW -->
+      <!-- TRUSTGIVING -->
       <div class="pkg-card featured reveal d1">
         <div class="pkg-pop-badge">Flagship</div>
+        <div class="pkg-icon"><i class="ti ti-building-bank"></i></div>
+        <div class="pkg-name">TrustGiving</div>
+        <div class="pkg-for">Financial system of record for a church</div>
+        <div class="pkg-overview">
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>What:</strong> Financial system of record for House of Miracles church</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Problem solved:</strong> Replaces a manual, paper-and-memory cash process with a ledger that can be audited</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Integrity model:</strong> Append-only audit log enforced at the database grant level — the app itself cannot alter history</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Status:</strong> In pilot use by church staff, ahead of full congregation rollout</span></div>
+        </div>
+        <div class="pkg-hosting"><i class="ti ti-server"></i> In pilot use by House of Miracles — private staff system</div>
+        <div class="pkg-features">
+          <div class="feat"><i class="ti ti-check"></i>Append-only audit log — the app's database role cannot UPDATE or DELETE it</div>
+          <div class="feat"><i class="ti ti-check"></i>Two-person cash confirmation, enforced at both the API and the database</div>
+          <div class="feat"><i class="ti ti-check"></i>Atomic uniqueness via Postgres sequences, not application-level checks</div>
+          <div class="feat"><i class="ti ti-check"></i>User roles re-verified server-side on every request, never trusted from a token</div>
+        </div>
+        <a class="btn btn-blue pkg-btn" href="https://trustgiving.vercel.app" target="_blank" rel="noopener noreferrer">
+          <i class="ti ti-external-link"></i> View Live App
+        </a>
+      </div>
+
+      <!-- PESAFLOW -->
+      <div class="pkg-card reveal d2">
         <div class="pkg-icon"><i class="ti ti-wallet"></i></div>
         <div class="pkg-name">PesaFlow</div>
         <div class="pkg-for">Kenya-first personal finance &amp; budgeting app</div>
-        <p class="pkg-desc">
-          A production budgeting app built for how Kenyans actually spend — automatic
-          M-Pesa transaction parsing, categorisation, budgets, debts, savings, and an
-          AI coach. Money is modelled as fixed-point Decimal throughout, never float.
-        </p>
+        <div class="pkg-overview">
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>What:</strong> A production budgeting app built for how Kenyans actually spend</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Problem solved:</strong> Automatic M-Pesa transaction parsing and categorisation, so budgeting doesn't need manual entry</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Money handling:</strong> Modelled as fixed-point Decimal throughout — never float</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Status:</strong> Live, in active personal use</span></div>
+        </div>
         <div class="pkg-hosting"><i class="ti ti-server"></i> Live at pesaflow-theta.vercel.app</div>
         <div class="pkg-features">
           <div class="feat"><i class="ti ti-check"></i>23-model Postgres schema, money stored as Decimal(14,2)</div>
@@ -38,36 +62,17 @@
         </div>
       </div>
 
-      <!-- TRUSTGIVING -->
-      <div class="pkg-card reveal d2">
-        <div class="pkg-icon"><i class="ti ti-building-bank"></i></div>
-        <div class="pkg-name">TrustGiving</div>
-        <div class="pkg-for">Financial system of record for a church</div>
-        <p class="pkg-desc">
-          Built with the rigor of software that handles other people's money — an
-          append-only audit log enforced at the database grant level, a two-person
-          rule required for every cash transaction, and Postgres-native uniqueness
-          for membership numbers and envelope codes.
-        </p>
-        <div class="pkg-hosting" style="color:var(--t2);"><i class="ti ti-lock"></i> Private client project — code not publicly shared</div>
-        <div class="pkg-features">
-          <div class="feat"><i class="ti ti-check"></i>Append-only audit log — the app's database role cannot UPDATE or DELETE it</div>
-          <div class="feat"><i class="ti ti-check"></i>Two-person cash confirmation, enforced at both the API and the database</div>
-          <div class="feat"><i class="ti ti-check"></i>Atomic uniqueness via Postgres sequences, not application-level checks</div>
-          <div class="feat"><i class="ti ti-check"></i>User roles re-verified server-side on every request, never trusted from a token</div>
-        </div>
-      </div>
-
       <!-- TRADE EXPECTANCY JOURNAL -->
       <div class="pkg-card reveal d3">
         <div class="pkg-icon gold"><i class="ti ti-chart-line"></i></div>
         <div class="pkg-name">Trade Expectancy Journal</div>
         <div class="pkg-for">Self-contained trading risk calculator</div>
-        <p class="pkg-desc">
-          A standalone HTML tool for tracking manual forex and gold trades against a
-          fixed-risk, fixed-R:R model, with live win-rate and expectancy (EV)
-          calculation. No install, no server, no dependencies.
-        </p>
+        <div class="pkg-overview">
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>What:</strong> A standalone tool for tracking manual forex and gold trades</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Problem solved:</strong> Tracks trades against a fixed-risk, fixed-R:R model and surfaces expectancy in real time</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Distribution:</strong> A single HTML file — no install, no server, no dependencies</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Status:</strong> Live, in personal daily use</span></div>
+        </div>
         <div class="pkg-hosting"><i class="ti ti-server"></i> Zero dependencies — runs entirely in the browser</div>
         <div class="pkg-features">
           <div class="feat"><i class="ti ti-check"></i>Live expectancy calculation: EV = (Win% × AvgWin) − (Loss% × AvgLoss)</div>
@@ -84,12 +89,12 @@
         <div class="pkg-icon"><i class="ti ti-shield-heart"></i></div>
         <div class="pkg-name">SafeReport</div>
         <div class="pkg-for">Anonymous GBV incident reporting platform for Kenya</div>
-        <p class="pkg-desc">
-          Lets survivors of gender-based violence report an incident with no account, no
-          name, and no phone number — a unique reference code is the only link back to
-          their case, and a one-tap Safe Exit immediately masks browser history. Staff
-          get a full case-management system with role-based access and audit logging.
-        </p>
+        <div class="pkg-overview">
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>What:</strong> An anonymous reporting platform for survivors of gender-based violence</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Problem solved:</strong> Lets survivors report without an account, a name, or a phone number</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Safety design:</strong> A one-tap Safe Exit masks browser history mid-session</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Status:</strong> Live — JKUAT BBIT capstone project, 2026</span></div>
+        </div>
         <div class="pkg-hosting"><i class="ti ti-server"></i> Live at safereport-mwangi-moses-kuria-s-projects.vercel.app</div>
         <div class="pkg-features">
           <div class="feat"><i class="ti ti-check"></i>Anonymous reporting with a unique GBV-XXXXXXXX reference code</div>
@@ -107,13 +112,12 @@
         <div class="pkg-icon"><i class="ti ti-fingerprint"></i></div>
         <div class="pkg-name">JKUAT Biometric Portal</div>
         <div class="pkg-for">Passwordless student portal — WebAuthn biometric auth</div>
-        <p class="pkg-desc">
-          Replaces password logins with FIDO2/WebAuthn biometrics — fingerprint, Face ID,
-          or Windows Hello — bound to a physical device, plus fee payments, unit
-          registration, and a RAG-powered assistant that answers questions against the
-          student's own live data. A self-audit of all 80 API routes found and fixed six
-          missing-auth and two IDOR issues before launch.
-        </p>
+        <div class="pkg-overview">
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>What:</strong> A passwordless student portal for JKUAT</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Problem solved:</strong> Removes forgotten and shared passwords as an attack surface entirely</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Security process:</strong> Self-audited all 80 API routes before launch — found and fixed 6 missing-auth and 2 IDOR issues</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Status:</strong> Live — final-year capstone project, 2026</span></div>
+        </div>
         <div class="pkg-hosting"><i class="ti ti-server"></i> Live at jkuat-biometric-portal.vercel.app</div>
         <div class="pkg-features">
           <div class="feat"><i class="ti ti-check"></i>Passwordless auth via @simplewebauthn — no passwords stored, ever</div>
@@ -131,13 +135,12 @@
         <div class="pkg-icon gold"><i class="ti ti-chart-candle"></i></div>
         <div class="pkg-name">Aurum Macro</div>
         <div class="pkg-for">Automated macro signal engine for XAU/USD</div>
-        <p class="pkg-desc">
-          A scheduled service that scores eight independent macro and options-flow
-          signals — real yields, DXY, VIX, COT positioning, and more — into a daily
-          composite gold bias on a normalised scale, so a verdict means the same thing
-          whether three or eight signals were available. Every call is written to an
-          append-only track record and served over a REST API to a companion execution bot.
-        </p>
+        <div class="pkg-overview">
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>What:</strong> A scheduled service that scores eight macro and options-flow signals into a daily gold bias</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Problem solved:</strong> Turns eight scattered data feeds into one normalised, daily verdict on gold</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Accountability:</strong> Every call is written to an append-only track record — none can be edited after the fact</span></div>
+          <div class="pkg-overview-item"><i class="ti ti-arrow-right"></i><span><strong>Status:</strong> Private, Dockerized, runs on a daily cron</span></div>
+        </div>
         <div class="pkg-hosting" style="color:var(--t2);"><i class="ti ti-lock"></i> Private repository — Docker + Railway, runs on a daily cron</div>
         <div class="pkg-features">
           <div class="feat"><i class="ti ti-check"></i>Eight independent signals scored into a ratio-scale composite bias</div>
