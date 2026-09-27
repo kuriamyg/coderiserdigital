@@ -1,0 +1,171 @@
+<!-- ======== CASE STUDY: CONTACT SPHERE ======== -->
+<section class="cs-hero">
+  <div class="container">
+    <span class="eyebrow blue reveal">Case study</span>
+    <h1 class="reveal d1">Contact Sphere</h1>
+    <p class="cs-lede reveal d2">
+      A Kenya-first contacts app for the people who hold a community together — chama
+      officials, church administrators, small business owners. It remembers birthdays,
+      follow-ups and who you haven't called in a while, and it keeps working when the
+      data bundle runs out.
+    </p>
+    <div class="cs-links reveal d3">
+      <a class="btn btn-blue" href="https://contact-sphere-nine.vercel.app" target="_blank" rel="noopener noreferrer">
+        <i class="ti ti-external-link"></i> View Live App
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/kuriamyg/contact-sphere" target="_blank" rel="noopener noreferrer">
+        <i class="ti ti-brand-github"></i> Read the Code
+      </a>
+    </div>
+    <div class="cs-facts reveal d3">
+      <div class="cs-fact"><b>420</b><span>automated tests, plus real-browser flows</span></div>
+      <div class="cs-fact"><b>16</b><span>architecture decision records</span></div>
+      <div class="cs-fact"><b>2</b><span>languages: English and Kiswahili</span></div>
+      <div class="cs-fact"><b>0</b><span>contact details in the logs</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt-bg">
+  <div class="container">
+    <span class="eyebrow reveal">The app</span>
+    <h2 class="reveal d1">What it looks like</h2>
+    <p class="section-intro reveal d2">Screenshots use made-up demo contacts — never real people.</p>
+    <div class="cs-shots">
+      <figure class="reveal d1">
+        <img src="assets/work/contact-sphere-today.jpg" width="540" height="1099" loading="lazy" alt="Contact Sphere Today screen: a birthday to celebrate, follow-ups due, and people to keep in touch with.">
+        <figcaption><strong>Today</strong> — who to call, text or congratulate, with one tap.</figcaption>
+      </figure>
+      <figure class="reveal d2">
+        <img src="assets/work/contact-sphere-contact.jpg" width="540" height="1099" loading="lazy" alt="A contact in Contact Sphere with call, SMS and WhatsApp buttons, skills, area and group role.">
+        <figcaption><strong>A contact</strong> — call, SMS or WhatsApp; skills, area and their role in your groups.</figcaption>
+      </figure>
+      <figure class="reveal d3">
+        <img src="assets/work/contact-sphere-group.jpg" width="540" height="1099" loading="lazy" alt="A chama group in Contact Sphere with members, roles, and buttons to text everyone or copy all numbers.">
+        <figcaption><strong>A chama</strong> — members with roles; text everyone or copy the numbers for WhatsApp.</figcaption>
+      </figure>
+      <figure class="reveal d4">
+        <img src="assets/work/contact-sphere-offline.jpg" width="540" height="1099" loading="lazy" alt="Editing a contact in Contact Sphere with no internet connection; the change is saved on the phone.">
+        <figcaption><strong>No data bundle</strong> — edits are saved on the phone and sent later.</figcaption>
+      </figure>
+    </div>
+    <figure class="cs-wide reveal d2">
+      <img src="assets/work/contact-sphere-laptop.jpg" width="1200" height="750" loading="lazy" alt="Contact Sphere on a laptop: a sidebar, the contact list, and the selected contact side by side.">
+      <figcaption><strong>On a laptop</strong> — the list stays beside the contact you open, with your search kept.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="container cs-body">
+    <span class="eyebrow blue reveal">The problem</span>
+    <h2 class="reveal d1">Communities run on phone contacts — and phone contacts forget.</h2>
+    <p class="reveal d2">
+      A chama treasurer, a church youth leader or a fundi keeps hundreds of numbers in
+      their phone. The phone knows names and numbers, but not who is the treasurer, whose
+      birthday is Friday, who promised a quote, or who you haven't spoken to in three
+      months. Existing contact apps either stop there, or pay for themselves by selling
+      that address book.
+    </p>
+    <p class="reveal d2">
+      The constraints were Kenyan ones: people move between bundles and no data, Kiswahili
+      is as natural as English, group messages go through WhatsApp or SMS, and the people
+      in an address book never agreed to be in anyone's database.
+    </p>
+
+    <span class="eyebrow blue reveal" style="margin-top:44px;">Key decisions</span>
+    <h2 class="reveal d1">What I decided, and why</h2>
+
+    <h3>Works with no data — including edits</h3>
+    <p>
+      When the owner switches it on, the phone keeps a copy of their contacts, groups and
+      Today screen. With no connection, a small offline app opens instead of an error: you
+      can search, call, SMS, add contacts, mark follow-ups done — and edit details. Changes
+      wait in a queue and are sent in order when the phone is back online.
+    </p>
+    <p>
+      Editing offline raises the hard question: what if the same contact was changed on a
+      laptop meanwhile? Instead of "last save wins", each change records what the phone
+      showed before the edit. On reconnect the server merges <strong>field by field</strong>:
+      fields nobody else touched take your edit; a field changed in both places keeps the
+      newer value and shows you both, with <em>Use mine</em> or <em>Keep this</em>. The API
+      refuses any save based on an out-of-date copy (<code>If-Match</code> → 412), so an old
+      phone can never silently overwrite newer data.
+    </p>
+
+    <h3>The browser never talks to the API directly</h3>
+    <p>
+      The Next.js web server is the only caller of the NestJS API, with a shared secret on
+      every request. The session token lives in an HttpOnly cookie the page's JavaScript
+      cannot read, and every page is served with a strict, per-request Content Security
+      Policy.
+    </p>
+
+    <h3>Guarantees live in the database</h3>
+    <p>
+      The app connects as a least-privilege role. Every row carries its owner, enforced by
+      composite foreign keys; CHECK constraints reject impossible data; and the audit log is
+      append-only at the grant level — the application itself cannot edit or delete
+      history. The audit log records ids only, never names or numbers.
+    </p>
+
+    <h3>Kiswahili as a first-class language</h3>
+    <p>
+      Every string exists in English and Kiswahili, side by side, checked by TypeScript and
+      a test that also verifies placeholders match. The choice is remembered on the account
+      so reminders sent from the server arrive in the owner's language too.
+    </p>
+
+    <h3>Security that holds up</h3>
+    <ul>
+      <li>Two-factor sign-in (TOTP) with single-use codes and recovery codes.</li>
+      <li>New passwords checked against known breaches — only 5 characters of a hash ever leave the server.</li>
+      <li>A list of signed-in devices, each one able to be signed out on its own.</li>
+      <li>Per-IP rate limits plus a per-account lock-out kept in the database, so a restart never resets it.</li>
+      <li>Structured logs with no request bodies, search words, emails, tokens or contact details.</li>
+    </ul>
+
+    <span class="eyebrow blue reveal" style="margin-top:44px;">How it was shipped</span>
+    <h2 class="reveal d1">A release routine that checks every step</h2>
+    <p>
+      Every change goes through the same routine: a pull request; all checks green (format,
+      lint, types, unit, database and end-to-end tests, a build exactly as Vercel builds it,
+      and a dependency audit); database migrations applied to staging and then production,
+      with a drift check, <em>before</em> the code is merged; then both API services are
+      redeployed and the live app is verified — with writes on staging, read-only on
+      production.
+    </p>
+    <p>
+      Significant choices are written down as architecture decision records (16 so far),
+      from authentication and deletion policy to offline conflicts and logging. The threat
+      model is kept current, and a session log records what actually shipped, including
+      what went wrong and how it was fixed.
+    </p>
+
+    <span class="eyebrow blue reveal" style="margin-top:44px;">Stack</span>
+    <h2 class="reveal d1">Built with</h2>
+    <p>
+      Next.js (App Router) on Vercel · NestJS on Render · PostgreSQL on Neon with Prisma ·
+      TypeScript throughout · Tailwind CSS · a service worker and IndexedDB for the offline
+      app · Web Push and email (Resend) for reminders · Vitest, Jest and Playwright for tests.
+    </p>
+
+    <span class="eyebrow blue reveal" style="margin-top:44px;">What's next</span>
+    <h2 class="reveal d1">Before anyone pays for it</h2>
+    <p>
+      Registering with Kenya's Office of the Data Protection Commissioner, a published privacy
+      policy and terms, account deletion, open sign-up with phone-number verification, and
+      M-Pesa billing — the commercial gate before Contact Sphere is offered to chamas and
+      churches beyond its first owner.
+    </p>
+
+    <div class="service-cta">
+      <a class="btn btn-wa wa-link" data-msg="general" href="#" target="_blank" rel="noopener noreferrer">
+        <i class="ti ti-brand-whatsapp"></i> Want something like this?
+      </a>
+      <a class="btn btn-ghost" href="projects.html">
+        <i class="ti ti-layout-grid"></i> More projects
+      </a>
+    </div>
+  </div>
+</section>

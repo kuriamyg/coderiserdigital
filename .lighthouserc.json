@@ -7,7 +7,9 @@
         "http://localhost/projects.html",
         "http://localhost/about.html",
         "http://localhost/skills.html",
-        "http://localhost/contact.html"
+        "http://localhost/contact.html",
+        "http://localhost/cv.html",
+        "http://localhost/contact-sphere.html"
       ],
       "numberOfRuns": 1,
       "settings": {

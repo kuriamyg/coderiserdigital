@@ -71,3 +71,10 @@ var observer = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.reveal').forEach(function(el) {
   observer.observe(el);
 });
+
+// ══════════════════════════════════════════════════════════════
+// CV: "Save as PDF" opens the print dialog (print styles in styles.css)
+// ══════════════════════════════════════════════════════════════
+document.querySelectorAll('[data-print]').forEach(function(btn) {
+  btn.addEventListener('click', function() { window.print(); });
+});
