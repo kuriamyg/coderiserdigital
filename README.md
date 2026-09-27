@@ -22,9 +22,11 @@ This site itself is built with:
 
 ## 📄 Site structure
 
-Five static pages, each with its own URL and its own title/description/OG tags for
+Six static pages in the nav, plus case studies, each with its own URL and its own title/description/OG tags for
 sharing: **Home** (`index.html`), **Projects** (`projects.html`), **About**
-(`about.html`), **Skills** (`skills.html`), and **Contact** (`contact.html`). A
+(`about.html`), **Skills** (`skills.html`), **Contact** (`contact.html`) and **CV**
+(`cv.html`, printable as a PDF). Case studies (`contact-sphere.html`) are reached from
+their project card and link back to Projects. A
 persistent nav bar links directly to any page, and Next/Back links at the bottom of
 each page step through them in order.
 
@@ -40,6 +42,11 @@ src/pages.config.mjs     per-page title/description/OG tags, and page order
 styles.css               shared styles
 script.js                shared behaviour (WhatsApp link wiring, scroll reveal)
 ```
+
+Two site-wide settings live at the top of `src/pages.config.mjs`:
+`DOMAIN` (custom domain — see [docs/custom-domain.md](docs/custom-domain.md)) and
+`GOATCOUNTER` (cookie-free visitor stats; empty = off). `npm run build` also
+regenerates `sitemap.xml` and `robots.txt` (from `src/robots.txt`) from them.
 
 After editing, regenerate the published pages:
 

@@ -56,9 +56,9 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moses Mwangi Kuria — Software Engineer</title>
-<meta name="description" content="Software engineer in Nairobi, Kenya, building fintech systems, security-first engineering practices, and practical tools. See PesaFlow, TrustGiving, Contact Sphere, and other work.">
-<link rel="canonical" href="https://kuriamyg.github.io/coderiserdigital">
+<title>Contact Sphere case study — Moses Mwangi Kuria</title>
+<meta name="description" content="How I built Contact Sphere, a Kenya-first contacts app: offline edits that merge field by field, Kiswahili, two-factor sign-in, audit logs the app cannot change, and a release routine that verifies every step.">
+<link rel="canonical" href="https://kuriamyg.github.io/coderiserdigital/contact-sphere.html">
 
 <!-- Favicons + PWA manifest -->
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -68,19 +68,19 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0A0A0D">
 
-<meta property="og:title" content="Moses Mwangi Kuria — Software Engineer">
-<meta property="og:description" content="Full-stack engineering where money, trust, or risk are involved. A live Kenya-first budgeting app, a church finance system with audit-grade integrity, and more.">
+<meta property="og:title" content="Case study: Contact Sphere">
+<meta property="og:description" content="A Kenya-first contacts app — the problem, the decisions, the security, and how it was shipped.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://kuriamyg.github.io/coderiserdigital">
-<meta property="og:image" content="https://kuriamyg.github.io/coderiserdigital/assets/og-image.png">
+<meta property="og:url" content="https://kuriamyg.github.io/coderiserdigital/contact-sphere.html">
+<meta property="og:image" content="https://kuriamyg.github.io/coderiserdigital/assets/og-image-projects.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Moses Mwangi Kuria — Software Engineer">
+<meta property="og:image:alt" content="Case study: Contact Sphere">
 <meta property="og:locale" content="en_KE">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Moses Mwangi Kuria — Software Engineer">
-<meta name="twitter:description" content="Full-stack engineering where money, trust, or risk are involved. A live Kenya-first budgeting app, a church finance system with audit-grade integrity, and more.">
-<meta name="twitter:image" content="https://kuriamyg.github.io/coderiserdigital/assets/og-image.png">
+<meta name="twitter:title" content="Case study: Contact Sphere">
+<meta name="twitter:description" content="A Kenya-first contacts app — the problem, the decisions, the security, and how it was shipped.">
+<meta name="twitter:image" content="https://kuriamyg.github.io/coderiserdigital/assets/og-image-projects.png">
 
 <!-- JSON-LD structured data — helps Google surface this as a person/professional
      profile (name, role, skills) directly in search results. -->
@@ -136,7 +136,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-WL5VTD16VB', {
-    page_title: 'Moses Mwangi Kuria — Software Engineer',
+    page_title: 'Case study: Contact Sphere',
     page_location: window.location.href,
     // [SEC] Anonymise IP — GDPR + Kenya DPA 2019 compliance
     anonymize_ip: true,
@@ -186,7 +186,7 @@
 
 <link rel="stylesheet" href="styles.css">
 </head>
-<body data-page="home">
+<body data-page="case-contact-sphere">
 
 <!-- ======== NAV ======== -->
 <nav>
@@ -239,110 +239,173 @@
 </div>
 
 
-<!-- ======== TRUST BAR ======== -->
-<div class="trust-bar">
+<!-- ======== CASE STUDY: CONTACT SPHERE ======== -->
+<section class="cs-hero">
   <div class="container">
-    <div class="trust-inner">
-      <span class="trust-item"><i class="ti ti-check"></i> Live production app (PesaFlow)</span>
-      <span class="trust-item"><i class="ti ti-check"></i> Security-first engineering</span>
-      <span class="trust-item"><i class="ti ti-check"></i> Decimal-precision fintech systems</span>
-      <span class="trust-item"><i class="ti ti-check"></i> Nairobi, Kenya</span>
-      <span class="trust-item"><i class="ti ti-check"></i> Open source on GitHub</span>
+    <span class="eyebrow blue reveal">Case study</span>
+    <h1 class="reveal d1">Contact Sphere</h1>
+    <p class="cs-lede reveal d2">
+      A Kenya-first contacts app for the people who hold a community together — chama
+      officials, church administrators, small business owners. It remembers birthdays,
+      follow-ups and who you haven't called in a while, and it keeps working when the
+      data bundle runs out.
+    </p>
+    <div class="cs-links reveal d3">
+      <a class="btn btn-blue" href="https://contact-sphere-nine.vercel.app" target="_blank" rel="noopener noreferrer">
+        <i class="ti ti-external-link"></i> View Live App
+      </a>
+      <a class="btn btn-ghost" href="https://github.com/kuriamyg/contact-sphere" target="_blank" rel="noopener noreferrer">
+        <i class="ti ti-brand-github"></i> Read the Code
+      </a>
     </div>
-  </div>
-</div>
-
-<!-- ======== HERO ======== -->
-<section class="hero">
-  <div class="hero-dots"></div>
-  <div class="hero-glow"></div>
-  <div class="container">
-    <div class="hero-content">
-      <span class="eyebrow blue reveal">Software Engineer — Nairobi, Kenya</span>
-      <h1 class="reveal d1">
-        Hi, I'm Moses.<br>
-        <em>I build software that handles real money and real risk.</em>
-      </h1>
-      <p class="hero-sub reveal d2">
-        Fintech systems, security-first engineering, and practical tools — from a live
-        Kenya-first budgeting app to a church finance system built with audit-grade
-        integrity. I care about correctness where it actually matters.
-      </p>
-      <div class="hero-btns reveal d3">
-        <a href="projects.html" class="btn btn-blue" style="font-size:15px;padding:15px 30px;">
-          <i class="ti ti-layout-grid"></i> View My Work
-        </a>
-        <!-- [SEC-4] rel="noopener noreferrer" on all external links -->
-        <!-- [SEC-5] href set by JS — wa-link class used as hook -->
-        <a class="btn btn-ghost wa-link" data-msg="general" href="#" target="_blank" rel="noopener noreferrer"
-           style="font-size:15px;padding:15px 26px;">
-          <i class="ti ti-brand-whatsapp"></i> Get in Touch
-        </a>
-      </div>
-      <div class="hero-stats reveal d4">
-        <div class="stat-item">
-          <div class="stat-num">5</div>
-          <div class="stat-label">Live apps in production</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">23</div>
-          <div class="stat-label">Models in PesaFlow's schema</div>
-        </div>
-        <a class="stat-item" href="https://github.com/kuriamyg/security-standards" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;">
-          <div class="stat-num">16</div>
-          <div class="stat-label">Layers in my security framework ↗</div>
-        </a>
-        <div class="stat-item">
-          <div class="stat-num">0</div>
-          <div class="stat-label">Floats used for money, ever</div>
-        </div>
-      </div>
+    <div class="cs-facts reveal d3">
+      <div class="cs-fact"><b>420</b><span>automated tests, plus real-browser flows</span></div>
+      <div class="cs-fact"><b>16</b><span>architecture decision records</span></div>
+      <div class="cs-fact"><b>2</b><span>languages: English and Kiswahili</span></div>
+      <div class="cs-fact"><b>0</b><span>contact details in the logs</span></div>
     </div>
   </div>
 </section>
 
-<!-- ======== SERVICES ======== -->
 <section class="alt-bg">
   <div class="container">
-    <span class="eyebrow blue reveal">Services</span>
-    <h2 class="reveal d1">What I can build for you.</h2>
-    <p class="section-intro reveal d2">
-      The same work you see in the projects — for your business, chama, church or
-      organisation. Every engagement starts with understanding how the work is really
-      done today, and ends with something live that you own.
-    </p>
-    <div class="service-grid">
-      <div class="service-card reveal d1">
-        <div class="service-icon"><i class="ti ti-device-mobile"></i></div>
-        <h3>Web apps that work on every phone</h3>
-        <p>Full-stack apps (Next.js, NestJS, PostgreSQL) that install like an app, work in English and Kiswahili, and keep working with no data bundle.</p>
-        <span class="service-proof">Proof: Contact Sphere, PesaFlow</span>
-      </div>
-      <div class="service-card reveal d2">
-        <div class="service-icon gold"><i class="ti ti-coins"></i></div>
-        <h3>Systems that handle money</h3>
-        <p>Budgets, ledgers, contributions and M-Pesa records — fixed-point money, append-only audit trails and two-person controls, so every shilling can be accounted for.</p>
-        <span class="service-proof">Proof: TrustGiving, PesaFlow</span>
-      </div>
-      <div class="service-card reveal d3">
-        <div class="service-icon green"><i class="ti ti-shield-lock"></i></div>
-        <h3>Security review &amp; hardening</h3>
-        <p>An existing app checked layer by layer against OWASP, NIST and Kenya DPA 2019 — sign-in, access control, data handling, headers and logs — with every fix explained.</p>
-        <span class="service-proof">Proof: my 16-layer security framework; 80 API routes self-audited on the JKUAT portal</span>
-      </div>
-      <div class="service-card reveal d4">
-        <div class="service-icon"><i class="ti ti-robot"></i></div>
-        <h3>AI features that earn their place</h3>
-        <p>Claude-powered features added where they save real time — summarising, drafting, sorting — with the data kept private and a person in control.</p>
-        <span class="service-proof">Proof: AI-assisted engineering on every project here</span>
-      </div>
+    <span class="eyebrow reveal">The app</span>
+    <h2 class="reveal d1">What it looks like</h2>
+    <p class="section-intro reveal d2">Screenshots use made-up demo contacts — never real people.</p>
+    <div class="cs-shots">
+      <figure class="reveal d1">
+        <img src="assets/work/contact-sphere-today.jpg" width="540" height="1099" loading="lazy" alt="Contact Sphere Today screen: a birthday to celebrate, follow-ups due, and people to keep in touch with.">
+        <figcaption><strong>Today</strong> — who to call, text or congratulate, with one tap.</figcaption>
+      </figure>
+      <figure class="reveal d2">
+        <img src="assets/work/contact-sphere-contact.jpg" width="540" height="1099" loading="lazy" alt="A contact in Contact Sphere with call, SMS and WhatsApp buttons, skills, area and group role.">
+        <figcaption><strong>A contact</strong> — call, SMS or WhatsApp; skills, area and their role in your groups.</figcaption>
+      </figure>
+      <figure class="reveal d3">
+        <img src="assets/work/contact-sphere-group.jpg" width="540" height="1099" loading="lazy" alt="A chama group in Contact Sphere with members, roles, and buttons to text everyone or copy all numbers.">
+        <figcaption><strong>A chama</strong> — members with roles; text everyone or copy the numbers for WhatsApp.</figcaption>
+      </figure>
+      <figure class="reveal d4">
+        <img src="assets/work/contact-sphere-offline.jpg" width="540" height="1099" loading="lazy" alt="Editing a contact in Contact Sphere with no internet connection; the change is saved on the phone.">
+        <figcaption><strong>No data bundle</strong> — edits are saved on the phone and sent later.</figcaption>
+      </figure>
     </div>
-    <div class="service-cta reveal d2">
+    <figure class="cs-wide reveal d2">
+      <img src="assets/work/contact-sphere-laptop.jpg" width="1200" height="750" loading="lazy" alt="Contact Sphere on a laptop: a sidebar, the contact list, and the selected contact side by side.">
+      <figcaption><strong>On a laptop</strong> — the list stays beside the contact you open, with your search kept.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="container cs-body">
+    <span class="eyebrow blue reveal">The problem</span>
+    <h2 class="reveal d1">Communities run on phone contacts — and phone contacts forget.</h2>
+    <p class="reveal d2">
+      A chama treasurer, a church youth leader or a fundi keeps hundreds of numbers in
+      their phone. The phone knows names and numbers, but not who is the treasurer, whose
+      birthday is Friday, who promised a quote, or who you haven't spoken to in three
+      months. Existing contact apps either stop there, or pay for themselves by selling
+      that address book.
+    </p>
+    <p class="reveal d2">
+      The constraints were Kenyan ones: people move between bundles and no data, Kiswahili
+      is as natural as English, group messages go through WhatsApp or SMS, and the people
+      in an address book never agreed to be in anyone's database.
+    </p>
+
+    <span class="eyebrow blue reveal" style="margin-top:44px;">Key decisions</span>
+    <h2 class="reveal d1">What I decided, and why</h2>
+
+    <h3>Works with no data — including edits</h3>
+    <p>
+      When the owner switches it on, the phone keeps a copy of their contacts, groups and
+      Today screen. With no connection, a small offline app opens instead of an error: you
+      can search, call, SMS, add contacts, mark follow-ups done — and edit details. Changes
+      wait in a queue and are sent in order when the phone is back online.
+    </p>
+    <p>
+      Editing offline raises the hard question: what if the same contact was changed on a
+      laptop meanwhile? Instead of "last save wins", each change records what the phone
+      showed before the edit. On reconnect the server merges <strong>field by field</strong>:
+      fields nobody else touched take your edit; a field changed in both places keeps the
+      newer value and shows you both, with <em>Use mine</em> or <em>Keep this</em>. The API
+      refuses any save based on an out-of-date copy (<code>If-Match</code> → 412), so an old
+      phone can never silently overwrite newer data.
+    </p>
+
+    <h3>The browser never talks to the API directly</h3>
+    <p>
+      The Next.js web server is the only caller of the NestJS API, with a shared secret on
+      every request. The session token lives in an HttpOnly cookie the page's JavaScript
+      cannot read, and every page is served with a strict, per-request Content Security
+      Policy.
+    </p>
+
+    <h3>Guarantees live in the database</h3>
+    <p>
+      The app connects as a least-privilege role. Every row carries its owner, enforced by
+      composite foreign keys; CHECK constraints reject impossible data; and the audit log is
+      append-only at the grant level — the application itself cannot edit or delete
+      history. The audit log records ids only, never names or numbers.
+    </p>
+
+    <h3>Kiswahili as a first-class language</h3>
+    <p>
+      Every string exists in English and Kiswahili, side by side, checked by TypeScript and
+      a test that also verifies placeholders match. The choice is remembered on the account
+      so reminders sent from the server arrive in the owner's language too.
+    </p>
+
+    <h3>Security that holds up</h3>
+    <ul>
+      <li>Two-factor sign-in (TOTP) with single-use codes and recovery codes.</li>
+      <li>New passwords checked against known breaches — only 5 characters of a hash ever leave the server.</li>
+      <li>A list of signed-in devices, each one able to be signed out on its own.</li>
+      <li>Per-IP rate limits plus a per-account lock-out kept in the database, so a restart never resets it.</li>
+      <li>Structured logs with no request bodies, search words, emails, tokens or contact details.</li>
+    </ul>
+
+    <span class="eyebrow blue reveal" style="margin-top:44px;">How it was shipped</span>
+    <h2 class="reveal d1">A release routine that checks every step</h2>
+    <p>
+      Every change goes through the same routine: a pull request; all checks green (format,
+      lint, types, unit, database and end-to-end tests, a build exactly as Vercel builds it,
+      and a dependency audit); database migrations applied to staging and then production,
+      with a drift check, <em>before</em> the code is merged; then both API services are
+      redeployed and the live app is verified — with writes on staging, read-only on
+      production.
+    </p>
+    <p>
+      Significant choices are written down as architecture decision records (16 so far),
+      from authentication and deletion policy to offline conflicts and logging. The threat
+      model is kept current, and a session log records what actually shipped, including
+      what went wrong and how it was fixed.
+    </p>
+
+    <span class="eyebrow blue reveal" style="margin-top:44px;">Stack</span>
+    <h2 class="reveal d1">Built with</h2>
+    <p>
+      Next.js (App Router) on Vercel · NestJS on Render · PostgreSQL on Neon with Prisma ·
+      TypeScript throughout · Tailwind CSS · a service worker and IndexedDB for the offline
+      app · Web Push and email (Resend) for reminders · Vitest, Jest and Playwright for tests.
+    </p>
+
+    <span class="eyebrow blue reveal" style="margin-top:44px;">What's next</span>
+    <h2 class="reveal d1">Before anyone pays for it</h2>
+    <p>
+      Registering with Kenya's Office of the Data Protection Commissioner, a published privacy
+      policy and terms, account deletion, open sign-up with phone-number verification, and
+      M-Pesa billing — the commercial gate before Contact Sphere is offered to chamas and
+      churches beyond its first owner.
+    </p>
+
+    <div class="service-cta">
       <a class="btn btn-wa wa-link" data-msg="general" href="#" target="_blank" rel="noopener noreferrer">
-        <i class="ti ti-brand-whatsapp"></i> Tell me about your project
+        <i class="ti ti-brand-whatsapp"></i> Want something like this?
       </a>
-      <a class="btn btn-ghost" href="contact-sphere.html">
-        <i class="ti ti-book"></i> Read a case study
+      <a class="btn btn-ghost" href="projects.html">
+        <i class="ti ti-layout-grid"></i> More projects
       </a>
     </div>
   </div>
@@ -351,10 +414,9 @@
 
 <div class="pager">
   <div class="container pager-inner">
-    <div class="pager-empty"></div>
-    <a href="projects.html" class="pager-btn pager-next">
-        <span><small>Next</small>Projects</span>
-        <i class="ti ti-arrow-right"></i>
+    <a href="projects.html" class="pager-btn pager-prev">
+        <i class="ti ti-arrow-left"></i>
+        <span><small>Back</small>Projects</span>
       </a>
   </div>
 </div>

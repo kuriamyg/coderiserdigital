@@ -1,4 +1,20 @@
-const SITE = 'https://kuriamyg.github.io/coderiserdigital';
+/**
+ * Site-wide settings — the only two things to change when the time comes.
+ *
+ * DOMAIN: '' keeps the GitHub Pages address. Set it (e.g. 'moseskuria.dev')
+ *   after buying a domain; `npm run build` then writes CNAME and switches
+ *   every canonical URL, the sitemap and robots.txt. See docs/custom-domain.md.
+ * GOATCOUNTER: '' = no visitor stats. Set it to your GoatCounter site code
+ *   (the "xyz" in xyz.goatcounter.com) to count visits — no cookies.
+ */
+export const site = {
+  DOMAIN: '',
+  GOATCOUNTER: '',
+};
+
+export const SITE = site.DOMAIN
+  ? `https://${site.DOMAIN}`
+  : 'https://kuriamyg.github.io/coderiserdigital';
 
 export const pages = [
   {
@@ -60,5 +76,31 @@ export const pages = [
     ogDescription: "Let's talk — WhatsApp, email, or GitHub.",
     ogImage: `${SITE}/assets/og-image-contact.png`,
     canonical: `${SITE}/contact.html`,
+  },
+  {
+    id: 'cv',
+    file: 'cv.html',
+    source: 'cv.html',
+    navLabel: 'CV',
+    title: 'CV — Moses Mwangi Kuria',
+    description: 'Moses Mwangi Kuria, software engineer in Nairobi: selected projects, skills, practices and education. Printable as a one-page PDF.',
+    ogTitle: 'CV — Moses Mwangi Kuria',
+    ogDescription: 'Selected projects, skills and practices — printable as a PDF.',
+    ogImage: `${SITE}/assets/og-image-about.png`,
+    canonical: `${SITE}/cv.html`,
+  },
+  {
+    id: 'case-contact-sphere',
+    file: 'contact-sphere.html',
+    source: 'contact-sphere.html',
+    navLabel: 'Contact Sphere case study',
+    inNav: false,
+    back: { file: 'projects.html', label: 'Projects' },
+    title: 'Contact Sphere case study — Moses Mwangi Kuria',
+    description: 'How I built Contact Sphere, a Kenya-first contacts app: offline edits that merge field by field, Kiswahili, two-factor sign-in, audit logs the app cannot change, and a release routine that verifies every step.',
+    ogTitle: 'Case study: Contact Sphere',
+    ogDescription: 'A Kenya-first contacts app — the problem, the decisions, the security, and how it was shipped.',
+    ogImage: `${SITE}/assets/og-image-projects.png`,
+    canonical: `${SITE}/contact-sphere.html`,
   },
 ];

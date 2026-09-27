@@ -1,0 +1,104 @@
+<!-- ======== CV ======== -->
+<section class="cv">
+  <div class="container">
+    <header class="cv-head">
+      <div>
+        <h1>Moses Mwangi Kuria</h1>
+        <div class="cv-role">Software Engineer — fintech, security-first web apps</div>
+      </div>
+      <div class="cv-contact">
+        <span>Nairobi, Kenya</span>
+        <a href="mailto:kuriam177@gmail.com">kuriam177@gmail.com</a>
+        <a href="https://github.com/kuriamyg" target="_blank" rel="noopener noreferrer">github.com/kuriamyg</a>
+        <a href="{{SITE}}" target="_blank" rel="noopener noreferrer">{{SITE}}</a>
+      </div>
+    </header>
+    <div class="cv-actions">
+      <button type="button" class="btn btn-blue" data-print>
+        <i class="ti ti-download"></i> Save as PDF
+      </button>
+      <a class="btn btn-ghost wa-link" data-msg="general" href="#" target="_blank" rel="noopener noreferrer">
+        <i class="ti ti-brand-whatsapp"></i> Message me
+      </a>
+    </div>
+
+    <div class="cv-section">
+      <h2>Profile</h2>
+      <p class="cv-summary">
+        Full-stack software engineer building systems where money, trust or risk are
+        involved — from a live Kenya-first budgeting app to a church finance system with
+        database-enforced audit trails. I work security-first, ship in small verified
+        steps, and write down the decisions behind what I build.
+      </p>
+    </div>
+
+    <div class="cv-section">
+      <h2>Selected projects</h2>
+      <div class="cv-item">
+        <div class="cv-item-head"><h3>Contact Sphere</h3><span class="cv-meta">Live · Next.js, NestJS, PostgreSQL</span></div>
+        <p>Kenya-first contacts and relationship app for chamas, churches and small businesses. <a href="contact-sphere.html">Case study</a></p>
+        <ul>
+          <li>Works with no data: offline edits merge field by field on reconnect, with clashes shown to the owner.</li>
+          <li>Two-factor sign-in, breached-password check, per-device sign-out; audit log the app cannot alter.</li>
+          <li>English and Kiswahili; 420 automated tests; 16 architecture decision records.</li>
+        </ul>
+      </div>
+      <div class="cv-item">
+        <div class="cv-item-head"><h3>PesaFlow</h3><span class="cv-meta">Live · Kenya-first budgeting app</span></div>
+        <ul>
+          <li>Automatic M-Pesa transaction parsing and categorisation, so budgeting needs no manual entry.</li>
+          <li>Money modelled as fixed-point Decimal throughout — never float.</li>
+        </ul>
+      </div>
+      <div class="cv-item">
+        <div class="cv-item-head"><h3>TrustGiving</h3><span class="cv-meta">In pilot · church financial system of record</span></div>
+        <ul>
+          <li>Replaces a paper-and-memory cash process with an auditable ledger for House of Miracles church.</li>
+          <li>Append-only audit log enforced at the database grant level; two-person cash controls.</li>
+        </ul>
+      </div>
+      <div class="cv-item">
+        <div class="cv-item-head"><h3>SafeReport</h3><span class="cv-meta">Live · JKUAT BBIT capstone, 2026</span></div>
+        <ul>
+          <li>Anonymous gender-based-violence reporting — no account, name or phone number needed.</li>
+          <li>One-tap Safe Exit that masks browser history mid-session.</li>
+        </ul>
+      </div>
+      <div class="cv-item">
+        <div class="cv-item-head"><h3>JKUAT Biometric Portal</h3><span class="cv-meta">Live · final-year capstone, 2026</span></div>
+        <ul>
+          <li>Passwordless student portal using WebAuthn biometrics.</li>
+          <li>Self-audited all 80 API routes before launch; found and fixed 6 missing-auth and 2 IDOR issues.</li>
+        </ul>
+      </div>
+      <div class="cv-item">
+        <div class="cv-item-head"><h3>Security Standards framework</h3><span class="cv-meta">Open source · v1.0</span></div>
+        <ul>
+          <li>A 16-layer hardening checklist run at the start of every serious project — OWASP Top 10, NIST SP 800-53, ISO/IEC 27001, Kenya DPA 2019, GDPR.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h2>Skills</h2>
+      <div class="cv-skills">
+        <div><b>Frontend</b>Next.js, React, TypeScript, Tailwind CSS</div>
+        <div><b>Backend</b>Node.js, NestJS, Django/Python — API design, validation</div>
+        <div><b>Databases</b>PostgreSQL, Prisma, Supabase — schema design, migrations</div>
+        <div><b>Fintech</b>M-Pesa integration, ledgers, audit logging, two-person controls</div>
+        <div><b>Security</b>OWASP Top 10, CSP, 2FA, rate limiting, least-privilege access</div>
+        <div><b>Testing &amp; delivery</b>Vitest, Jest, Playwright, GitHub Actions, Vercel, Render</div>
+        <div><b>AI</b>Anthropic Claude API, AI-assisted engineering workflows</div>
+        <div><b>Languages</b>English, Kiswahili</div>
+      </div>
+    </div>
+
+    <div class="cv-section">
+      <h2>Education</h2>
+      <div class="cv-item">
+        <div class="cv-item-head"><h3>Bachelor of Business Information Technology (BBIT)</h3><span class="cv-meta">JKUAT · final-year capstones, 2026</span></div>
+        <p>Jomo Kenyatta University of Agriculture and Technology.</p>
+      </div>
+    </div>
+  </div>
+</section>

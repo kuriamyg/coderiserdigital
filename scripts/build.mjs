@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
-import { pages } from '../src/pages.config.mjs';
+import { pages, site, SITE } from '../src/pages.config.mjs';
 import { socialLinks } from '../src/social-links.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -56,9 +56,25 @@ function renderSocialRowFooter() {
   </div>`;
 }
 
-function renderPager(index) {
-  const prev = pages[index - 1];
-  const next = pages[index + 1];
+// Pages in the nav are stepped through in order; the others (case studies)
+// only link back to where they are reached from.
+const navPages = pages.filter((p) => p.inNav !== false);
+
+function renderPager(page) {
+  if (page.inNav === false) {
+    if (!page.back) return '';
+    return `<div class="pager">
+  <div class="container pager-inner">
+    <a href="${page.back.file}" class="pager-btn pager-prev">
+        <i class="ti ti-arrow-left"></i>
+        <span><small>Back</small>${page.back.label}</span>
+      </a>
+  </div>
+</div>`;
+  }
+  const index = navPages.indexOf(page);
+  const prev = navPages[index - 1];
+  const next = navPages[index + 1];
   if (!prev && !next) return '';
 
   const prevHtml = prev
@@ -83,6 +99,18 @@ function renderPager(index) {
 </div>`;
 }
 
+// Visitor stats (GoatCounter): cookie-free, so no consent banner. Off until
+// a site code is set in src/pages.config.mjs.
+const gc = site.GOATCOUNTER;
+if (gc && !/^[a-z0-9-]{2,50}$/.test(gc)) {
+  throw new Error('GOATCOUNTER must be the site code only, e.g. "moseskuria"');
+}
+const analytics = gc
+  ? `<script data-goatcounter="https://${gc}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>`
+  : '<!-- Visitor stats: off (set GOATCOUNTER in src/pages.config.mjs) -->';
+const cspScript = gc ? ' https://gc.zgo.at' : '';
+const cspConnect = gc ? ` https://${gc}.goatcounter.com` : '';
+
 const socialRowNav = renderSocialRowNav();
 const socialRowInline = renderSocialRowInline();
 const socialRowFooter = renderSocialRowFooter();
@@ -93,7 +121,7 @@ for (let i = 0; i < pages.length; i++) {
   const page = pages[i];
   const content = readFileSync(path.join(srcDir, 'pages', page.source), 'utf8')
     .replaceAll('{{SOCIAL_ROW_INLINE}}', socialRowInline);
-  const pager = renderPager(i);
+  const pager = renderPager(page);
 
   const html = layout
     .replaceAll('{{TITLE}}', escapeHtml(page.title))
@@ -106,8 +134,35 @@ for (let i = 0; i < pages.length; i++) {
     .replace('{{NAV}}', navWithSocial)
     .replace('{{CONTENT}}', content)
     .replace('{{PAGER}}', pager)
-    .replace('{{FOOTER}}', footerWithSocial);
+    .replace('{{FOOTER}}', footerWithSocial)
+    .replaceAll('{{SITE}}', SITE)
+    .replace('{{ANALYTICS}}', analytics)
+    .replace('{{CSP_SCRIPT}}', cspScript)
+    .replaceAll('{{CSP_CONNECT}}', cspConnect);
 
   writeFileSync(path.join(root, page.file), html);
   console.log(`built ${page.file}`);
 }
+
+// Files that name the site's address, regenerated so a domain change is one
+// setting (src/pages.config.mjs → site.DOMAIN).
+const urls = pages
+  .map((p) => `  <url><loc>${p.canonical}</loc></url>`)
+  .join('\n');
+writeFileSync(
+  path.join(root, 'sitemap.xml'),
+  `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>
+`,
+);
+const robots = readFileSync(path.join(srcDir, 'robots.txt'), 'utf8').replaceAll(
+  '{{SITE}}',
+  SITE,
+);
+writeFileSync(path.join(root, 'robots.txt'), robots);
+if (site.DOMAIN) {
+  writeFileSync(path.join(root, 'CNAME'), `${site.DOMAIN}\n`);
+}
+console.log('built sitemap.xml, robots.txt' + (site.DOMAIN ? ', CNAME' : ''));

@@ -1,0 +1,17 @@
+# Moses Mwangi Kuria — robots.txt
+# {{SITE}}
+
+User-agent: *
+Allow: /
+
+# Block any future sensitive paths from indexing
+Disallow: /.well-known/
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+
+# Build sources — raw page partials and build scripts, not meant to be indexed
+Disallow: /src/
+Disallow: /scripts/
+
+Sitemap: {{SITE}}/sitemap.xml

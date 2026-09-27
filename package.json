@@ -7,8 +7,8 @@
   },
   "scripts": {
     "build": "node scripts/build.mjs",
-    "verify-build": "npm run build && git diff --exit-code -- index.html projects.html about.html skills.html contact.html",
-    "lint:html": "html-validate index.html projects.html about.html skills.html contact.html",
+    "verify-build": "npm run build && git diff --exit-code -- index.html projects.html about.html skills.html contact.html cv.html contact-sphere.html sitemap.xml robots.txt",
+    "lint:html": "html-validate index.html projects.html about.html skills.html contact.html cv.html contact-sphere.html",
     "lint:json": "node scripts/validate-json.mjs",
     "lint": "npm run lint:html && npm run lint:json"
   },
