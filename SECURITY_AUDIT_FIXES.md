@@ -1,4 +1,6 @@
 # 🔒 Security Audit & Fixes Report
+
+> **Update (Sept 2026):** Google Analytics (GA4) has been removed. Visitor stats now come from cookie-free GoatCounter, and the CSP no longer allows `unsafe-inline` scripts. The GA4 items below are kept for history.
 **CodeRise Digital Landing Page | 2026-05-29**
 
 ---
