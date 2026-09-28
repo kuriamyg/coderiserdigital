@@ -30,34 +30,18 @@
 })();
 
 // ══════════════════════════════════════════════════════════════
-// WHATSAPP CLICK TRACKING (GA4)
+// WHATSAPP CLICK COUNT (GoatCounter event — no cookies, no personal data)
 // ══════════════════════════════════════════════════════════════
-document.querySelectorAll('.wa-link, #nav-wa-btn').forEach(function(btn) {
+document.querySelectorAll('.wa-link, #nav-wa-btn, #footer-phone-link').forEach(function(btn) {
   btn.addEventListener('click', function() {
-    if (typeof gtag === 'function') {
-      var label = (btn.innerText || '').trim().substring(0, 40);
-      gtag('event', 'whatsapp_click', {
-        event_category: 'CTA',
-        event_label: label,
-        value: 1
+    if (window.goatcounter && typeof window.goatcounter.count === 'function') {
+      window.goatcounter.count({
+        path: 'whatsapp-click-' + (document.body.getAttribute('data-page') || 'page'),
+        title: 'WhatsApp click',
+        event: true
       });
     }
   });
-});
-
-// ══════════════════════════════════════════════════════════════
-// TIME ON PAGE (GA4 engagement depth)
-// ══════════════════════════════════════════════════════════════
-[30, 60, 120, 300].forEach(function(t) {
-  setTimeout(function() {
-    if (typeof gtag === 'function') {
-      gtag('event', 'time_on_page', {
-        event_category: 'Engagement',
-        event_label: t + 's',
-        value: t
-      });
-    }
-  }, t * 1000);
 });
 
 // ══════════════════════════════════════════════════════════════

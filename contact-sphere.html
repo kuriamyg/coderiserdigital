@@ -16,12 +16,12 @@
      [SEC-4]  rel="noopener noreferrer" added to ALL external links (was rel="noopener" only)
      [SEC-5]  Phone number obfuscated — assembled at runtime, not hardcoded in DOM
      [SEC-6]  SRI hashes added to ALL external CDN resources (Google Fonts, Tabler Icons)
-     [SEC-7]  GA4 script sandboxed — only fires after consent check
+     [SEC-7]  GA4 removed (Sept 2026) — replaced by cookie-free GoatCounter
      [SEC-8]  security.txt instructions added as comment
      [SEC-9]  robots.txt instructions added as comment
      [SEC-10] Copyright year corrected to 2026
      [SEC-11] X-Frame-Options: GitHub Pages cannot set headers — Cloudflare migration note added
-     [SEC-12] utm_source reflected from URL — sanitised before use to prevent XSS
+     [SEC-12] No inline scripts at all — script-src has no 'unsafe-inline'
      [SEC-13] WhatsApp pre-fill text minimised — removes package price exposure in browser history
 
      GITHUB PAGES LIMITATION NOTE:
@@ -36,15 +36,16 @@
 <!-- [SEC-1] Content Security Policy via meta tag
      Note: meta CSP cannot enforce frame-ancestors — that requires a real header.
      Cloudflare Pages / Transform Rules needed for full protection.
-     script-src includes unsafe-inline because GitHub Pages GA4 inline scripts cannot use nonces.
-     Once on Cloudflare Pages: remove unsafe-inline and implement nonce-based CSP. -->
+     script-src has no 'unsafe-inline': every script is an external file from an
+     allowed origin (the JSON-LD block is data, not script, and is not blocked).
+     style-src keeps 'unsafe-inline' for the inline style attributes in the pages. -->
 <meta http-equiv="Content-Security-Policy" content="
   default-src 'self';
-  script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://gc.zgo.at;
+  script-src 'self' https://gc.zgo.at;
   style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net;
   font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net;
-  img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https://moseskuria.goatcounter.com;
-  connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://moseskuria.goatcounter.com;
+  img-src 'self' data: https://moseskuria.goatcounter.com;
+  connect-src 'self' https://moseskuria.goatcounter.com;
   frame-src 'none';
   object-src 'none';
   base-uri 'self';
@@ -110,55 +111,6 @@
      [SEC-8] security.txt — present at .well-known/security.txt (RFC 9116)
      [SEC-9] robots.txt — present at the repository root
      ====================================================== -->
-
-<!-- ======== GOOGLE ANALYTICS GA4 ======== -->
-<!-- [SEC-12] GA4 loaded only after basic consent check.
-     utm_source is sanitised before use to prevent reflected XSS.
-     Measurement ID: replace G-WL5VTD16VB with your real ID if this is a placeholder. -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WL5VTD16VB"></script>
-<!-- Note: Google Tag Manager / gtag.js does not publish SRI hashes, so no integrity
-     attribute is set here — a placeholder hash was previously present and made the
-     browser reject the script outright (it never matches the real fetched bytes),
-     which silently disabled all analytics. Do not add an integrity attribute back
-     without generating (and keeping in sync) a real hash for the exact pinned bytes.
-     Mitigation: the CSP above restricts script-src to googletagmanager.com only,
-     which limits the blast radius of any GTM compromise to known domains. -->
-<script>
-  // [SEC-12] Sanitise all URL parameters before use — prevents reflected XSS
-  function sanitiseParam(val) {
-    if (!val) return '';
-    return String(val).replace(/[<>"'&]/g, function(c) {
-      return {'<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#x27;','&':'&amp;'}[c];
-    }).substring(0, 64); // max 64 chars — no parameter should ever be longer
-  }
-
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-WL5VTD16VB', {
-    page_title: 'Case study: Contact Sphere',
-    page_location: window.location.href,
-    // [SEC] Anonymise IP — GDPR + Kenya DPA 2019 compliance
-    anonymize_ip: true,
-    // [SEC] Disable ad personalisation features
-    allow_google_signals: false,
-    allow_ad_personalization_signals: false
-  });
-
-  // Track UTM source — sanitised before any use
-  (function(){
-    var params = new URLSearchParams(window.location.search);
-    var source = sanitiseParam(params.get('utm_source'));
-    var medium = sanitiseParam(params.get('utm_medium'));
-    if(source){
-      gtag('event','platform_visit',{
-        event_category: 'Traffic Source',
-        event_label: source + (medium ? ' / ' + medium : ''),
-        value: 1
-      });
-    }
-  })();
-</script>
 
 <!-- [SEC-6] SRI hashes on ALL external resources
      Google Fonts: SRI is not supported by Google Fonts CDN (dynamic responses).
