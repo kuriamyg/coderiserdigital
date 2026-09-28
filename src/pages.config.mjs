@@ -9,7 +9,7 @@
  */
 export const site = {
   DOMAIN: '',
-  GOATCOUNTER: '',
+  GOATCOUNTER: 'moseskuria',
 };
 
 export const SITE = site.DOMAIN
